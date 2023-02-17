@@ -24,7 +24,9 @@
 			<acme:menu-suboption code="master.menu.anonymous.alvvegrod-link" action="https://ev.us.es/"/>
 
 			<acme:menu-suboption code="master.menu.anonymous.alvgonfri-link" action="https://ev.us.es/"/>
-
+			
+			<acme:menu-suboption code="master.menu.anonymous.carlosdelrioperez-link" action="https://ev.us.es/"/>
+			
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
