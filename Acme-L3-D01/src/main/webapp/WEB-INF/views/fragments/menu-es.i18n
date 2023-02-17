@@ -19,8 +19,12 @@ master.menu.sign-out = Salir
 
 master.menu.anonymous = Anónimo
 master.menu.anonymous.favourite-link = Enlace favorito
+
+master.menu.anonymous.alvvegrod-link = 49280660: Vega Rodríguez, Álvaro
+
 master.menu.anonymous.alvgonfri-link = 30276674: González Frías, Álvaro
 master.menu.anonymous.migmanalv-link = 29545812N: Manzano Álvarez, Miguel
+
 
 # master.menu.administrator ###################################################
 
