@@ -21,12 +21,19 @@
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
 
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
+			
+			<acme:menu-suboption code="master.menu.anonymous.serlopdia-link" action="https://ev.us.es/"/>
+			
 			<acme:menu-suboption code="master.menu.anonymous.alvvegrod-link" action="https://ev.us.es/"/>
-
 			<acme:menu-suboption code="master.menu.anonymous.alvgonfri-link" action="https://ev.us.es/"/>
+
 			
 			<acme:menu-suboption code="master.menu.anonymous.carlosdelrioperez-link" action="https://ev.us.es/"/>
 			
+
+			<acme:menu-suboption code="master.menu.anonymous.migmanalv-link" action="https://powerhispania.net/"/>
+
+
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
