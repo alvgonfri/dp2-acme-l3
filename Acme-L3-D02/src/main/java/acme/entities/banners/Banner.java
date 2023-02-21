@@ -25,6 +25,8 @@ public class Banner extends AbstractEntity {
 
 	protected static final long	serialVersionUID	= 1L;
 
+	// Attributes -------------------------------------------------------------
+
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
 	protected Date				moment;
@@ -44,8 +46,6 @@ public class Banner extends AbstractEntity {
 
 	@URL
 	protected String			target;
-
-	// Attributes -------------------------------------------------------------
 
 	// Derived attributes -----------------------------------------------------
 
