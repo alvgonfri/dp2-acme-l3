@@ -22,8 +22,8 @@
 	<description>This is a project to help the fictitious company Acme Life-Long Learning, Inc. to perform its function.</description>
 
 	<groupId>Acme</groupId>	
-	<artifactId>Acme-L3-D01</artifactId>
-	<version>D01</version>
+	<artifactId>Acme-L3-D02</artifactId>
+	<version>D02</version>
 	<packaging>war</packaging>
 
 	<parent>
