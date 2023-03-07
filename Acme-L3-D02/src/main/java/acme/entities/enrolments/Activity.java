@@ -4,6 +4,7 @@ package acme.entities.enrolments;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
@@ -12,6 +13,7 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
+import acme.entities.courses.LectureType;
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -36,7 +38,7 @@ public class Activity extends AbstractEntity {
 	protected String			summary; // This is the "abstract" attribute
 
 	@NotNull
-	protected ActivityType		type;
+	protected LectureType		type;
 
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
@@ -53,8 +55,6 @@ public class Activity extends AbstractEntity {
 
 	// Relationships ----------------------------------------------------------
 
-	/*
-	 * @ManyToOne(optional = false)
-	 * protected Enrolment enrolment;
-	 */
+	@ManyToOne(optional = false)
+	protected Enrolment			enrolment;
 }
