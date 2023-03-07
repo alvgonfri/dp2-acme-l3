@@ -1,13 +1,8 @@
 
 package acme.entities.enrolments;
 
-import java.util.List;
-import java.util.concurrent.TimeUnit;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Transient;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
@@ -43,22 +38,23 @@ public class Enrolment extends AbstractEntity {
 
 	// Derived attributes -----------------------------------------------------
 
-
-	@Transient
-	public Integer workTime() {
-		int result = 0;
-		for (final Activity activity : this.activities) {
-			final int diffInMillies = (int) Math.abs(activity.getEndDate().getTime() - activity.getStartDate().getTime());
-			final int diffInHours = (int) TimeUnit.HOURS.convert(diffInMillies, TimeUnit.MILLISECONDS);
-			result += diffInHours;
-		}
-		return result;
-	}
+	/*
+	 * @Transient
+	 * public Integer workTime() {
+	 * int result = 0;
+	 * for (final Activity activity : this.activities) {
+	 * final int diffInMillies = (int) Math.abs(activity.getEndDate().getTime() - activity.getStartDate().getTime());
+	 * final int diffInHours = (int) TimeUnit.HOURS.convert(diffInMillies, TimeUnit.MILLISECONDS);
+	 * result += diffInHours;
+	 * }
+	 * return result;
+	 * }
+	 */
 
 	// Relationships ----------------------------------------------------------
 
-
-	@OneToMany
-	protected List<Activity> activities;
-
+	/*
+	 * @OneToMany
+	 * protected List<Activity> activities;
+	 */
 }
