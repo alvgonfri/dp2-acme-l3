@@ -4,7 +4,6 @@ package acme.entities.audits;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
@@ -43,12 +42,15 @@ public class Audit extends AbstractEntity {
 
 	// Derived attributes -----------------------------------------------------
 
-
-	@NotNull
-	public Mark getMark() {
-		return Mark.A;
-	}
+	//	@NotNull
+	//	public Mark getMark() {
+	//
+	//	}
 	// Relationships ----------------------------------------------------------
 
-	//FALTAN RELACIONES
+	//	@ManyToOne
+	//	protected Course course;
+
+	//	@OneToMany
+	//	protected List<AuditingRecord> auditingRecords;
 }
