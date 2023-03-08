@@ -1,5 +1,5 @@
 
-package acme.entities.banners;
+package acme.entities.courses;
 
 public enum LectureType {
 
