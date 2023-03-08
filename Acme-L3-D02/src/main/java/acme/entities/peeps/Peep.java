@@ -1,11 +1,12 @@
 
-package acme.entities.banners;
+package acme.entities.peeps;
 
 import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
@@ -20,7 +21,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Banner extends AbstractEntity {
+public class Peep extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -28,32 +29,27 @@ public class Banner extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	@PastOrPresent
+	@NotNull
 	protected Date				moment;
-
-	@NotNull
-	@Temporal(TemporalType.TIMESTAMP)
-	protected Date				displayStart;
-
-	@NotNull
-	@Temporal(TemporalType.TIMESTAMP)
-	protected Date				displayEnd;
-
-	@NotNull
-	@URL
-	protected String			picture;
 
 	@NotBlank
 	@Length(max = 75)
-	protected String			slogan;
+	protected String			title;
+
+	@NotBlank
+	@Length(max = 75)
+	protected String			nick;
+
+	@NotBlank
+	@Length(max = 100)
+	protected String			message;
+
+	@Email
+	protected String			email;
 
 	@URL
-	protected String			target;
-
-	// Derived attributes -----------------------------------------------------
-
-	// Relationships ----------------------------------------------------------
+	protected String			link;
 
 }
