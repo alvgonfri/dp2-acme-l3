@@ -1,19 +1,18 @@
 
-package acme.entities.enrolments;
+package acme.entities.bulletins;
 
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.entities.courses.LectureType;
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,7 +20,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Activity extends AbstractEntity {
+public class Bulletin extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -29,32 +28,26 @@ public class Activity extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
+	@NotNull
+	@Past
+	@Temporal(TemporalType.TIMESTAMP)
+	protected Date				moment;
+
 	@NotBlank
 	@Length(max = 75)
 	protected String			title;
 
 	@NotBlank
 	@Length(max = 100)
-	protected String			summary; // This is the "abstract" attribute
+	protected String			message;
 
-	@NotNull
-	protected LectureType		type;
-
-	@NotNull
-	@Temporal(TemporalType.TIMESTAMP)
-	protected Date				startDate;
-
-	@NotNull
-	@Temporal(TemporalType.TIMESTAMP)
-	protected Date				endDate;
+	protected boolean			critical;
 
 	@URL
-	protected String			moreInfo;
+	protected String			optionalLink;
 
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
 
-	@ManyToOne(optional = false)
-	protected Enrolment			enrolment;
 }
