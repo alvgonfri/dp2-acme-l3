@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -15,6 +16,7 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.data.util.Pair;
 
+import acme.entities.courses.Course;
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -73,10 +75,10 @@ public class Audit extends AbstractEntity {
 	}
 	// Relationships ----------------------------------------------------------
 
-	//	@ManyToOne
-	//	protected Course course;
 
+	@ManyToOne
+	protected Course				course;
 
 	@OneToMany
-	protected List<AuditingRecord> auditingRecords;
+	protected List<AuditingRecord>	auditingRecords;
 }
