@@ -14,26 +14,30 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Assistant extends AbstractRole {
+public class Auditor extends AbstractRole {
 
 	// Serialisation identifier -----------------------------------------------
+
 	protected static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
 	@Length(max = 75)
-	protected String			supervisor;
+	protected String			firm;
+
+	@NotBlank
+	@Length(max = 25)
+	protected String			profesionalId;
 
 	@NotBlank
 	@Length(max = 100)
-	protected String			expertiseFiels;
-
-	@NotBlank
-	@Length(max = 100)
-	protected String			resume;
+	protected String			certifications;
 
 	@URL
-	protected String			link;
+	protected String			moreInfo;
+	// Derived attributes -----------------------------------------------------
+
+	// Relationships ----------------------------------------------------------
 
 }
