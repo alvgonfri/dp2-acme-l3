@@ -1,10 +1,7 @@
 
 package acme.entities.tutorial;
 
-import java.util.Date;
-
 import javax.persistence.Entity;
-
 import javax.validation.constraints.NotBlank;
 
 import org.hibernate.validator.constraints.Length;
@@ -16,40 +13,26 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Tutorial extends AbstractEntity{
+public class Tutorial extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
-		protected static final long	serialVersionUID	= 1L;
+	protected static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
-	
-	protected String code; 
-	
-	
+
+	protected String			code;
+
 	@NotBlank
-	@Length(max= 75)
-	protected String title; 
-	
-	@NotBlank
-	@Length(max = 100)
-	protected String anAbstract; 
-	´
-	
+	@Length(max = 75)
+	protected String			title;
+
 	@NotBlank
 	@Length(max = 100)
-	protected String goals; 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	protected String			anAbstract;
+
+	@NotBlank
+	@Length(max = 100)
+	protected String			goals;
+
 }
