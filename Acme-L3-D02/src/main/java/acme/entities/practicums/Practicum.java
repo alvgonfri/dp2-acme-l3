@@ -1,11 +1,8 @@
 
 package acme.entities.practicums;
 
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
@@ -22,26 +19,26 @@ public class Practicum extends AbstractRole {
 
 	// Serialisation identifier -----------------------------------------------
 
-	protected static final long			serialVersionUID	= 1L;
+	protected static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
 
 	@Pattern(regexp = "[A-Z]{1,3}[0-9][0-9]{3}")
 	@NotBlank
 	@Column(unique = true)
-	protected String					code;
+	protected String			code;
 
 	@NotBlank
 	@Length(max = 75)
-	protected String					title;
+	protected String			title;
 
 	@NotBlank
 	@Length(max = 100)
-	protected String					summary; // "abstract" name is banned
+	protected String			summary; // "abstract" name is banned
 
 	@NotBlank
 	@Length(max = 100)
-	protected String					goals;
+	protected String			goals;
 
 	// Derived attributes -----------------------------------------------------
 
@@ -58,7 +55,6 @@ public class Practicum extends AbstractRole {
 
 	// Relationships ----------------------------------------------------------
 
-	@OneToMany
-	protected List<PracticumSession>	sessions;
+	//	protected List<PracticumSession>	sessions;
 
 }
