@@ -1,8 +1,6 @@
 
 package acme.entities.tutorial;
 
-import java.sql.Time;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
@@ -42,6 +40,6 @@ public class Tutorial extends AbstractEntity {
 	@Length(max = 100)
 	protected String			goals;
 
-	protected Time				totaltime;
+	protected int				totaltime;
 
 }
