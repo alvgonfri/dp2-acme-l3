@@ -1,8 +1,12 @@
 
 package acme.entities.tutorial;
 
+import java.sql.Time;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 
@@ -21,6 +25,9 @@ public class Tutorial extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
+	@NotBlank
+	@Pattern(regexp = "[A-Z]{1,3}[0-9][0-9]{3}$", message = "wrong pattern")
+	@Column(unique = true)
 	protected String			code;
 
 	@NotBlank
@@ -34,5 +41,7 @@ public class Tutorial extends AbstractEntity {
 	@NotBlank
 	@Length(max = 100)
 	protected String			goals;
+
+	protected Time				totaltime;
 
 }
