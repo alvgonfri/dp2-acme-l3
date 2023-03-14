@@ -1,4 +1,4 @@
-key,code,conclusion,strongPoints,weakPoints,
+key,code,conclusion,strongPoints,weakPoints,key:auditor
 audit-01,ABC0123,The audit concluded.,All.,None.,auditor-01
 audit-02,XYZ9876,The audit concluded.,All.,None.,auditor-01
 audit-03,ABC0124,The process of auditing has concluded.,All.,None.,auditor-01
