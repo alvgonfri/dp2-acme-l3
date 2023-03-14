@@ -7,5 +7,5 @@ auditing-record-05,Base subject.,Base assessment.,2022/06/15 11:30,2022/06/15 12
 auditing-record-06,Base subject.,Base assessment.,2022/06/15 11:30,2022/06/15 13:30,C,null,audit-01
 auditing-record-07,Base subject.,Base assessment.,2022/06/15 11:30,2022/06/15 13:30,B,https://www.google.es/,audit-01
 auditing-record-08,Base subject.,Base assessment.,2022/06/15 11:30,2022/06/15 13:30,B,null,audit-02
-auditing-record-02,Tema base con carácteres en español.,Base assessment.,2022/06/15 11:30,2022/06/15 13:30,B,null,audit1-01
-auditing-record-07,Base subject.,Base assessment.,2022/06/15 11:30,2022/06/15 13:30,B,https://acme.com/a/b,audit-01
+auditing-record-09,Tema base con carácteres en español.,Base assessment.,2022/06/15 11:30,2022/06/15 13:30,B,null,audit1-01
+auditing-record-10,Base subject.,Base assessment.,2022/06/15 11:30,2022/06/15 13:30,B,https://acme.com/a/b,audit-01
