@@ -3,12 +3,15 @@ package acme.entities.enrolments;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 
+import acme.entities.courses.Course;
 import acme.framework.data.AbstractEntity;
+import acme.roles.Student;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -23,7 +26,7 @@ public class Enrolment extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	@Pattern(regexp = "[A-Z]{1,3}[0-9][0-9]{3}")
+	@Pattern(regexp = "[A-Z]{1,3}\\d{3}")
 	@NotBlank
 	@Column(unique = true)
 	protected String			code;
@@ -38,23 +41,11 @@ public class Enrolment extends AbstractEntity {
 
 	// Derived attributes -----------------------------------------------------
 
-	/*
-	 * @Transient
-	 * public Integer workTime() {
-	 * int result = 0;
-	 * for (final Activity activity : this.activities) {
-	 * final int diffInMillies = (int) Math.abs(activity.getEndDate().getTime() - activity.getStartDate().getTime());
-	 * final int diffInHours = (int) TimeUnit.HOURS.convert(diffInMillies, TimeUnit.MILLISECONDS);
-	 * result += diffInHours;
-	 * }
-	 * return result;
-	 * }
-	 */
-
 	// Relationships ----------------------------------------------------------
 
-	/*
-	 * @OneToMany
-	 * protected List<Activity> activities;
-	 */
+	@ManyToOne(optional = false)
+	protected Student			student;
+
+	@ManyToOne(optional = false)
+	protected Course			course;
 }
