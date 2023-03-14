@@ -35,7 +35,7 @@ public class AuditingRecord extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 100)
-	protected String			assessmet;
+	protected String			assessment;
 
 	@NotNull
 	@Past
