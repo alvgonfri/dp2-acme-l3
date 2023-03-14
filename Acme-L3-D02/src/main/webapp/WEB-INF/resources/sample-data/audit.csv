@@ -1,7 +1,7 @@
-key,code,conclusion,strongPoints,weakPoints,key:auditor
-audit-01,ABC0123,Se ha realizado la auditoria.,Todos.,Ninguno.,auditor-01
-audit-02,XYZ9876,Se ha realizado la auditoria.,Todos.,Ninguno.,auditor-01
-audit-03,ABC0123,Se ha llevado a cabo la auditoria.,Todos.,Ninguno.,auditor-01
-audit-04,ABC0123,Se ha realizado la auditoria.,Todos los puntos son considerados como puntos fuertes.,Ninguno.,auditor-01
-audit-05,ABC0123,Se ha realizado la auditoria.,Todos.,No se han encontrado puntos débiles.,auditor-01
-audit-06,ABC0123,Se ha realizado la auditoria.,Todos.,Ninguno.,auditor-02
+key,code,conclusion,strongPoints,weakPoints,
+audit-01,ABC0123,The audit concluded.,All.,None.,auditor-01
+audit-02,XYZ9876,The audit concluded.,All.,None.,auditor-01
+audit-03,ABC0124,The process of auditing has concluded.,All.,None.,auditor-01
+audit-04,ABC0125,The audit concluded.,All the points treated in the audit were considered as strong points.,None.,auditor-01
+audit-05,ABC0126,The audit concluded.,All.,None of the points treated in the audit were considered as a weak point.,auditor-01
+audit-06,ABC0127,The audit concluded.,All.,None.,auditor-02
