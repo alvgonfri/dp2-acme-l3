@@ -1,3 +1,3 @@
-key,key:userAccount,,,,
+key,key:userAccount,firm,profesionalID,certifications,moreInfo
 auditor-01,user-account-auditor-01,pabloblanco123,pabblan,"ISO (45001, 9001) SGE 21",null
 auditor-02,user-account-auditor-02,jorgeruiz123,jorgrui,"ISO (45001, 9001, 14001) SGE 21",https://www.google.es
