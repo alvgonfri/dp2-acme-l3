@@ -1,0 +1,9 @@
+key,subject,assessment,startDate,endDate,mark,moreInfo,key:audit
+auditing-record-01,Base subject.,Base assessment.,2022/06/15 11:30,2022/06/15 13:30,B,null,audi1-01
+auditing-record-02,This is a variant for the subject subject.,Base assessment.,2022/06/15 11:30,2022/06/15 13:30,B,null,audi1-01
+auditing-record-03,Base subject.,This is a variant for the assessment.,2022/06/15 11:30,2022/06/15 13:30,B,null,audi1-01
+auditing-record-04,Base subject.,Base assessment.,2022/06/15 10:30,2022/06/15 13:30,B,null,audit-01
+auditing-record-05,Base subject.,Base assessment.,2022/06/15 11:30,2022/06/15 12:30,B,null,audit-01
+auditing-record-06,Base subject.,Base assessment.,2022/06/15 11:30,2022/06/15 13:30,C,null,audit-01
+auditing-record-07,Base subject.,Base assessment.,2022/06/15 11:30,2022/06/15 13:30,B,https://www.google.es/,audit-01
+auditing-record-08,Base subject.,Base assessment.,2022/06/15 11:30,2022/06/15 13:30,B,null,audit-02
