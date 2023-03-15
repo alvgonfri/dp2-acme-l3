@@ -11,6 +11,7 @@ import org.hibernate.validator.constraints.Length;
 
 import acme.entities.courses.Course;
 import acme.framework.data.AbstractEntity;
+import acme.roles.Auditor;
 import lombok.Getter;
 import lombok.Setter;
 
