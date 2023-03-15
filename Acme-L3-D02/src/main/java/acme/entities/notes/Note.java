@@ -13,8 +13,6 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.datatypes.UserIdentity;
-import acme.framework.components.accounts.Principal;
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -50,15 +48,6 @@ public class Note extends AbstractEntity {
 
 	// Derived attributes -----------------------------------------------------
 
-
-	//provisional, falta saber como obtener realmente datos de Principal y UserIdentity
-	@NotBlank
-	@Length(max = 75)
-	public String getAuthor(final Principal user, final UserIdentity userId) {
-
-		return String.format("%s - %s, %s", user.getUsername(), userId.getName(), userId.getSurname());
-
-	}
 	// Relationships ----------------------------------------------------------
 
 }
