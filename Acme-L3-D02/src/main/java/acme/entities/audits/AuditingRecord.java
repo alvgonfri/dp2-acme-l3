@@ -55,10 +55,6 @@ public class AuditingRecord extends AbstractEntity {
 
 	// Derived attributes -----------------------------------------------------
 
-	//se puede modelar las fechas como LocalDate y obtener los periods asi?
-	//		public Period getPeriod() {
-	//			return Period.between(startDate, endDate);
-	//		}
 	// Relationships ----------------------------------------------------------
 
 	@ManyToOne(optional = false)
