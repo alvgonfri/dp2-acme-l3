@@ -1,5 +1,5 @@
 
-package acme.entities.sessions;
+package acme.entities.tutorial;
 
 public enum TutorialSessionType {
 
