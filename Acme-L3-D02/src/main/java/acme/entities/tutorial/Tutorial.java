@@ -3,6 +3,7 @@ package acme.entities.tutorial;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
@@ -24,7 +25,7 @@ public class Tutorial extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
-	@Pattern(regexp = "[A-Z]{1,3}[0-9][0-9]{3}$", message = "wrong pattern")
+	@Pattern(regexp = "[A-Z]{1,3}\\d{3}$", message = "wrong pattern")
 	@Column(unique = true)
 	protected String			code;
 
@@ -40,6 +41,17 @@ public class Tutorial extends AbstractEntity {
 	@Length(max = 100)
 	protected String			goals;
 
-	protected int				totaltime;
+	//	@NotNull
+	//	protected Integer			totaltime;
+	//	
+	// Derived attributes -----------------------------------------------------
+
+	// Relationships ----------------------------------------------------------
+
+	@ManyToOne(optional = false)
+	protected Assistant			assistant;
+
+	@ManyToOne(optional = false)
+	protected Course			course;
 
 }
