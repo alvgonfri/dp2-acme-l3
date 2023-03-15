@@ -1,5 +1,5 @@
 
-package entities.offer;
+package entities.offers;
 
 import java.util.Date;
 
