@@ -27,13 +27,13 @@ public class Assistant extends AbstractRole {
 
 	@NotBlank
 	@Length(max = 100)
-	protected String			expertiseFiels;
+	protected String			expertiseFields;
 
 	@NotBlank
 	@Length(max = 100)
 	protected String			resume;
 
 	@URL
-	protected String			link;
+	protected String			moreInfo;
 
 }

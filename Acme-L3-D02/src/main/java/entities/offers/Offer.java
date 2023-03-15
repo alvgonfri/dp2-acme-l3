@@ -1,5 +1,5 @@
 
-package acme.entities.banners;
+package entities.offers;
 
 import java.util.Date;
 
@@ -13,6 +13,7 @@ import javax.validation.constraints.Past;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
+import acme.framework.components.datatypes.Money;
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,38 +21,40 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Banner extends AbstractEntity {
+
+public class Offer extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
-
 	protected static final long	serialVersionUID	= 1L;
 
-	// Attributes -------------------------------------------------------------
-
-	@NotNull
+	// Attributes ----------
 	@Temporal(TemporalType.TIMESTAMP)
+	@NotNull
 	@Past
 	protected Date				moment;
 
-	@NotNull
-	@Temporal(TemporalType.TIMESTAMP)
-	protected Date				displayStart;
-
-	@NotNull
-	@Temporal(TemporalType.TIMESTAMP)
-	protected Date				displayEnd;
-
 	@NotBlank
-	@URL
-	protected String			picture;
-
-	@NotBlank
+	@NotNull
 	@Length(max = 75)
-	protected String			slogan;
+	protected String			heading;
 
+	@Length(max = 100)
 	@NotBlank
+	protected String			summary;
+
+	@NotNull
+	@Temporal(TemporalType.TIMESTAMP)
+	protected Date				startAvalible;
+
+	@NotNull
+	@Temporal(TemporalType.TIMESTAMP)
+	protected Date				endAvalible;
+
+	@NotNull
+	protected Money				price;
+
 	@URL
-	protected String			target;
+	protected String			link;
 
 	// Derived attributes -----------------------------------------------------
 
