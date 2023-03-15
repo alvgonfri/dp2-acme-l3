@@ -15,7 +15,7 @@ public class AuditorDashboard extends AbstractForm {
 
 	// Attributes -------------------------------------------------------------
 
-	int							numberOfAudits;
+	int							numberOfAuditsForTheoryCourses;
 	int							numberOfAuditsForHandsOnCourses;
 	double						averageAuditingRecordsInTheAuditorsAudits;
 	double						minimumAuditingRecordsInTheAuditorsAudits;
