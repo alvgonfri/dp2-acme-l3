@@ -39,6 +39,7 @@ public class Offer extends AbstractEntity {
 	protected String			heading;
 
 	@Length(max = 100)
+	@NotBlank
 	protected String			summary;
 
 	@NotNull
