@@ -30,7 +30,7 @@ public class AdministratorDashboard extends AbstractForm {
 	double						averageBudgetInOffersByCurrency;
 	double						minimumBudgetInOffersByCurrency;
 	double						maximumBudgetInOffersByCurrency;
-	double						standardBudgetInOffersByCurrency;
+	double						deviationBudgetInOffersByCurrency;
 	double						averageNumberOfNotesPostedOver10Weeks;
 	double						minimumNumberOfNotesPostedOver10Weeks;
 	double						maximumNumberOfNotesPostedOver10Weeks;
