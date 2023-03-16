@@ -1,0 +1,4 @@
+key,moment,title,message,critical,moreInfo
+bulletin-01,2000/08/24 14:39,Lorem ipsum,Lorem ipsum dolor sit amet,true,www.ev.us.es
+bulletin-02,2003/05/14 14:39,Lorem ipsum,Lorem ipsum dolor sit amet,true,www.ev.us.es
+bulletin-03,2000/12/25 14:39,Lorem ipsum,Lorem ipsum dolor sit amet,false,www.ev.us.es
