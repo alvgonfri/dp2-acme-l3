@@ -14,8 +14,17 @@ public class AdministratorDashboard extends AbstractForm {
 
 	// Attributes -------------------------------------------------------------
 
-	int							numberOfPrincipalsForTheoryCourses;
-	double						ratioOfPeepsWithEmailAndAdrees;
+	int						numberOfPrincipalsAssistant;
+	
+	int						numberOfPrincipalsAuditor;
+	
+	int						numberOfPrincipalsCompany;
+	
+	int						numberOfPrincipalsStudent;
+	
+	int						numberOfPrincipalLecturer;
+	
+	double						ratioOfPeepsWithEmailAndLink;
 	double						ratioOfCriticalBulletins;
 	double						ratioOfNonCriticalBulletins;
 	double						averageBudgetInOffersByCurrency;
@@ -25,7 +34,7 @@ public class AdministratorDashboard extends AbstractForm {
 	double						averageNumberOfNotesPostedOver10Weeks;
 	double						minimumNumberOfNotesPostedOver10Weeks;
 	double						maximumNumberOfNotesPostedOver10Weeks;
-	double						standardNumberOfNotesPostedOver10Weeks;
+	double						deviationNumberOfNotesPostedOver10Weeks;
 
 	// Derived attributes -----------------------------------------------------
 
