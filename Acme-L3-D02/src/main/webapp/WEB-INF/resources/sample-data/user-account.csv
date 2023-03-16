@@ -1,0 +1,5 @@
+key,enabled,identity,password,username
+user-account-administrator-02,true,"UserIdentity{name: 'Administrator', surname: '1', email: 'administrator@acme.com'}",administrator1,administrator1
+user-account-administrator-03,true,"UserIdentity{name: 'Administrator', surname: '2', email: 'administrator@acme.com'}",administrator2,administrator2
+user-account-lecturer-01,true,"UserIdentity{name: 'Lecturer', surname: '1', email: 'lecturer1@acme.com'}",lecturer1,lecturer1
+user-account-lecturer-02,true,"UserIdentity{name: 'Lecturer', surname: '2', email: 'lecturer2@acme.com'}",lecturer2,lecturer2
