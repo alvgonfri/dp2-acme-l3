@@ -44,7 +44,7 @@ public class Bulletin extends AbstractEntity {
 	protected boolean			critical;
 
 	@URL
-	protected String			optionalLink;
+	protected String			moreInfo;
 
 	// Derived attributes -----------------------------------------------------
 
