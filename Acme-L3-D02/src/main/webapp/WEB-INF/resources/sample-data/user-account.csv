@@ -1,0 +1,3 @@
+key,enabled,identity,password,username
+user-account-assistant-1,true,"UserIdentity{name: 'Pepe', surname:' Garcia', email:'pepegarcia@acme.com'}",assistant1,assistant1
+user-account-assistant-2,true,"UserIdentity{name: 'Luis', surname:' Garcia', email:'luisgarcia@acme.com'}",assistant2,assistant2

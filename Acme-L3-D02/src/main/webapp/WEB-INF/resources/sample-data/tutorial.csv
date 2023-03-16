@@ -1,0 +1,7 @@
+key,code,title,summary,goals,assistant:key,course:key
+tutorial-01,ABC873,Basic,Basic tutorial,Sample data,assistant-01,course-01
+tutorial-02,ABC813,Basic,Basic tutorial,Sample data,assistant-02,course-01
+tutorial-03,ABC872,Basic,Basic tutorial,Sample data,assistant-01,course-02
+tutorial-04,ABC672,Basic,Basic tutorial,Sample data,assistant-01,course-02
+
+
