@@ -47,7 +47,7 @@ public class Course extends AbstractEntity {
 	protected Money				retailPrice;
 
 	@URL
-	protected String			link;
+	protected String			moreInfo;
 
 	// Derived attributes -----------------------------------------------------
 
