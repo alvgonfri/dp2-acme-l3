@@ -4,5 +4,7 @@ user-account-assistant-2,true,"UserIdentity{name: 'Luis', surname:' Garcia', ema
 user-account-lecturer-01,true,"UserIdentity{name: 'Lecturer', surname: '1', email: 'lecturer1@acme.com'}",lecturer1,lecturer1
 user-account-lecturer-02,true,"UserIdentity{name: 'Lecturer', surname: '2', email: 'lecturer2@acme.com'}",lecturer2,lecturer2
 user-account-lecturer-03,true,"UserIdentity{name: 'Lecturer', surname: '3', email: 'lecturer3@acme.com'}",lecturer3,lecturer3
+user-account-student-01,true,"UserIdentity{name: 'Student', surname: 'One', email: 'student1@mail.com'}",student1,student1
+user-account-student-02,true,"UserIdentity{name: 'Student', surname: 'Two', email: 'student2@mail.com'}",student2,student2
 user-account-auditor-01,true,"UserIdentity{name: 'Pablo', surname: 'Blanco', email: 'pabloblanco@acme.com'}",auditor1,auditor1
 user-account-auditor-02,true,"UserIdentity{name: 'Jorge', surname: 'Ruiz', email: 'jorgeruiz@acme.com'}",auditor2,auditor2
