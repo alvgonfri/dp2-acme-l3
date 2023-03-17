@@ -1,6 +1,6 @@
-key,code,title,summary,goals,draft_mode,key:company,key:course
-"practicum-01,AAA111,Practicum ejemplo,Sumario de la práctica de ejemplo,""Emprender, aprender, jugar"",false,company-01,course-01"
-"practicum-02,AAA111,Practicum ejemplo,Sumario de la práctica de ejemplo,""Emprender, aprender, jugar"",false,company-02,course-02"
-"practicum-03,AAA111,Practicum ejemplo,Sumario de la práctica de ejemplo,""Emprender, aprender, jugar"",false,company-03,course-03"
-"practicum-04,AAA111,Practicum ejemplo,Sumario de la práctica de ejemplo,""Emprender, aprender, jugar"",false,company-04,course-01"
-"practicum-05,AAA111,Practicum ejemplo,Sumario de la práctica de ejemplo,""Emprender, aprender, jugar"",false,company-05,course-02"
+key,code,title,summary,goals,key:company,key:course,key:user-account
+practicum-01,AAA111,Practicum ejemplo,Sumario de la practica de ejemplo,emprender,company-01,course-01,user-account-student-01
+practicum-02,AAA121,Practicum ejemplo,Sumario de la practica de ejemplo,aprender,company-04,course-02,user-account-student-01
+practicum-03,AAA131,Practicum ejemplo,Sumario de la practica de ejemplo,habilidad,company-02,course-01,user-account-student-01
+practicum-04,AAA141,Practicum ejemplo,Sumario de la practica de ejemplo,economia,company-03,course-02,user-account-student-01
+practicum-05,AAA151,Practicum ejemplo,Sumario de la practica de ejemplo,jugar,company-02,course-01,user-account-student-01
