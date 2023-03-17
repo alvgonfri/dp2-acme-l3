@@ -1,0 +1,21 @@
+key,name,VAT,summary,further_information_link,key:userAccount
+company-01,Empresa ejemplo,12345678901,Aquí va un resumen de la empresa de ejemplo.,https://github.com/alvgonfri/dp2-acme-l3,user-account-company-01
+company-02,Empresa ejemplo,12345678901,Aquí va un resumen de la empresa de ejemplo.,https://github.com/alvgonfri/dp2-acme-l3,user-account-company-02
+company-03,Empresa ejemplo,1234567890123456789012345,Aquí va un resumen de la empresa de ejemplo.,https://github.com/alvgonfri/dp2-acme-l3,user-account-company-03
+company-04,????? ??????,12345678901,Aquí va un resumen de la empresa de ejemplo.,https://github.com/alvgonfri/dp2-acme-l3,user-account-company-04
+company-05,?????? ????????,12345678901,Aquí va un resumen de la empresa de ejemplo.,https://github.com/alvgonfri/dp2-acme-l3,user-account-company-05
+company-06,<h1>Empresa ejemplo</h1>,12345678901,Aquí va un resumen de la empresa de ejemplo.,Esto no es una web,user-account-company-06
+company-07,Empresa ejemplo,12345678901,Aquí va a ir un texto con cien palabras exactamente para probar que la longitud de la cadena está bi,https://github.com/alvgonfri/dp2-acme-l3,user-account-company-07
+company-08,Empresa ejemplo,12345678901,Aquí va un resumen de la empresa de ejemplo.,https://github.com/alvgonfri/dp2-acme-l3,user-account-company-08
+company-09,http://www.google.es,12345678901,Aquí va un resumen de la empresa de ejemplo.,https://github.com/alvgonfri/dp2-acme-l3,user-account-company-09
+company-10,Empresa ejemplo,12345678901,Aquí va un resumen de la empresa de ejemplo.,https://github.com/alvgonfri/dp2-acme-l3,user-account-company-10
+company-11,Empresa ejemplo,12345678901,???????????,https://github.com/alvgonfri/dp2-acme-l3,user-account-company-11
+company-12,Empresa ejemplo,1234567890123456789012345,??? ??????? ????????? ??????? ????????.,https://github.com/alvgonfri/dp2-acme-l3,user-account-company-12
+company-13,Empresa ejemplo,12345678901,Aquí va un resumen de la empresa de ejemplo.,https://github.com/alvgonfri/dp2-acme-l3,user-account-company-13
+company-14,Empresa ejemplo,A-12345678901J,Aquí va un resumen de la empresa de ejemplo.,https://github.com/alvgonfri/dp2-acme-l3,user-account-company-14
+company-15,Empresa ejemplo,12345678901,<h2>Aquí va un resumen de la empresa de ejemplo.</h2>,https://github.com/alvgonfri/dp2-acme-l3,user-account-company-15
+company-16,Empresa ejemplo,1234567890123456789012345,Aquí va un resumen de la empresa de ejemplo.,https://github.com/alvgonfri/dp2-acme-l3,user-account-company-16
+company-17,1111111111,12345678901,Aquí va un resumen de la empresa de ejemplo.,https://github.com/alvgonfri/dp2-acme-l3,user-account-company-17
+company-18,Empresa ejemplo,WWW12345678901,Aquí va un resumen de la empresa de ejemplo.,https://github.com/alvgonfri/dp2-acme-l3,user-account-company-18
+company-19,Empresa ejemplo,numeroVAT,Aquí va un resumen de la empresa de ejemplo.,https://github.com/alvgonfri/dp2-acme-l3,user-account-company-19
+company-20,Empresa ejemplo,12345678901,Aquí va un resumen de la empresa de ejemplo.,https://github.com/alvgonfri/dp2-acme-l3,user-account-company-20

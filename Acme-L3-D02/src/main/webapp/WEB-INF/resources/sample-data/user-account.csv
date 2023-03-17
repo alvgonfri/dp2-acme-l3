@@ -1,10 +1,30 @@
 key,enabled,identity,password,username
-user-account-assistant-1,true,"UserIdentity{name: 'Pepe', surname:' Garcia', email:'pepegarcia@acme.com'}",assistant1,assistant1
-user-account-assistant-2,true,"UserIdentity{name: 'Luis', surname:' Garcia', email:'luisgarcia@acme.com'}",assistant2,assistant2
-user-account-lecturer-01,true,"UserIdentity{name: 'Lecturer', surname: '1', email: 'lecturer1@acme.com'}",lecturer1,lecturer1
-user-account-lecturer-02,true,"UserIdentity{name: 'Lecturer', surname: '2', email: 'lecturer2@acme.com'}",lecturer2,lecturer2
-user-account-lecturer-03,true,"UserIdentity{name: 'Lecturer', surname: '3', email: 'lecturer3@acme.com'}",lecturer3,lecturer3
-user-account-student-01,true,"UserIdentity{name: 'Student', surname: 'One', email: 'student1@mail.com'}",student1,student1
-user-account-student-02,true,"UserIdentity{name: 'Student', surname: 'Two', email: 'student2@mail.com'}",student2,student2
-user-account-auditor-01,true,"UserIdentity{name: 'Pablo', surname: 'Blanco', email: 'pabloblanco@acme.com'}",auditor1,auditor1
-user-account-auditor-02,true,"UserIdentity{name: 'Jorge', surname: 'Ruiz', email: 'jorgeruiz@acme.com'}",auditor2,auditor2
+"user-account-assistant-1,true,""UserIdentity{name: 'Pepe', surname:' Garcia', email:'pepegarcia@acme.com'}"",assistant1,assistant1"
+"user-account-assistant-2,true,""UserIdentity{name: 'Luis', surname:' Garcia', email:'luisgarcia@acme.com'}"",assistant2,assistant2"
+"user-account-lecturer-01,true,""UserIdentity{name: 'Lecturer', surname: '1', email: 'lecturer1@acme.com'}"",lecturer1,lecturer1"
+"user-account-lecturer-02,true,""UserIdentity{name: 'Lecturer', surname: '2', email: 'lecturer2@acme.com'}"",lecturer2,lecturer2"
+"user-account-lecturer-03,true,""UserIdentity{name: 'Lecturer', surname: '3', email: 'lecturer3@acme.com'}"",lecturer3,lecturer3"
+"user-account-student-01,true,""UserIdentity{name: 'Student', surname: 'One', email: 'student1@mail.com'}"",student1,student1"
+"user-account-student-02,true,""UserIdentity{name: 'Student', surname: 'Two', email: 'student2@mail.com'}"",student2,student2"
+"user-account-auditor-01,true,""UserIdentity{name: 'Pablo', surname: 'Blanco', email: 'pabloblanco@acme.com'}"",auditor1,auditor1"
+"user-account-auditor-02,true,""UserIdentity{name: 'Jorge', surname: 'Ruiz', email: 'jorgeruiz@acme.com'}"",auditor2,auditor2"
+"user-account-company-01,true,""UserIdentity{name: 'Sergio', surname: 'Lopez', email: 'company1@acme.com'}"",company1,company1"
+"user-account-company-02,true,""UserIdentity{name: 'Sergio', surname: 'Lopez', email: 'company2@acme.com'}"",company2,company2"
+"user-account-company-03,true,""UserIdentity{name: 'Sergio', surname: 'Lopez', email: 'company3@acme.com'}"",company3,company3"
+"user-account-company-04,true,""UserIdentity{name: 'Sergio', surname: 'Lopez', email: 'company4@acme.com'}"",company4,company4"
+"user-account-company-05,true,""UserIdentity{name: 'Sergio', surname: 'Lopez', email: 'company5@acme.com'}"",company5,company5"
+"user-account-company-06,true,""UserIdentity{name: 'Sergio', surname: 'Lopez', email: 'company6@acme.com'}"",company6,company6"
+"user-account-company-07,true,""UserIdentity{name: 'Sergio', surname: 'Lopez', email: 'company7@acme.com'}"",company7,company7"
+"user-account-company-08,true,""UserIdentity{name: 'Sergio', surname: 'Lopez', email: 'company8@acme.com'}"",company8,company8"
+"user-account-company-09,true,""UserIdentity{name: 'Sergio', surname: 'Lopez', email: 'company9@acme.com'}"",company9,company9"
+"user-account-company-10,true,""UserIdentity{name: 'Sergio', surname: 'Lopez', email: 'company10@acme.com'}"",company10,company10"
+"user-account-company-11,true,""UserIdentity{name: 'Sergio', surname: 'Lopez', email: 'company11@acme.com'}"",company11,company11"
+"user-account-company-12,true,""UserIdentity{name: 'Sergio', surname: 'Lopez', email: 'company12@acme.com'}"",company12,company12"
+"user-account-company-13,true,""UserIdentity{name: 'Sergio', surname: 'Lopez', email: 'company13@acme.com'}"",company13,company13"
+"user-account-company-14,true,""UserIdentity{name: 'Sergio', surname: 'Lopez', email: 'company14@acme.com'}"",company14,company14"
+"user-account-company-15,true,""UserIdentity{name: 'Sergio', surname: 'Lopez', email: 'company15@acme.com'}"",company15,company15"
+"user-account-company-16,true,""UserIdentity{name: 'Sergio', surname: 'Lopez', email: 'company16@acme.com'}"",company16,company16"
+"user-account-company-17,true,""UserIdentity{name: 'Sergio', surname: 'Lopez', email: 'company17@acme.com'}"",company17,company17"
+"user-account-company-18,true,""UserIdentity{name: 'Sergio', surname: 'Lopez', email: 'company18@acme.com'}"",company18,company18"
+"user-account-company-19,true,""UserIdentity{name: 'Sergio', surname: 'Lopez', email: 'company19@acme.com'}"",company19,company19"
+"user-account-company-20,true,""UserIdentity{name: 'Sergio', surname: 'Lopez', email: 'company20@acme.com'}"",company20,company20"
