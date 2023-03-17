@@ -46,6 +46,10 @@ public class Note extends AbstractEntity {
 	@URL
 	protected String			moreInfo;
 
+	@NotBlank
+	@Length(max = 75)
+	protected String			author;
+
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
