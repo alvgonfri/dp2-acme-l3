@@ -41,7 +41,7 @@
     
     
     
-    <wb-module deploy-name="Acme-L3-D02-D02">
+    <wb-module deploy-name="Acme-L3-D03-D03">
                                                                                                                                                                                                                                                                                                                                                         
         
         
@@ -285,7 +285,7 @@
         
         
         <property name="java-output-path" value="/Hello-World-22.0/target/classes"/>
-        <property name="context-root" value="Acme-L3-D02"/>
+        <property name="context-root" value="Acme-L3-D03"/>
                                                                                                                                                                                                                                                                                                                                                     
     
     
