@@ -19,21 +19,12 @@
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
-
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
-			
 			<acme:menu-suboption code="master.menu.anonymous.serlopdia-link" action="https://ev.us.es/"/>
-			
 			<acme:menu-suboption code="master.menu.anonymous.alvvegrod-link" action="https://ev.us.es/"/>
 			<acme:menu-suboption code="master.menu.anonymous.alvgonfri-link" action="https://ev.us.es/"/>
-
-			
 			<acme:menu-suboption code="master.menu.anonymous.carlosdelrioperez-link" action="https://ev.us.es/"/>
-			
-
 			<acme:menu-suboption code="master.menu.anonymous.migmanalv-link" action="https://powerhispania.net/"/>
-
-
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
@@ -43,6 +34,10 @@
 			<acme:menu-suboption code="master.menu.administrator.populate-sample" action="/administrator/populate-sample"/>			
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.student" access="hasRole('Student')">
+			<acme:menu-suboption code="master.menu.student.list-my-enrolments" action="/student/enrolment/list"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
