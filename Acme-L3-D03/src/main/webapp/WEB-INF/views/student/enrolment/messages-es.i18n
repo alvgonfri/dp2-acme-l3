@@ -8,6 +8,11 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+student.enrolment.form.label.code = Código:
+student.enrolment.form.label.motivation = Motivación:
+student.enrolment.form.label.goals = Objetivos:
+student.enrolment.form.label.course = Curso:
+
 student.enrolment.list.label.code = Código
 student.enrolment.list.label.motivation = Motivación
 student.enrolment.list.label.goals = Objetivos
