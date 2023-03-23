@@ -17,7 +17,7 @@
 
 <acme:form>
 	<acme:input-textbox code="student.enrolment.form.label.code" path="code"/>	
-	<acme:input-textarea code="student.enrolment.form.label.motivation" path="motivation"/>
+	<acme:input-textbox code="student.enrolment.form.label.motivation" path="motivation"/>
 	<acme:input-textarea code="student.enrolment.form.label.goals" path="goals"/>
 	<acme:input-textbox code="student.enrolment.form.label.course" path="course.title"/>
 </acme:form>
