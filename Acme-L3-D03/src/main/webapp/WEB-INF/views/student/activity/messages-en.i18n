@@ -8,7 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-student.activity.form.label.workbook-code = Workbook's enrolment code:
+student.activity.form.label.enrolment-code = Enrolment code:
 student.activity.form.label.title = Title:
 student.activity.form.label.summary = Abstract:
 student.activity.form.label.type = Type:
@@ -16,7 +16,6 @@ student.activity.form.label.startDate = Start date:
 student.activity.form.label.endDate = End date:
 student.activity.form.label.moreInfo = More info: (Optional)
 
-student.activity.list.label.workbook-code = Workbook's enrolment code
 student.activity.list.label.title = Title
 student.activity.list.label.type = Type
 student.activity.list.label.startDate = Start date

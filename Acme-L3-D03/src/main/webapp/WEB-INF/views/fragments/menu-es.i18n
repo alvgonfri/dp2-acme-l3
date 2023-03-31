@@ -38,7 +38,6 @@ master.menu.administrator.shut-down = Parar el sistema
 
 master.menu.student = Estudiante
 master.menu.student.list-my-enrolments = Ver mis matrículas
-master.menu.student.list-my-activities = Ver actividades de mis workbooks
 
 # master.menu.provider ########################################################
 

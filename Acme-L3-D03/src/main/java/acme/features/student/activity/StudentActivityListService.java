@@ -7,13 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.enrolments.Activity;
-import acme.framework.components.accounts.Principal;
+import acme.entities.enrolments.Enrolment;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Student;
 
 @Service
-public class StudentActivityListMineService extends AbstractService<Student, Activity> {
+public class StudentActivityListService extends AbstractService<Student, Activity> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -25,21 +25,33 @@ public class StudentActivityListMineService extends AbstractService<Student, Act
 
 	@Override
 	public void check() {
-		super.getResponse().setChecked(true);
+		boolean status;
+
+		status = super.getRequest().hasData("enrolmentId", int.class);
+
+		super.getResponse().setChecked(status);
 	}
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status;
+		int enrolmentId;
+		Enrolment enrolment;
+
+		enrolmentId = super.getRequest().getData("enrolmentId", int.class);
+		enrolment = this.repository.findOneEnrolmentById(enrolmentId);
+		status = enrolment != null;
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
 		Collection<Activity> objects;
-		Principal principal;
+		int enrolmentId;
 
-		principal = super.getRequest().getPrincipal();
-		objects = this.repository.findActivitiesByStudentId(principal.getActiveRoleId());
+		enrolmentId = super.getRequest().getData("enrolmentId", int.class);
+		objects = this.repository.findManyActivitiesByEnrolmentId(enrolmentId);
 
 		super.getBuffer().setData(objects);
 	}
@@ -50,7 +62,7 @@ public class StudentActivityListMineService extends AbstractService<Student, Act
 
 		Tuple tuple;
 
-		tuple = super.unbind(object, "enrolment.code", "title", "type", "startDate", "endDate");
+		tuple = super.unbind(object, "title", "type", "startDate", "endDate");
 
 		super.getResponse().setData(tuple);
 	}

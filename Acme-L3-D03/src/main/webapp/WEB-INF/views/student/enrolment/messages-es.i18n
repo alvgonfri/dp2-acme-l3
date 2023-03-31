@@ -13,6 +13,8 @@ student.enrolment.form.label.motivation = Motivación:
 student.enrolment.form.label.goals = Objetivos:
 student.enrolment.form.label.course = Curso:
 
+student.enrolment.form.button.activities = Actividades
+
 student.enrolment.list.label.code = Código
 student.enrolment.list.label.motivation = Motivación
 student.enrolment.list.label.goals = Objetivos
