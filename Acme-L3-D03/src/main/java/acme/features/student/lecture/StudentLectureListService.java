@@ -27,7 +27,7 @@ public class StudentLectureListService extends AbstractService<Student, Lecture>
 	public void check() {
 		boolean status;
 
-		status = super.getRequest().hasData("masterId", int.class);
+		status = super.getRequest().hasData("courseId", int.class);
 
 		super.getResponse().setChecked(status);
 	}
@@ -35,11 +35,11 @@ public class StudentLectureListService extends AbstractService<Student, Lecture>
 	@Override
 	public void authorise() {
 		boolean status;
-		int masterId;
+		int courseId;
 		Course course;
 
-		masterId = super.getRequest().getData("masterId", int.class);
-		course = this.repository.findOneCourseById(masterId);
+		courseId = super.getRequest().getData("courseId", int.class);
+		course = this.repository.findOneCourseById(courseId);
 		status = course != null;
 
 		super.getResponse().setAuthorised(status);
@@ -48,10 +48,10 @@ public class StudentLectureListService extends AbstractService<Student, Lecture>
 	@Override
 	public void load() {
 		Collection<Lecture> objects;
-		int masterId;
+		int courseId;
 
-		masterId = super.getRequest().getData("masterId", int.class);
-		objects = this.repository.findManyLecturesByMasterId(masterId);
+		courseId = super.getRequest().getData("courseId", int.class);
+		objects = this.repository.findManyLecturesByCourseId(courseId);
 
 		super.getBuffer().setData(objects);
 	}

@@ -23,7 +23,7 @@
 	<acme:input-url code="student.course.form.label.moreInfo" path="moreInfo"/>
 	<acme:input-textbox code="student.course.form.label.lecturer" path="lecturerFullName"/>
 	
-	<acme:button code="student.course.form.button.lectures" action="/student/lecture/list?masterId=${id}"/>
+	<acme:button code="student.course.form.button.lectures" action="/student/lecture/list?courseId=${id}"/>
 </acme:form>
 
 <div></div>
