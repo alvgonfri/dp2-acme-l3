@@ -13,3 +13,4 @@ authenticated.audits.list.label.code = Código
 authenticated.audits.list.label.conclusion = Conclusión
 authenticated.audits.list.label.strong-points = Puntos fuertes
 authenticated.audits.list.label.weak-points = Puntos débiles
+authenticated.audits.list.label.course = Curso

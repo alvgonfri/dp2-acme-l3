@@ -18,8 +18,7 @@
 <acme:list>
 	<acme:list-column code="authenticated.audits.list.label.code" path="code"/>
 	<acme:list-column code="authenticated.audits.list.label.conclusion" path="conclusion"/>
-	<acme:list-column code="authenticated.audits.list.label.strong-points" path="strongPoints"/>
-	<acme:list-column code="authenticated.audits.list.label.weak-points" path="weakPoints"/>
+	<acme:list-column code="authenticated.audits.list.label.course" path="course.title"/>
 	
 </acme:list>
 
