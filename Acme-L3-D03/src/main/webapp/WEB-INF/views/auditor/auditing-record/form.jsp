@@ -16,12 +16,12 @@
 <%@taglib prefix="acme" uri="http://www.the-acme-framework.org/"%>
 
 <acme:form>
-	<acme:input-textbox code="auditor.audit.list.label.code" path="code"/>
-	<acme:input-textbox code="auditor.audit.list.label.conclusion" path="conclusion"/>
-	<acme:input-textbox code="auditor.audit.list.label.strong-points" path="strongPoints"/>
-	<acme:input-textbox code="auditor.audit.list.label.weak-points" path="weakPoints"/>
-	
-	<acme:button code="auditor.audit.form.button.auditingRecord" action="/auditor/auditing-record/list?auditId=${id}"/>
-	
+	<acme:input-textbox code="auditor.auditingRecord.list.label.audit" path="audit.code"/>
+	<acme:input-textbox code="auditor.auditingRecord.list.label.assessment" path="assessment"/>
+	<acme:input-moment code="auditor.auditingRecord.list.label.startDate" path="startDate"/>
+	<acme:input-moment code="auditor.auditingRecord.list.label.endDate" path="endDate"/>
+	<acme:input-select code="auditor.auditingRecord.list.label.mark" path="mark" choices="${mark}"/>
+	<acme:input-url code="auditor.auditingRecord.list.label.moreInfo" path="moreInfo"/>
+	<acme:input-textbox code="auditor.auditingRecord.list.label.subject" path="subject"/>
 	
 </acme:form>

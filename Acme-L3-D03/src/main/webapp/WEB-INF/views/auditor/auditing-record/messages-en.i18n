@@ -1,4 +1,4 @@
-# messages-es.i18n
+# messages-en.i18n
 #
 # Copyright (C) 2012-2023 Rafael Corchuelo.
 #
@@ -8,9 +8,10 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-
-auditor.audit.list.label.code = Código
-auditor.audit.list.label.conclusion = Conclusión
-auditor.audit.list.label.strong-points = Puntos fuertes
-auditor.audit.list.label.weak-points = Puntos débiles
-auditor.audit.form.button.auditingRecord = Registros de auditorías
+auditor.auditingRecord.list.label.assessment = Assessment
+auditor.auditingRecord.list.label.startDate = Start date
+auditor.auditingRecord.list.label.endDate = End date
+auditor.auditingRecord.list.label.mark = Mark
+auditor.auditingRecord.list.label.moreInfo = More info
+auditor.auditingRecord.list.label.subject = Subject
+auditor.auditingRecord.list.label.audit = Audit
