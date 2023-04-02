@@ -8,7 +8,6 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-
 auditor.audit.list.label.code = Código
 auditor.audit.list.label.conclusion = Conclusión
 auditor.audit.list.label.strong-points = Puntos fuertes
