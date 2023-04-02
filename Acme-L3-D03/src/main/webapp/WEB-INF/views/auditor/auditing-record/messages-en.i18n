@@ -8,10 +8,10 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-
-auditor.audit.list.label.code = Code
-auditor.audit.list.label.conclusion = Conclusion
-auditor.audit.list.label.strong-points = Strong Points
-auditor.audit.list.label.weak-points = Weak Points
-auditor.audit.form.button.auditingRecord = Auditing records
-
+auditor.auditingRecord.list.label.assessment = Assessment
+auditor.auditingRecord.list.label.startDate = Start date
+auditor.auditingRecord.list.label.endDate = End date
+auditor.auditingRecord.list.label.mark = Mark
+auditor.auditingRecord.list.label.moreInfo = More info
+auditor.auditingRecord.list.label.subject = Subject
+auditor.auditingRecord.list.label.audit = Audit
