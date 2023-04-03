@@ -13,3 +13,5 @@ auditor.audit.list.label.conclusion = Conclusión
 auditor.audit.list.label.strong-points = Puntos fuertes
 auditor.audit.list.label.weak-points = Puntos débiles
 auditor.audit.form.button.auditingRecord = Registros de auditorías
+auditor.audit.list.label.course = Curso
+auditor.audit.list.label.mark = Calificación

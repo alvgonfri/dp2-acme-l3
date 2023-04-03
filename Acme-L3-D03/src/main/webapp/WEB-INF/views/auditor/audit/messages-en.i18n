@@ -14,4 +14,5 @@ auditor.audit.list.label.conclusion = Conclusion
 auditor.audit.list.label.strong-points = Strong Points
 auditor.audit.list.label.weak-points = Weak Points
 auditor.audit.form.button.auditingRecord = Auditing records
-
+auditor.audit.list.label.course = Course
+auditor.audit.list.label.mark = Mark
