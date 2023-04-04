@@ -12,6 +12,7 @@ student.enrolment.form.label.code = Code:
 student.enrolment.form.label.motivation = Motivation:
 student.enrolment.form.label.goals = Goals:
 student.enrolment.form.label.course = Course:
+student.enrolment.form.label.workTime = Work time (hours):
 
 student.enrolment.form.button.activities = Activities
 
@@ -19,3 +20,5 @@ student.enrolment.list.label.code = Code
 student.enrolment.list.label.motivation = Motivation
 student.enrolment.list.label.goals = Goals
 student.enrolment.list.label.course = Course
+student.enrolment.list.label.workTime = Work time (hours)
+
