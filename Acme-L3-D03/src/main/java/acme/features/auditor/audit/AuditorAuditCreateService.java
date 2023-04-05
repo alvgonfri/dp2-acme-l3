@@ -14,7 +14,7 @@ import acme.framework.services.AbstractService;
 import acme.roles.Auditor;
 
 @Service
-public class AuditorAuditShowService extends AbstractService<Auditor, Audit> {
+public class AuditorAuditCreateService extends AbstractService<Auditor, Audit> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -26,11 +26,7 @@ public class AuditorAuditShowService extends AbstractService<Auditor, Audit> {
 
 	@Override
 	public void check() {
-		boolean status;
-
-		status = super.getRequest().hasData("id", int.class);
-
-		super.getResponse().setChecked(status);
+		super.getResponse().setChecked(true);
 	}
 
 	@Override
@@ -41,22 +37,60 @@ public class AuditorAuditShowService extends AbstractService<Auditor, Audit> {
 	@Override
 	public void load() {
 		Audit object;
-		int id;
+		Auditor auditor;
 
-		id = super.getRequest().getData("id", int.class);
-		object = this.repository.findOneAuditById(id);
+		auditor = this.repository.findOneAuditorById(super.getRequest().getPrincipal().getActiveRoleId());
+		object = new Audit();
+		object.setDraftMode(true);
+		object.setAuditor(auditor);
 
 		super.getBuffer().setData(object);
+	}
+
+	@Override
+	public void bind(final Audit object) {
+		assert object != null;
+
+		int courseId;
+		Course course;
+
+		courseId = super.getRequest().getData("course", int.class);
+		course = this.repository.findOneCourseById(courseId);
+
+		super.bind(object, "code", "conclusion", "strongPoints", "weakPoints");
+		object.setCourse(course);
+	}
+
+	@Override
+	public void validate(final Audit object) {
+		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			Audit existing;
+
+			existing = this.repository.findOneAuditByCode(object.getCode());
+			super.state(existing == null, "code", "auditor.audit.form.error.duplicated");
+		}
+
+	}
+
+	@Override
+	public void perform(final Audit object) {
+		assert object != null;
+
+		this.repository.save(object);
 	}
 
 	@Override
 	public void unbind(final Audit object) {
 		assert object != null;
 
-		Tuple tuple;
+		int auditorId;
 		Collection<Course> courses;
 		SelectChoices choices;
+		Tuple tuple;
 
+		auditorId = super.getRequest().getPrincipal().getActiveRoleId();
 		courses = this.repository.findAllCourses();
 		choices = SelectChoices.from(courses, "code", object.getCourse());
 
@@ -66,5 +100,4 @@ public class AuditorAuditShowService extends AbstractService<Auditor, Audit> {
 
 		super.getResponse().setData(tuple);
 	}
-
 }

@@ -36,6 +36,7 @@ public class Auditor extends AbstractRole {
 
 	@URL
 	protected String			moreInfo;
+
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------

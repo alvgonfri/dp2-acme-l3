@@ -22,3 +22,6 @@
 	
 </acme:list>
 
+<jstl:if test="${_command == 'list-mine'}">
+	<acme:button code="auditor.audit.list.button.create" action="/auditor/audit/create"/>
+</jstl:if>	

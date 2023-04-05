@@ -20,5 +20,12 @@
 	<acme:input-textbox code="authenticated.audits.list.label.conclusion" path="conclusion"/>
 	<acme:input-textbox code="authenticated.audits.list.label.strong-points" path="strongPoints"/>
 	<acme:input-textbox code="authenticated.audits.list.label.weak-points" path="weakPoints"/>
+	<acme:input-select code="auditor.audit.form.label.course" path="course" choices="${courses}"/>	
 	
+	
+	<jstl:choose>	 
+		<jstl:when test="${_command == 'create'}">
+			<acme:submit code="employer.job.form.button.create" action="/auditor/audit/create"/>
+		</jstl:when>		
+	</jstl:choose>
 </acme:form>
