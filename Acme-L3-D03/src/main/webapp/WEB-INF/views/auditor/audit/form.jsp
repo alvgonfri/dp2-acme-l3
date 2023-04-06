@@ -15,13 +15,15 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="http://www.the-acme-framework.org/"%>
 
-<acme:form>
-	<acme:input-textbox code="authenticated.audits.list.label.code" path="code"/>
-	<acme:input-textbox code="authenticated.audits.list.label.conclusion" path="conclusion"/>
-	<acme:input-textbox code="authenticated.audits.list.label.strong-points" path="strongPoints"/>
-	<acme:input-textbox code="authenticated.audits.list.label.weak-points" path="weakPoints"/>
-	<acme:input-select code="auditor.audit.form.label.course" path="course" choices="${courses}"/>	
-	
+
+	<acme:input-textbox code="auditor.audit.form.label.code" path="code"/>
+	<acme:input-textbox code="auditor.audit.fprm.label.conclusion" path="conclusion"/>
+	<acme:input-textbox code="auditor.audit.form.label.strong-points" path="strongPoints"/>
+	<acme:input-textbox code="auditor.audit.form.label.weak-points" path="weakPoints"/>
+		<acme:input-select code="auditor.audit.form.label.course" path="course" choices="${courses}"/>	
+
+	<acme:button code="auditor.audit.form.button.auditingRecord" action="/auditor/auditing-record/list?auditId=${id}"/>
+
 	
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">

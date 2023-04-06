@@ -16,13 +16,11 @@
 <%@taglib prefix="acme" uri="http://www.the-acme-framework.org/"%>
 
 <acme:list>
-	<acme:list-column code="auditor.audit.list.label.code" path="code"/>
-	<acme:list-column code="auditor.audit.list.label.conclusion" path="conclusion"/>
-	<acme:list-column code="auditor.audit.list.label.course" path="course.title"/>
-	<acme:list-column code="auditor.audit.list.label.mark" path="mark"/>
-	
+		<acme:list-column code="auditor.auditingRecord.list.label.assessment" path="assessment"/>
+		<acme:list-column code="auditor.auditingRecord.list.label.startDate" path="startDate"/>
+		<acme:list-column code="auditor.auditingRecord.list.label.endDate" path="endDate"/>
+		<acme:list-column code="auditor.auditingRecord.list.label.mark" path="mark"/>
+		<acme:list-column code="auditor.auditingRecord.list.label.moreInfo" path="moreInfo"/>
+		<acme:list-column code="auditor.auditingRecord.list.label.subject" path="subject"/>
 </acme:list>
 
-<jstl:if test="${_command == 'list-mine'}">
-	<acme:button code="auditor.audit.list.button.create" action="/auditor/audit/create"/>
-</jstl:if>	
