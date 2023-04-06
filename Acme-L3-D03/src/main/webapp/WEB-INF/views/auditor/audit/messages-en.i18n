@@ -9,10 +9,26 @@
 # they accept any liabilities with respect to them.
 
 
+
+auditor.audit.form.error.duplicated = This code is taken
+auditor.audit.list.button.create = New audit
+auditor.audit.form.button.update = Update
+auditor.audit.form.button.delete = Delete
+auditor.audit.form.button.publish = Publish
+auditor.audit.form.button.create = Save
+auditor.audit.form.button.auditingRecord = Auditing records
+
 auditor.audit.list.label.code = Code
 auditor.audit.list.label.conclusion = Conclusion
 auditor.audit.list.label.strong-points = Strong Points
 auditor.audit.list.label.weak-points = Weak Points
-auditor.audit.form.button.auditingRecord = Auditing records
 auditor.audit.list.label.course = Course
 auditor.audit.list.label.mark = Mark
+
+auditor.audit.form.label.code = Code
+auditor.audit.form.label.conclusion = Conclusion
+auditor.audit.form.label.strong-points = Strong Points
+auditor.audit.form.label.weak-points = Weak Points
+auditor.audit.form.label.course = Course
+auditor.audit.form.label.mark = Mark
+auditor.audit.form.label.course = Course
