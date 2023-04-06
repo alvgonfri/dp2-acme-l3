@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.entities.audits.Audit;
+import acme.entities.audits.AuditingRecord;
 import acme.entities.courses.Course;
 import acme.framework.repositories.AbstractRepository;
 import acme.roles.Auditor;
@@ -31,5 +32,8 @@ public interface AuditorAuditRepository extends AbstractRepository {
 
 	@Query("Select c from Course c")
 	Collection<Course> findAllCourses();
+
+	@Query("select ar from AuditingRecord ar where ar.audit.id = :id")
+	Collection<AuditingRecord> findManyAuditingRecordsByAuditId(int id);
 
 }
