@@ -30,7 +30,7 @@
 			<acme:submit code="auditor.audit.form.button.publish" action="/auditor/audit/publish"/>
 		</jstl:when>
 		<jstl:when test="${_command == 'create'}">
-			<acme:submit code="employer.job.form.button.create" action="/auditor/audit/create"/>
+			<acme:submit code="auditor.audit.form.button.create" action="/auditor/audit/create"/>
 		</jstl:when>		
 	</jstl:choose>
 </acme:form>
