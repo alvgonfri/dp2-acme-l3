@@ -20,16 +20,13 @@
 	<acme:input-select code="student.enrolment.form.label.course" path="course" choices="${courses}"/>
 	<acme:input-textbox code="student.enrolment.form.label.motivation" path="motivation"/>
 	<acme:input-textarea code="student.enrolment.form.label.goals" path="goals"/>
-	<jstl:if test="${_command == 'show'}">
-		<acme:input-integer code="student.enrolment.form.label.workTime" path="workTime"/>	
-	</jstl:if>	
-	
+	<acme:input-integer code="student.enrolment.form.label.workTime" path="workTime" readonly="true"/>	
 	
 	<jstl:choose>	 
 		<jstl:when test="${_command == 'show' && draftMode == false}">
 			<acme:button code="student.enrolment.form.button.activities" action="/student/activity/list?enrolmentId=${id}"/>			
 		</jstl:when>
-		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
+		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|finalise') && draftMode == true}">
 			<acme:button code="student.enrolment.form.button.activities" action="/student/activity/list?enrolmentId=${id}"/>
 			<acme:submit code="student.enrolment.form.button.update" action="/student/enrolment/update"/>
 			<acme:submit code="student.enrolment.form.button.delete" action="/student/enrolment/delete"/>
