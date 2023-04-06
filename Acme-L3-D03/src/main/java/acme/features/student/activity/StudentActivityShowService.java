@@ -66,7 +66,7 @@ public class StudentActivityShowService extends AbstractService<Student, Activit
 
 		choices = SelectChoices.from(LectureType.class, object.getType());
 
-		tuple = super.unbind(object, "enrolment.code", "title", "summary", "type", "startDate", "endDate", "moreInfo");
+		tuple = super.unbind(object, "title", "summary", "type", "startDate", "endDate", "moreInfo");
 		tuple.put("types", choices);
 
 		super.getResponse().setData(tuple);

@@ -15,10 +15,19 @@ student.enrolment.form.label.course = Course:
 student.enrolment.form.label.workTime = Work time (hours):
 
 student.enrolment.form.button.activities = Activities
+student.enrolment.form.button.update = Update
+student.enrolment.form.button.delete = Delete
+student.enrolment.form.button.finalise = Finalise
+student.enrolment.form.button.create = Create
+
+student.enrolment.form.error.code-duplicated = This code is taken
 
 student.enrolment.list.label.code = Code
 student.enrolment.list.label.motivation = Motivation
 student.enrolment.list.label.goals = Goals
 student.enrolment.list.label.course = Course
 student.enrolment.list.label.workTime = Work time (hours)
+
+student.enrolment.list.button.create = Create
+
 

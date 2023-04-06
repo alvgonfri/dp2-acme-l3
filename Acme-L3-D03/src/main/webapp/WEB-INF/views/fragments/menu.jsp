@@ -37,7 +37,7 @@
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.student" access="hasRole('Student')">
-      		<acme:menu-suboption code="master.menu.student.list-my-enrolments" action="/student/enrolment/list"/>
+      		<acme:menu-suboption code="master.menu.student.list-my-enrolments" action="/student/enrolment/list-mine"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">

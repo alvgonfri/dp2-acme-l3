@@ -21,3 +21,5 @@
 	<acme:list-column code="student.activity.list.label.startDate" path="startDate" width="25%"/>
 	<acme:list-column code="student.activity.list.label.endDate" path="endDate" width="25%"/>
 </acme:list>
+
+<acme:button test="${showCreate}" code="student.activity.list.button.create" action="/student/activity/create?enrolmentId=${enrolmentId}"/>

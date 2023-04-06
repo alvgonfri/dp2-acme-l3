@@ -7,8 +7,10 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.courses.Course;
 import acme.entities.enrolments.Activity;
 import acme.entities.enrolments.Enrolment;
+import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
 import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
@@ -66,10 +68,17 @@ public class StudentEnrolmentShowService extends AbstractService<Student, Enrolm
 
 		Tuple tuple;
 		int workTime;
+		Collection<Course> courses;
+		SelectChoices choices;
+
+		courses = this.repository.findAllCourses();
+		choices = SelectChoices.from(courses, "title", object.getCourse());
 
 		workTime = this.getWorkTime(object.getId());
-		tuple = super.unbind(object, "code", "motivation", "goals", "course.title");
+		tuple = super.unbind(object, "code", "motivation", "goals", "draftMode");
 		tuple.put("workTime", workTime);
+		tuple.put("course", choices.getSelected().getKey());
+		tuple.put("courses", choices);
 
 		super.getResponse().setData(tuple);
 	}

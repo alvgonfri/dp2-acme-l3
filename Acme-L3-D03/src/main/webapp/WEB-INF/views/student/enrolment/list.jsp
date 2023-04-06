@@ -21,3 +21,7 @@
 	<acme:list-column code="student.enrolment.list.label.workTime" path="workTime" width="15%"/>
 	<acme:list-column code="student.enrolment.list.label.course" path="course.title" width="30%"/>
 </acme:list>
+
+<jstl:if test="${_command == 'list-mine'}">
+	<acme:button code="student.enrolment.list.button.create" action="/student/enrolment/create"/>
+</jstl:if>	

@@ -8,7 +8,6 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-student.activity.form.label.enrolment-code = Código de la matrícula:
 student.activity.form.label.title = Título:
 student.activity.form.label.summary = Resumen:
 student.activity.form.label.type = Tipo:
@@ -16,7 +15,13 @@ student.activity.form.label.startDate = Fecha de inicio:
 student.activity.form.label.endDate = Fecha de fin:
 student.activity.form.label.moreInfo = Más información: (Opcional)
 
+student.activity.form.button.create = Crear
+student.activity.form.button.update = Actualizar
+student.activity.form.button.delete = Borrar
+
 student.activity.list.label.title = Título
 student.activity.list.label.type = Tipo
 student.activity.list.label.startDate = Fecha de inicio
 student.activity.list.label.endDate = Fecha de fin
+
+student.activity.list.button.create = Crear

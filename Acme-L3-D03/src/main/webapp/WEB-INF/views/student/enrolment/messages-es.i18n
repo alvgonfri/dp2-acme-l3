@@ -15,9 +15,17 @@ student.enrolment.form.label.course = Curso:
 student.enrolment.form.label.workTime = Tiempo de trabajo (horas):
 
 student.enrolment.form.button.activities = Actividades
+student.enrolment.form.button.update = Actualizar
+student.enrolment.form.button.delete = Borrar
+student.enrolment.form.button.finalise = Finalizar
+student.enrolment.form.button.create = Crear
+
+student.enrolment.form.error.code-duplicated = Este código no está libre
 
 student.enrolment.list.label.code = Código
 student.enrolment.list.label.motivation = Motivación
 student.enrolment.list.label.goals = Objetivos
 student.enrolment.list.label.course = Curso
 student.enrolment.list.label.workTime = Tiempo de trabajo (horas)
+
+student.enrolment.list.button.create = Crear
