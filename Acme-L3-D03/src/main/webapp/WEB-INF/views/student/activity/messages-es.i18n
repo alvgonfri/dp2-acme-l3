@@ -19,6 +19,8 @@ student.activity.form.button.create = Crear
 student.activity.form.button.update = Actualizar
 student.activity.form.button.delete = Borrar
 
+student.activity.form.error.wrong-dates = La fecha de fin debe ser posterior a la fecha de inicio
+
 student.activity.list.label.title = Título
 student.activity.list.label.type = Tipo
 student.activity.list.label.startDate = Fecha de inicio
