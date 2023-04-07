@@ -14,7 +14,7 @@ import acme.framework.services.AbstractService;
 import acme.roles.Auditor;
 
 @Service
-public class AuditorAuditShowService extends AbstractService<Auditor, Audit> {
+public class AuditorAuditPublishService extends AbstractService<Auditor, Audit> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -35,7 +35,17 @@ public class AuditorAuditShowService extends AbstractService<Auditor, Audit> {
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status;
+		int auditId;
+		Audit audit;
+		Auditor auditor;
+
+		auditId = super.getRequest().getData("id", int.class);
+		audit = this.repository.findOneAuditById(auditId);
+		auditor = audit == null ? null : audit.getAuditor();
+		status = audit != null && audit.isDraftMode() && super.getRequest().getPrincipal().hasRole(auditor);
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -50,13 +60,49 @@ public class AuditorAuditShowService extends AbstractService<Auditor, Audit> {
 	}
 
 	@Override
+	public void bind(final Audit object) {
+		assert object != null;
+
+		int courseId;
+		Course course;
+
+		courseId = super.getRequest().getData("course", int.class);
+		course = this.repository.findOneCourseById(courseId);
+
+		super.bind(object, "code", "conclusion", "strongPoints", "weakPoints");
+		object.setCourse(course);
+	}
+
+	@Override
+	public void validate(final Audit object) {
+		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			Audit existing;
+
+			existing = this.repository.findOneAuditByCode(object.getCode());
+			super.state(existing == null || existing.equals(object), "code", "auditor.audit.form.error.duplicated");
+		}
+	}
+
+	@Override
+	public void perform(final Audit object) {
+		assert object != null;
+
+		object.setDraftMode(false);
+		this.repository.save(object);
+	}
+
+	@Override
 	public void unbind(final Audit object) {
 		assert object != null;
 
-		Tuple tuple;
+		int auditorId;
 		Collection<Course> courses;
 		SelectChoices choices;
+		Tuple tuple;
 
+		auditorId = super.getRequest().getPrincipal().getActiveRoleId();
 		courses = this.repository.findAllCourses();
 		choices = SelectChoices.from(courses, "code", object.getCourse());
 
