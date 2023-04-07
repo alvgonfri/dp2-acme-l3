@@ -30,6 +30,9 @@ public class AuditorAuditController extends AbstractController<Auditor, Audit> {
 	@Autowired
 	protected AuditorAuditUpdateService		auditorAuditUpdateService;
 
+	@Autowired
+	protected AuditorAuditPublishService	auditorAuditPublishService;
+
 	// Constructors -----------------------------------------------------------
 
 
@@ -40,6 +43,8 @@ public class AuditorAuditController extends AbstractController<Auditor, Audit> {
 		super.addBasicCommand("delete", this.auditorAuditDeleteService);
 		super.addBasicCommand("update", this.auditorAuditUpdateService);
 		super.addCustomCommand("list-mine", "list", this.auditorAuditListMineService);
+		super.addCustomCommand("publish", "update", this.auditorAuditPublishService);
+
 	}
 
 }
