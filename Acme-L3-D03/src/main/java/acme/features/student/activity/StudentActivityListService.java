@@ -67,4 +67,20 @@ public class StudentActivityListService extends AbstractService<Student, Activit
 		super.getResponse().setData(tuple);
 	}
 
+	@Override
+	public void unbind(final Collection<Activity> objects) {
+		assert objects != null;
+
+		int enrolmentId;
+		Enrolment enrolment;
+		boolean showCreate;
+
+		enrolmentId = super.getRequest().getData("enrolmentId", int.class);
+		enrolment = this.repository.findOneEnrolmentById(enrolmentId);
+		showCreate = !enrolment.isDraftMode() && super.getRequest().getPrincipal().hasRole(enrolment.getStudent());
+
+		super.getResponse().setGlobal("enrolmentId", enrolmentId);
+		super.getResponse().setGlobal("showCreate", showCreate);
+	}
+
 }
