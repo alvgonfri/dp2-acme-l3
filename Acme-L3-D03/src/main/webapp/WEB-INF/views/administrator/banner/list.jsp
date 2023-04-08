@@ -20,3 +20,5 @@
 	<acme:list-column code="administrator.banner.list.label.displayStart" path="displayStart" width="20%"/>
 	<acme:list-column code="administrator.banner.list.label.displayEnd" path="displayEnd" width="20%"/>	
 </acme:list>
+
+<acme:button code="administrator.banner.list.button.create" action="/administrator/banner/create"/>
