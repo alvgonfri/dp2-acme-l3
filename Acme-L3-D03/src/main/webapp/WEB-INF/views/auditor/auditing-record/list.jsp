@@ -24,3 +24,6 @@
 		<acme:list-column code="auditor.auditingRecord.list.label.subject" path="subject"/>
 </acme:list>
 
+<acme:button test="${showCreate}" code="auditor.auditingRecord.list.button.create" action="/auditor/auditing-record/create?auditId=${auditId}"/>
+
+
