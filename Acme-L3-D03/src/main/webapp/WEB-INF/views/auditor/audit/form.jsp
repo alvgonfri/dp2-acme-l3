@@ -17,6 +17,7 @@
 
 <acme:form>
 	<acme:input-textbox code="auditor.audit.form.label.code" path="code"/>
+	<acme:input-textbox code="auditor.audit.form.label.mark" path="mark" readonly="true"/>
 	<acme:input-textbox code="auditor.audit.fprm.label.conclusion" path="conclusion"/>
 	<acme:input-textbox code="auditor.audit.form.label.strong-points" path="strongPoints"/>
 	<acme:input-textbox code="auditor.audit.form.label.weak-points" path="weakPoints"/>
