@@ -21,6 +21,9 @@ public class AuthenticatedNoteController extends AbstractController<Authenticate
 	@Autowired
 	protected AuthenticatedNoteShowService			showService;
 
+	@Autowired
+	protected AuthenticatedNoteCreateService		createService;
+
 	// Constructors -----------------------------------------------------------
 
 
@@ -28,6 +31,7 @@ public class AuthenticatedNoteController extends AbstractController<Authenticate
 	protected void initialise() {
 		super.addBasicCommand("list", this.listRecentService);
 		super.addBasicCommand("show", this.showService);
+		super.addBasicCommand("create", this.createService);
 	}
 
 }

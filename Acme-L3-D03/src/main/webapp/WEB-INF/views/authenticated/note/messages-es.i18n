@@ -14,7 +14,12 @@ authenticated.note.form.label.title = Título:
 authenticated.note.form.label.message = Mensaje:
 authenticated.note.form.label.email = Correo electrónico: (Opcional)
 authenticated.note.form.label.moreInfo = Más informacion: (Opcional)
+authenticated.note.form.label.confirmation = Confirme que la nota es correcta
+
+authenticated.note.form.button.create = Crear
 
 authenticated.note.list.label.moment = Instante de creación
 authenticated.note.list.label.author = Autor
 authenticated.note.list.label.title = Título
+
+authenticated.note.list.button.create = Crear
