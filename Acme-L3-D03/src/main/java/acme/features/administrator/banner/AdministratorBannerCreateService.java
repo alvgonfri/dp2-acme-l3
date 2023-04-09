@@ -76,7 +76,7 @@ public class AdministratorBannerCreateService extends AbstractService<Administra
 		assert object != null;
 
 		if (!super.getBuffer().getErrors().hasErrors("displayStart"))
-			super.state(MomentHelper.isAfter(object.getDisplayStart(), object.getMoment()), "displayStart", "administrator.banner.form.error.wrong-displayStart");
+			super.state(MomentHelper.isFuture(object.getDisplayStart()), "displayStart", "administrator.banner.form.error.wrong-displayStart");
 
 		if (!super.getBuffer().getErrors().hasErrors("displayEnd")) {
 			Date displayStart;
