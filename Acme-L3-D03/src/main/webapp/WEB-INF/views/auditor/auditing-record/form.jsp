@@ -24,4 +24,10 @@
 	<acme:input-url code="auditor.auditingRecord.list.label.moreInfo" path="moreInfo"/>
 	<acme:input-textbox code="auditor.auditingRecord.list.label.subject" path="subject"/>
 	
+	<jstl:choose>
+		
+		<jstl:when test="${_command == 'create'}">
+			<acme:submit code="auditor.auditingRecord.form.button.create" action="/auditor/auditing-record/create?auditId=${auditId}"/>
+		</jstl:when>		
+	</jstl:choose>		
 </acme:form>

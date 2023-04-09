@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.audits.Audit;
 import acme.entities.audits.AuditingRecord;
-import acme.features.auditor.audit.AuditorAuditRepository;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Auditor;
@@ -19,10 +18,7 @@ public class AuditorAuditingRecordListService extends AbstractService<Auditor, A
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AuditorAuditingRecordRepository	repository;
-
-	@Autowired
-	protected AuditorAuditRepository			auditRepository;
+	protected AuditorAuditingRecordRepository repository;
 
 	// AbstractService interface ----------------------------------------------
 
@@ -43,7 +39,7 @@ public class AuditorAuditingRecordListService extends AbstractService<Auditor, A
 		Audit audit;
 
 		auditId = super.getRequest().getData("auditId", int.class);
-		audit = this.auditRepository.findOneAuditById(auditId);
+		audit = this.repository.findOneAuditById(auditId);
 		status = audit != null;
 
 		super.getResponse().setAuthorised(status);
@@ -69,6 +65,22 @@ public class AuditorAuditingRecordListService extends AbstractService<Auditor, A
 		tuple = super.unbind(object, "assessment", "startDate", "endDate", "mark", "moreInfo", "subject");
 
 		super.getResponse().setData(tuple);
+	}
+
+	@Override
+	public void unbind(final Collection<AuditingRecord> objects) {
+		assert objects != null;
+
+		int auditId;
+		boolean showCreate;
+		final Audit audit;
+
+		auditId = super.getRequest().getData("auditId", int.class);
+		audit = this.repository.findOneAuditById(auditId);
+		showCreate = audit.isDraftMode() && super.getRequest().getPrincipal().hasRole(audit.getAuditor());
+
+		super.getResponse().setGlobal("auditId", auditId);
+		super.getResponse().setGlobal("showCreate", showCreate);
 	}
 
 }
