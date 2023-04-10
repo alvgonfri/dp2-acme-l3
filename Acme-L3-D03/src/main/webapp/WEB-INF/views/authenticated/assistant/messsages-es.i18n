@@ -14,3 +14,4 @@ authenticated.assistant.form.label.resume = Resumen
 authenticated.assistant.form.label.moreInfo = Más información
 
 authenticated.assistant.form.button.create = Crear
+authenticated.assistant.form.button.update = Actualizar
