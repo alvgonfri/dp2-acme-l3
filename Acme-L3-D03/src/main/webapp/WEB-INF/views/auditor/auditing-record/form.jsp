@@ -25,7 +25,7 @@
 	<acme:input-textbox code="auditor.auditingRecord.list.label.subject" path="subject"/>
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete') && draftMode == true}">
-			<acme:submit code="employer.duty.form.button.update" action="/employer/duty/update"/>
+			<acme:submit code="employer.duty.form.button.update" action="/auditor/auditing-record/update"/>
 			<acme:submit code="employer.duty.form.button.delete" action="/auditor/auditing-record/delete"/>
 		</jstl:when>
 		<jstl:when test="${_command == 'create'}">
