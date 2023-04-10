@@ -22,8 +22,15 @@
 		<acme:list-column code="auditor.auditingRecord.list.label.mark" path="mark"/>
 		<acme:list-column code="auditor.auditingRecord.list.label.moreInfo" path="moreInfo"/>
 		<acme:list-column code="auditor.auditingRecord.list.label.subject" path="subject"/>
+		<acme:list-column code="auditor.auditingRecord.list.label.isCorrection" path="isCorrection"/>
+		
 </acme:list>
-
-<acme:button test="${showCreate}" code="auditor.auditingRecord.list.button.create" action="/auditor/auditing-record/create?auditId=${auditId}"/>
-
+<jstl:choose>
+	<jstl:when test="${!showCreate}">
+		<acme:button code="auditor.audit.form.button.createCorrection" action="/auditor/auditing-record/create-correction?auditId=${auditId}"/>
+	</jstl:when>
+	<jstl:when test="${showCreate}">
+		<acme:button code="auditor.auditingRecord.list.button.create" action="/auditor/auditing-record/create?auditId=${auditId}"/>
+	</jstl:when>
+</jstl:choose>
 

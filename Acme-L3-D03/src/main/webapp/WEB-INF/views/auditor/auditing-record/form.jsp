@@ -30,6 +30,9 @@
 		</jstl:when>
 		<jstl:when test="${_command == 'create'}">
 			<acme:submit code="auditor.auditingRecord.form.button.create" action="/auditor/auditing-record/create?auditId=${auditId}"/>
+		</jstl:when>
+		<jstl:when test="${_command == 'create-correction'}">
+			<acme:submit code="auditor.auditingRecord.form.button.create" action="/auditor/auditing-record/create-correction?auditId=${auditId}"/>
 		</jstl:when>		
 	</jstl:choose>		
 </acme:form>
