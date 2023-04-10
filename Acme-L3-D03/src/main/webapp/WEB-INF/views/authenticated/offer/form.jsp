@@ -16,14 +16,12 @@
 <%@taglib prefix="acme" uri="http://www.the-acme-framework.org/"%>
 
 <acme:form>
-	<acme:input-textbox code="authenticated.offer.list.label.heading" path="heading" readonly="true"/>
-	<acme:input-textbox code="authenticated.offer.list.label.summary" path="summary" readonly="true"/>
-	<acme:input-textbox code="authenticated.offer.list.label.startAvailable" path="startAvailable" readonly="true"/>
-	<acme:input-email code="authenticated.offer.list.label.endAvailable" path="endAvailable" readonly="true"/>
-	<acme:input-textbox code="authenticated.offer.list.label.price" path="price" readonly="true"/>
-	<acme:input-checkbox code="authenticated.offer.list.label.moreInfo" path="moreInfo" readonly="${!canUpdate}}"/>
+	<acme:input-textbox code="authenticated.offer.list.label.heading" path="heading" />
+	<acme:input-textbox code="authenticated.offer.list.label.summary" path="summary" />
+	<acme:input-moment code="authenticated.offer.list.label.startAvailable" path="startAvailable" />
+	<acme:input-moment code="authenticated.offer.list.label.endAvailable" path="endAvailable" />
+	<acme:input-money code="authenticated.offer.list.label.price" path="price" />
+	<acme:input-url code="authenticated.offer.list.label.moreInfo" path="moreInfo"/>
 	
-	<jstl:if test="${canUpdate}">			
-		<acme:submit code="administrator.user-account.form.button.update" action="/administrator/user-account/update"/>
-	</jstl:if>
+
 </acme:form>
