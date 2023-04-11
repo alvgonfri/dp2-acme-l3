@@ -14,3 +14,4 @@ authenticated.company.form.label.summary = Summary:
 authenticated.company.form.label.link = Further information:
 
 authenticated.company.form.button.create = Create
+authenticated.company.form.button.update = Update

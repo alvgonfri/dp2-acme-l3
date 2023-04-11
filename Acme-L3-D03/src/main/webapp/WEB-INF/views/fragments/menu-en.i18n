@@ -64,5 +64,5 @@ master.menu.user-account.student = Student data
 master.menu.user-account.become-student = Become a student
 master.menu.user-account.assistant = Assistant data
 master.menu.user-account.become-assistant = Become an assistant
+master.menu.authenticated.company.update = Company data
 master.menu.authenticated.company.create = Become a company
-
