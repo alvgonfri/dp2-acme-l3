@@ -10,4 +10,7 @@
 	<acme:input-url code="authenticated.assistant.form.label.moreInfo" path="moreInfo"/>
 
 	<acme:submit test="${_command == 'create'}" code="authenticated.assistant.form.button.create" action="/authenticated/assistant/create"/>
+		<jstl:if test="${_command == 'update'}">
+		<acme:submit code="authenticated.assistant.form.button.update" action="/authenticated/assistant/update"/>
+	</jstl:if>
 </acme:form>
