@@ -1,6 +1,8 @@
 
 package acme.features.auditor.auditingRecord;
 
+import java.time.temporal.ChronoUnit;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,6 +11,7 @@ import acme.entities.audits.AuditingRecord;
 import acme.entities.audits.Mark;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
+import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Auditor;
 
@@ -76,6 +79,16 @@ public class AuditorAuditingRecordCreateService extends AbstractService<Auditor,
 	public void validate(final AuditingRecord object) {
 
 		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("startDate") && !super.getBuffer().getErrors().hasErrors("endDate")) {
+			boolean isValid;
+
+			isValid = MomentHelper.isLongEnough(object.getStartDate(), object.getEndDate(), 1, ChronoUnit.HOURS);
+
+			super.state(isValid, "startDate", "muy corto");
+			super.state(isValid, "endDate", "muy corto");
+		}
+
 	}
 
 	@Override
