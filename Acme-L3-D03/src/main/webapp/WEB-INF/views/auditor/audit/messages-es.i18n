@@ -13,7 +13,7 @@
 auditor.audit.form.error.duplicated = Este código no está libre
 auditor.audit.list.button.create = Nueva auditoría
 auditor.audit.form.button.update = Actualizar
-auditor.audit.form.button.delete = Eliminat
+auditor.audit.form.button.delete = Eliminar
 auditor.audit.form.button.publish = Publicar
 auditor.audit.form.button.create = Guardar
 auditor.audit.form.button.auditingRecord = Registros de auditorías
