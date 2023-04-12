@@ -4,7 +4,7 @@ package acme.features.administrator.systemConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.framework.components.accounts.Authenticated;
+import acme.framework.components.accounts.Administrator;
 import acme.framework.components.models.Tuple;
 import acme.framework.controllers.HttpMethod;
 import acme.framework.helpers.PrincipalHelper;
@@ -12,7 +12,7 @@ import acme.framework.services.AbstractService;
 import acme.system.configuration.SystemConfiguration;
 
 @Service
-public class AdministratorSystemConfigurationUpdateService extends AbstractService<Authenticated, SystemConfiguration> {
+public class AdministratorSystemConfigurationUpdateService extends AbstractService<Administrator, SystemConfiguration> {
 
 	// Internal state ---------------------------------------------------------
 

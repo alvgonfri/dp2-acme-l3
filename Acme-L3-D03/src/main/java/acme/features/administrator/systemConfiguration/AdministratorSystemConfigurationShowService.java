@@ -4,13 +4,13 @@ package acme.features.administrator.systemConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.framework.components.accounts.Authenticated;
+import acme.framework.components.accounts.Administrator;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.system.configuration.SystemConfiguration;
 
 @Service
-public class AdministratorSystemConfigurationShowService extends AbstractService<Authenticated, SystemConfiguration> {
+public class AdministratorSystemConfigurationShowService extends AbstractService<Administrator, SystemConfiguration> {
 
 	@Autowired
 	protected AdministratorSystemConfigurationRepository repository;
@@ -23,7 +23,7 @@ public class AdministratorSystemConfigurationShowService extends AbstractService
 
 	@Override
 	public void authorise() {
-		super.getResponse().setChecked(true);
+		super.getResponse().setAuthorised(true);
 	}
 
 	@Override
