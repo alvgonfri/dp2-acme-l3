@@ -64,4 +64,7 @@ master.menu.user-account.assistant = Datos de asistente
 master.menu.user-account.become-assistant = Hazte asistente
 master.menu.authenticated.company.update = Datos de empresa
 master.menu.authenticated.company.create = Hazte empresa
+master.menu.user-account.lecturer = Datos del profesor
+master.menu.user-account.become-lecturer = Hazte profesor
+
 
