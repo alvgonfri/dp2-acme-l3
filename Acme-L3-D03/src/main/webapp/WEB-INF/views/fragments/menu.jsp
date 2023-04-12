@@ -26,6 +26,11 @@
 			<acme:menu-suboption code="master.menu.anonymous.carlosdelrioperez-link" action="https://ev.us.es/"/>
 			<acme:menu-suboption code="master.menu.anonymous.migmanalv-link" action="https://powerhispania.net/"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.any">
+			<acme:menu-suboption code="master.menu.any.course" action="/any/course/list"/>
+			<acme:menu-separator/>
+		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
