@@ -16,12 +16,12 @@
 <%@taglib prefix="acme" uri="http://www.the-acme-framework.org/"%>
 
 <acme:form>
-
-	<acme:input-textbox code="authenticated.offer.list.label.username" path="heading" width="20%"/>
-	<acme:input-textbox code="authenticated.offer.list.label.summary" path="summary" width="40%"/>	
-	<acme:input-moment code="authenticated.offer.list.label.startAvalible" path="startAvalible" width="40%"/>
-	<acme:input-moment code="authenticated.offer.list.label.endAvalible" path="endAvalible" width="40%"/>	
-	<acme:input-textbox code="authenticated.offer.list.label.price" path="price" width="40%"/>	
-	<acme:input-url code="authenticated.offer.list.label.moreInfo" path="MoreInfo" width="40%"/>	
+	<acme:input-textbox code="authenticated.offer.list.label.heading" path="heading" />
+	<acme:input-textbox code="authenticated.offer.list.label.summary" path="summary" />
+	<acme:input-moment code="authenticated.offer.list.label.startAvailable" path="startAvailable" />
+	<acme:input-moment code="authenticated.offer.list.label.endAvailable" path="endAvailable" />
+	<acme:input-money code="authenticated.offer.list.label.price" path="price" />
+	<acme:input-url code="authenticated.offer.list.label.moreInfo" path="moreInfo"/>
+	
 
 </acme:form>

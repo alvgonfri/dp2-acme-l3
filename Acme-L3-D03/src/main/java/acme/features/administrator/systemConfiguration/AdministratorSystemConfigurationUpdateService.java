@@ -1,14 +1,14 @@
 
 package acme.features.administrator.systemConfiguration;
 
-import org.hibernate.cfg.BinderHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.google.common.util.concurrent.AbstractService;
-
 import acme.framework.components.accounts.Authenticated;
+import acme.framework.components.models.Tuple;
+import acme.framework.controllers.HttpMethod;
 import acme.framework.helpers.PrincipalHelper;
+import acme.framework.services.AbstractService;
 import acme.system.configuration.SystemConfiguration;
 
 @Service
@@ -35,12 +35,8 @@ public class AdministratorSystemConfigurationUpdateService extends AbstractServi
 	@Override
 	public void load() {
 		SystemConfiguration object;
-		Principal principal;
-		int userAccountId;
 
-		principal = super.getRequest().getPrincipal();
-		userAccountId = principal.getAccountId();
-		object = this.repository.findAssistantByUserAccountId(userAccountId);
+		object = this.repository.findCurrentSystemConfiguration();
 
 		super.getBuffer().setData(object);
 	}
@@ -70,7 +66,7 @@ public class AdministratorSystemConfigurationUpdateService extends AbstractServi
 
 		Tuple tuple;
 
-		tuple = BinderHelper.unbind(object, "defaultSystemCurrency", "acceptedCurrencies");
+		tuple = super.unbind(object, "defaultSystemCurrency", "acceptedCurrencies");
 		super.getResponse().setData(tuple);
 	}
 

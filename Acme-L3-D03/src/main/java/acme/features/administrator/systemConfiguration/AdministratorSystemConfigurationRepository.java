@@ -11,6 +11,6 @@ import acme.system.configuration.SystemConfiguration;
 public interface AdministratorSystemConfigurationRepository extends AbstractRepository {
 
 	@Query("select s from SystemConfiguration s")
-	List<SystemConfiguration> findCurrentSystemConfiguration();
+	SystemConfiguration findCurrentSystemConfiguration();
 
 }

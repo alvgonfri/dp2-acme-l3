@@ -4,9 +4,9 @@ package acme.features.administrator.systemConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.google.common.util.concurrent.AbstractService;
-
 import acme.framework.components.accounts.Authenticated;
+import acme.framework.components.models.Tuple;
+import acme.framework.services.AbstractService;
 import acme.system.configuration.SystemConfiguration;
 
 @Service
@@ -23,19 +23,14 @@ public class AdministratorSystemConfigurationShowService extends AbstractService
 
 	@Override
 	public void authorise() {
-		boolean status;
-
-		status = !super.getRequest().getPrincipal().hasRole(SystemConfiguration.class);
-
-		super.getResponse().setAuthorised(status);
+		super.getResponse().setChecked(true);
 	}
 
 	@Override
 	public void load() {
 		final SystemConfiguration object;
-		final Principal principal;
 
-		userAccount = this.repository.findCurrentSystemConfiguration();
+		object = this.repository.findCurrentSystemConfiguration();
 
 		super.getBuffer().setData(object);
 	}
