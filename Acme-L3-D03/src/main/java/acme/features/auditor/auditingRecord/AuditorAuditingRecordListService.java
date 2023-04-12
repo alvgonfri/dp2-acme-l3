@@ -1,6 +1,7 @@
 
 package acme.features.auditor.auditingRecord;
 
+import java.time.Duration;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 import acme.entities.audits.Audit;
 import acme.entities.audits.AuditingRecord;
 import acme.framework.components.models.Tuple;
+import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Auditor;
 
@@ -61,9 +63,12 @@ public class AuditorAuditingRecordListService extends AbstractService<Auditor, A
 		assert object != null;
 
 		Tuple tuple;
+		Duration auditingDuration;
+
+		auditingDuration = MomentHelper.computeDuration(object.getStartDate(), object.getEndDate());
 
 		tuple = super.unbind(object, "assessment", "startDate", "endDate", "mark", "moreInfo", "subject", "isCorrection");
-
+		tuple.put("auditingDuration", String.format("%dD %dH %dMin", auditingDuration.toDays(), auditingDuration.toHours() % 24, auditingDuration.toMinutes() % 60));
 		super.getResponse().setData(tuple);
 	}
 

@@ -18,19 +18,21 @@
 <acme:form>
 	<acme:input-textbox code="auditor.audit.form.label.code" path="code"/>
 	<acme:input-textbox code="auditor.audit.form.label.mark" path="mark" readonly="true"/>
-	<acme:input-textbox code="auditor.audit.fprm.label.conclusion" path="conclusion"/>
+	<acme:input-textbox code="auditor.audit.form.label.conclusion" path="conclusion"/>
 	<acme:input-textbox code="auditor.audit.form.label.strong-points" path="strongPoints"/>
 	<acme:input-textbox code="auditor.audit.form.label.weak-points" path="weakPoints"/>
-		<acme:input-select code="auditor.audit.form.label.course" path="course" choices="${courses}"/>	
-
-	<acme:button code="auditor.audit.form.button.auditingRecord" action="/auditor/auditing-record/list?auditId=${id}"/>
+	<acme:input-select code="auditor.audit.form.label.course" path="course" choices="${courses}"/>
 
 	
 	<jstl:choose>
-		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
+	<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
 			<acme:submit code="auditor.audit.form.button.update" action="/auditor/audit/update"/>
 			<acme:submit code="auditor.audit.form.button.delete" action="/auditor/audit/delete"/>
 			<acme:submit code="auditor.audit.form.button.publish" action="/auditor/audit/publish"/>
+			<acme:button code="auditor.audit.form.button.auditingRecord" action="/auditor/auditing-record/list?auditId=${id}"/>
+		</jstl:when>
+		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish')}">
+			<acme:button code="auditor.audit.form.button.auditingRecord" action="/auditor/auditing-record/list?auditId=${id}"/>
 		</jstl:when>
 		<jstl:when test="${_command == 'create'}">
 			<acme:submit code="auditor.audit.form.button.create" action="/auditor/audit/create"/>

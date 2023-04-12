@@ -17,8 +17,7 @@
 
 <acme:list>
 		<acme:list-column code="auditor.auditingRecord.list.label.assessment" path="assessment"/>
-		<acme:list-column code="auditor.auditingRecord.list.label.startDate" path="startDate"/>
-		<acme:list-column code="auditor.auditingRecord.list.label.endDate" path="endDate"/>
+		<acme:list-column code="auditor.auditingRecord.list.label.auditingDuration" path="auditingDuration"/>
 		<acme:list-column code="auditor.auditingRecord.list.label.mark" path="mark"/>
 		<acme:list-column code="auditor.auditingRecord.list.label.moreInfo" path="moreInfo"/>
 		<acme:list-column code="auditor.auditingRecord.list.label.subject" path="subject"/>
@@ -27,7 +26,7 @@
 </acme:list>
 <jstl:choose>
 	<jstl:when test="${!showCreate}">
-		<acme:button code="auditor.audit.form.button.createCorrection" action="/auditor/auditing-record/create-correction?auditId=${auditId}"/>
+		<acme:button code="auditor.auditingRecord.list.button.createCorrection" action="/auditor/auditing-record/create-correction?auditId=${auditId}"/>
 	</jstl:when>
 	<jstl:when test="${showCreate}">
 		<acme:button code="auditor.auditingRecord.list.button.create" action="/auditor/auditing-record/create?auditId=${auditId}"/>

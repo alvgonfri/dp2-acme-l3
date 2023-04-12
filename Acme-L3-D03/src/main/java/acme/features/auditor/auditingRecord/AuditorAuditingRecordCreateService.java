@@ -85,8 +85,8 @@ public class AuditorAuditingRecordCreateService extends AbstractService<Auditor,
 
 			isValid = MomentHelper.isLongEnough(object.getStartDate(), object.getEndDate(), 1, ChronoUnit.HOURS);
 
-			super.state(isValid, "startDate", "muy corto");
-			super.state(isValid, "endDate", "muy corto");
+			super.state(isValid, "startDate", "auditor.auditingRecord.form.error.duration");
+			super.state(isValid, "endDate", "auditor.auditingRecord.form.error.duration");
 		}
 
 	}

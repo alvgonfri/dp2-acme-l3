@@ -15,3 +15,23 @@ auditor.auditingRecord.list.label.mark = Mark
 auditor.auditingRecord.list.label.moreInfo = More info
 auditor.auditingRecord.list.label.subject = Subject
 auditor.auditingRecord.list.label.audit = Audit
+auditor.auditingRecord.list.label.isCorrection = Is correction
+auditor.auditingRecord.list.label.auditingDuration = Duration
+
+auditor.auditingRecord.list.button.createCorrection = New correction record
+auditor.auditingRecord.list.button.create = New record
+
+auditor.auditingRecord.form.label.assessment = Assessment
+auditor.auditingRecord.form.label.startDate = Start date
+auditor.auditingRecord.form.label.endDate = End date
+auditor.auditingRecord.form.label.mark = Mark
+auditor.auditingRecord.form.label.moreInfo = More info
+auditor.auditingRecord.form.label.subject = Subject
+auditor.auditingRecord.form.label.audit = Audit
+auditor.auditingRecord.form.label.isCorrection = Is correction
+
+auditor.auditingRecord.form.button.create = Save
+auditor.auditingRecord.form.button.update = Update
+auditor.auditingRecord.form.button.delete = Delete
+
+auditor.auditingRecord.form.error.duration = The auditing period must be at least 1 hour long
