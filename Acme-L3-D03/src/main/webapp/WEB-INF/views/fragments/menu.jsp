@@ -38,11 +38,13 @@
 		
 		<acme:menu-option code="master.menu.auditor" access="hasRole('Auditor')">
 			<acme:menu-suboption code="master.menu.auditor.audits" action="/auditor/audit/list-mine"/>
+
 			</acme:menu-option>
 
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.authenticated.notes" action="/authenticated/note/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.offers"  action="/authenticated/offer/list"/>
+
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
