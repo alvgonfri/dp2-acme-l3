@@ -9,30 +9,21 @@
 # they accept any liabilities with respect to them.
 
 ﻿# master.menu #################################################################
-
 master.menu.home = Inicio
 master.menu.sign-up = Registrarse
 master.menu.sign-in = Entrar
 master.menu.sign-out = Salir
 
 # master.menu.anonymous #######################################################
-
 master.menu.anonymous = Anónimo
 master.menu.anonymous.favourite-link = Enlace favorito
-
 master.menu.anonymous.serlopdia-link = 15412769: López Díaz, Sergio
-
 master.menu.anonymous.alvvegrod-link = 49280660: Vega Rodríguez, Álvaro
-
 master.menu.anonymous.alvgonfri-link = 30276674: González Frías, Álvaro
 master.menu.anonymous.migmanalv-link = 29545812N: Manzano Álvarez, Miguel
-
 master.menu.anonymous.carlosdelrioperez-link = 20092776: del Río Pérez, Carlos
 
-
-
 # master.menu.administrator ###################################################
-
 master.menu.administrator = Administrador
 master.menu.administrator.dashboard = Panel de indicadores
 master.menu.administrator.user-accounts = Cuentas de usuario
@@ -41,22 +32,11 @@ master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-down = Parar el sistema
 
 # master.menu.authenticated ########################################################
-
 master.menu.authenticated = Autentificado
 master.menu.authenticated.notes = Ver notas recientes
-
-# master.menu.provider ########################################################
-
-master.menu.provider = Proveedor
-master.menu.provider.favourite-link = Enlace favorito
-
-# master.menu.consumer ##########################################################
-
-master.menu.consumer = Consumidor
-master.menu.consumer.favourite-link = Enlace favorito
+master.menu.authenticated.offers = Ver ofertas
 
 # master.menu.user-account ####################################################
-master.menu.user-account.offers = Ofertas
 master.menu.user-account = Cuenta
 master.menu.user-account.general-data = Datos generales
 master.menu.user-account.provider = Datos de proveedor
