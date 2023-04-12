@@ -68,6 +68,11 @@ public class CompanyPracticumCreateService extends AbstractService<Company, Prac
 	}
 
 	@Override
+	public void validate(final Practicum object) {
+		assert object != null;
+	}
+
+	@Override
 	public void perform(final Practicum object) {
 		assert object != null;
 
