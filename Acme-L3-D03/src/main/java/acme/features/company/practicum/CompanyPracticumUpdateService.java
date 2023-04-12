@@ -95,18 +95,16 @@ public class CompanyPracticumUpdateService extends AbstractService<Company, Prac
 
 		Collection<Course> courses;
 		SelectChoices choices;
-		Tuple coursesList;
+		Tuple tuple;
 
 		courses = this.repository.findAllCourses();
 		choices = SelectChoices.from(courses, "code", object.getCourse());
 
-		coursesList = super.unbind(object, "code", "title", "summary", "goals");
-		coursesList.put("course", choices.getSelected().getKey());
-		coursesList.put("courses", choices);
+		tuple = super.unbind(object, "code", "title", "summary", "goals");
+		tuple.put("course", choices.getSelected().getKey());
+		tuple.put("courses", choices);
 
-		super.getResponse().setData(coursesList);
+		super.getResponse().setData(tuple);
 	}
-
-	/* AQUÍ INTRODUCIR VALIDADOR DE SPAM PARA LOS CAMPOS */
 
 }

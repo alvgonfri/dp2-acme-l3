@@ -21,9 +21,9 @@
 	<acme:input-textbox code="company.practicum.form.label.practicum-title" path="title"/>
 	<acme:input-textbox code="company.practicum.form.label.summary" path="summary"/>
 	<acme:input-textbox code="company.practicum.form.label.goals" path="goals"/>
-
+	
 	<jstl:choose>
-		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish')}">
+		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
 			<acme:submit code="company.practicum.form.button.update" action="/company/practicum/update"/>
 			<acme:submit code="company.practicum.form.button.delete" action="/company/practicum/delete"/>
 			<acme:submit code="company.practicum.form.button.publish" action="/company/practicum/publish"/>
