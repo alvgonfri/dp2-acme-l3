@@ -1,0 +1,17 @@
+# messages-es.i18n
+#
+# Copyright (C) 2012-2023 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+
+administrator.offer.list.label.heading = Título
+administrator.offer.list.label.startAvailable = Comienzo de disponibilidad
+administrator.offer.list.label.endAvailable = Fin de disponibilidad
+administrator.offer.list.label.price = Precio
+administrator.offer.list.label.moreInfo = Más información
+administrator.offer.list.label.summary = Resumen
