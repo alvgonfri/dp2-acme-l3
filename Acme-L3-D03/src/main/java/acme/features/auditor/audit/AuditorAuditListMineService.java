@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 import acme.entities.audits.Audit;
 import acme.entities.audits.AuditingRecord;
 import acme.entities.audits.Mark;
-import acme.features.auditor.auditingRecord.AuditorAuditingRecordRepository;
 import acme.framework.components.accounts.Principal;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
@@ -24,10 +23,7 @@ public class AuditorAuditListMineService extends AbstractService<Auditor, Audit>
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AuditorAuditRepository			repository;
-
-	@Autowired
-	protected AuditorAuditingRecordRepository	auditingRecordRepository;
+	protected AuditorAuditRepository repository;
 
 	// AbstractService interface ----------------------------------------------
 
@@ -58,11 +54,12 @@ public class AuditorAuditListMineService extends AbstractService<Auditor, Audit>
 		assert object != null;
 
 		Tuple tuple;
+		Mark auditMark;
 
-		final Mark auditMark = this.getAuditMark(object.getId());
+		auditMark = this.getAuditMark(object.getId());
 
 		tuple = super.unbind(object, "code", "conclusion", "course.title");
-		if (this.auditingRecordRepository.findManyAuditingRecordByAuditId(object.getId()).isEmpty())
+		if (this.repository.findManyAuditingRecordsByAuditId(object.getId()).isEmpty())
 			tuple.put("mark", "-");
 		else
 			tuple.put("mark", auditMark);
@@ -75,7 +72,7 @@ public class AuditorAuditListMineService extends AbstractService<Auditor, Audit>
 		final List<Pair<Mark, Integer>> aux = new ArrayList<>();
 
 		final Mark[] marks = Mark.values();
-		final Collection<AuditingRecord> auditingRecords = this.auditingRecordRepository.findManyAuditingRecordByAuditId(auditId);
+		final Collection<AuditingRecord> auditingRecords = this.repository.findManyAuditingRecordsByAuditId(auditId);
 
 		for (final Mark m : marks) {
 			final Pair<Mark, Integer> p = Pair.of(m, auditingRecords.stream().filter(x -> x.getMark() == m).collect(Collectors.toList()).size());
