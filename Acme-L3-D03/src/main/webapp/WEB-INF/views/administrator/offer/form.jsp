@@ -26,6 +26,10 @@
 	<acme:input-url code="administrator.offer.list.label.moreInfo" path="moreInfo"/>
 	
 	<jstl:choose>
+	<jstl:when test="${acme:anyOf(_command, 'show|update|delete')}">
+			<acme:submit code="employer.job.form.button.update" action="/administrator/offer/update"/>
+			<acme:submit code="employer.job.form.button.delete" action="/administrator/offer/delete"/>
+		</jstl:when>
 	<jstl:when test="${_command == 'create'}">
 			<acme:submit code="administrator.offer.form.button.create" action="/administrator/offer/create"/>
 		</jstl:when>		

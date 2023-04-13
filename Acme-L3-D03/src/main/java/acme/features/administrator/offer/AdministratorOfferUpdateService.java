@@ -2,7 +2,6 @@
 package acme.features.administrator.offer;
 
 import java.time.temporal.ChronoUnit;
-import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,38 +13,44 @@ import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 
 @Service
-public class AdministratorOfferCreateService extends AbstractService<Administrator, Offer> {
+public class AdministratorOfferUpdateService extends AbstractService<Administrator, Offer> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
 	protected AdministratorOfferRepository repository;
 
-	// AbstractService interface ----------------------------------------------
+	// AbstractService<Employer, Job> -------------------------------------
 
 
 	@Override
 	public void check() {
-		super.getResponse().setChecked(true);
+		boolean status;
+
+		status = super.getRequest().hasData("id", int.class);
+
+		super.getResponse().setChecked(status);
 	}
 
 	@Override
 	public void authorise() {
 		boolean status;
-		status = super.getRequest().getPrincipal().hasRole(Administrator.class);
+		int masterId;
+		Offer offer;
+		masterId = super.getRequest().getData("id", int.class);
+		offer = this.repository.findOneOfferById(masterId);
+		status = offer != null && super.getRequest().getPrincipal().hasRole(Administrator.class);
 
 		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
-		final Offer object;
-		Date moment;
+		Offer object;
+		int id;
 
-		moment = MomentHelper.getCurrentMoment();
-
-		object = new Offer();
-		object.setMoment(moment);
+		id = super.getRequest().getData("id", int.class);
+		object = this.repository.findOneOfferById(id);
 
 		super.getBuffer().setData(object);
 	}
@@ -55,6 +60,7 @@ public class AdministratorOfferCreateService extends AbstractService<Administrat
 		assert object != null;
 
 		super.bind(object, "moment", "heading", "summary", "startAvailable", "endAvailable", "price", "moreInfo");
+
 	}
 
 	@Override
@@ -76,14 +82,13 @@ public class AdministratorOfferCreateService extends AbstractService<Administrat
 
 			super.state(isValid, "startAvailable", "Debe estar disponible al menos durante una semana");
 			super.state(isValid, "endAvailable", "Debe estar disponible al menos durante una semana");
-
 		}
-
 	}
 
 	@Override
 	public void perform(final Offer object) {
 		assert object != null;
+
 		this.repository.save(object);
 	}
 
@@ -97,5 +102,4 @@ public class AdministratorOfferCreateService extends AbstractService<Administrat
 
 		super.getResponse().setData(tuple);
 	}
-
 }
