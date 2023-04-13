@@ -43,12 +43,11 @@ public class Enrolment extends AbstractEntity {
 
 	protected boolean			draftMode;
 
-	/*
-	 * protected String creditCardHolder;
-	 * 
-	 * @Pattern(regexp = "\\d{4}")
-	 * protected String creditCardLowerNibble;
-	 */
+	@Length(max = 75)
+	protected String			creditCardHolder;
+
+	@Pattern(regexp = "\\d{4}")
+	protected String			creditCardLowerNibble;
 
 	// Derived attributes -----------------------------------------------------
 

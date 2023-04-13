@@ -13,6 +13,12 @@ student.enrolment.form.label.motivation = Motivación:
 student.enrolment.form.label.goals = Objetivos:
 student.enrolment.form.label.course = Curso:
 student.enrolment.form.label.workTime = Tiempo de trabajo (horas):
+student.enrolment.form.label.creditCardHolder = Nombre del titular:
+student.enrolment.form.label.creditCardNumber = Número de tarjeta:
+student.enrolment.form.label.expiryDate = Fecha de vencimiento:
+student.enrolment.form.label.cvc = CVC:
+
+student.enrolment.form.message.creditCard = Proporcione una tarjeta de crédito válida si quiere finalizar la matrícula:
 
 student.enrolment.form.button.activities = Actividades
 student.enrolment.form.button.update = Actualizar
@@ -20,7 +26,12 @@ student.enrolment.form.button.delete = Borrar
 student.enrolment.form.button.finalise = Finalizar
 student.enrolment.form.button.create = Crear
 
+student.enrolment.form.error.null-creditCardHolder = Introduce el titular de la tarjeta
 student.enrolment.form.error.code-duplicated = Este código no está libre
+student.enrolment.form.error.wrong-cardNumber = El número de tarjeta debe estar compuesto por 16 dígitos
+student.enrolment.form.error.card-expired = Esta tarjeta ha vencido
+student.enrolment.form.error.null-expiryDate = Introduce la fecha de vencimiento
+student.enrolment.form.error.wrong-cvc = El CVC debe estar compuesto por 3 dígitos
 
 student.enrolment.list.label.code = Código
 student.enrolment.list.label.motivation = Motivación
