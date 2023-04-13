@@ -53,4 +53,5 @@ master.menu.authenticated.company.create = Hazte empresa
 master.menu.user-account.lecturer = Datos del profesor
 master.menu.user-account.become-lecturer = Hazte profesor
 
-
+master.menu.any.course = Cursos
+master.menu.any = Cualquiera

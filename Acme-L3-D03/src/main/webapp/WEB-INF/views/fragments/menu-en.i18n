@@ -52,3 +52,6 @@ master.menu.authenticated.company.update = Company data
 master.menu.authenticated.company.create = Become a company
 master.menu.user-account.lecturer = Lecturer data
 master.menu.user-account.become-lecturer = Become a lecturer
+
+master.menu.any.course = Courses
+master.menu.any= Any
