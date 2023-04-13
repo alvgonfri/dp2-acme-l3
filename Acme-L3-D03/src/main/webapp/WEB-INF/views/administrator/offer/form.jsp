@@ -16,6 +16,8 @@
 <%@taglib prefix="acme" uri="http://www.the-acme-framework.org/"%>
 
 <acme:form>
+
+	<acme:input-textbox code="administrator.offer.list.label.heading" path="moment" readonly="true"/>
 	<acme:input-textbox code="administrator.offer.list.label.heading" path="heading" />
 	<acme:input-textbox code="administrator.offer.list.label.summary" path="summary" />
 	<acme:input-moment code="administrator.offer.list.label.startAvailable" path="startAvailable" />
@@ -23,5 +25,10 @@
 	<acme:input-money code="administrator.offer.list.label.price" path="price" />
 	<acme:input-url code="administrator.offer.list.label.moreInfo" path="moreInfo"/>
 	
+	<jstl:choose>
+	<jstl:when test="${_command == 'create'}">
+			<acme:submit code="administrator.offer.form.button.create" action="/administrator/offer/create"/>
+		</jstl:when>		
+	</jstl:choose>
 
 </acme:form>

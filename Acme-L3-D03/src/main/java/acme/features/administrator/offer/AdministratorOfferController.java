@@ -15,10 +15,13 @@ public class AdministratorOfferController extends AbstractController<Administrat
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AdministratorOfferListService	listService;
+	protected AdministratorOfferListService		listService;
 
 	@Autowired
-	protected AdministratorOfferShowService	showService;
+	protected AdministratorOfferShowService		showService;
+
+	@Autowired
+	protected AdministratorOfferCreateService	createService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -27,6 +30,7 @@ public class AdministratorOfferController extends AbstractController<Administrat
 	protected void initialise() {
 		super.addBasicCommand("list", this.listService);
 		super.addBasicCommand("show", this.showService);
+		super.addBasicCommand("create", this.createService);
 	}
 
 }

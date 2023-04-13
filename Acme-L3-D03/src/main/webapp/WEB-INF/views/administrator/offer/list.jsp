@@ -22,3 +22,5 @@
 	<acme:list-column code="administrator.offer.list.label.endAvailable" path="endAvailable" width="40%"/>	
 	<acme:list-column code="administrator.offer.list.label.price" path="price" width="40%"/>		
 </acme:list>
+
+	<acme:button code="administrator.offer.list.button.create" action="/administrator/offer/create"/>
