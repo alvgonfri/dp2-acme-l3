@@ -14,3 +14,4 @@ administrator.system-configuration.form.label.acceptedCurrencies = Accepted Curr
 
 
 administrator.system-configuration.form.update = Update
+administrator.system-configuration.form.error.defaultSystemCurrency = Currency not in Accepted Currencies

@@ -51,6 +51,16 @@ public class AdministratorSystemConfigurationUpdateService extends AbstractServi
 	@Override
 	public void validate(final SystemConfiguration object) {
 		assert object != null;
+		if (!super.getBuffer().getErrors().hasErrors("defaultSystemCurrency")) {
+
+			String defaultSystemCurrency;
+			String acceptedCurrencies;
+			defaultSystemCurrency = super.getRequest().getData("defaultSystemCurrency", String.class);
+			acceptedCurrencies = super.getRequest().getData("acceptedCurrencies", String.class);
+
+			super.state(acceptedCurrencies.contains(defaultSystemCurrency), "defaultSystemCurrency", "administrator.system-configuration.form.error.defaultSystemCurrency");
+		}
+
 	}
 
 	@Override
