@@ -15,5 +15,5 @@ authenticated.practicum.form.label.summary = Resumen:
 authenticated.practicum.form.label.goals = Metas:
 authenticated.practicum.form.label.company = Empresa:
 
-authenticated.practicum.list.label.code = Código
 authenticated.practicum.list.label.title = Título
+authenticated.practicum.list.label.summary = Resumen

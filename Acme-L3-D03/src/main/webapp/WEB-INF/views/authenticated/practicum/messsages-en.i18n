@@ -15,5 +15,5 @@ authenticated.practicum.form.label.summary = Abstract:
 authenticated.practicum.form.label.goals = Goals:
 authenticated.practicum.form.label.company = Company:
 
-authenticated.practicum.list.label.code = Code
 authenticated.practicum.list.label.title = Title
+authenticated.practicum.list.label.summary = Abstract
