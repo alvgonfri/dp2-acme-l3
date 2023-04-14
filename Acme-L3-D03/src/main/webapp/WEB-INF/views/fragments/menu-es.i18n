@@ -23,6 +23,10 @@ master.menu.anonymous.alvgonfri-link = 30276674: González Frías, Álvaro
 master.menu.anonymous.migmanalv-link = 29545812N: Manzano Álvarez, Miguel
 master.menu.anonymous.carlosdelrioperez-link = 20092776: del Río Pérez, Carlos
 
+# master.menu.peep #######################################################
+master.menu.peep = Peeps
+master.menu.peep.list = Lista de peeps
+
 # master.menu.administrator ###################################################
 master.menu.administrator = Administrador
 master.menu.administrator.dashboard = Panel de indicadores
