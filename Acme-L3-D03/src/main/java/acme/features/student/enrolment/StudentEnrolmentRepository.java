@@ -30,6 +30,9 @@ public interface StudentEnrolmentRepository extends AbstractRepository {
 	@Query("select c from Course c")
 	Collection<Course> findAllCourses();
 
+	@Query("select c from Course c where c.draftMode = 0")
+	Collection<Course> findPublishedCourses();
+
 	@Query("select c from Course c where c.id = :id")
 	Course findOneCourseById(int id);
 

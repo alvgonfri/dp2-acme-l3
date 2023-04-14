@@ -22,11 +22,14 @@
 	<acme:input-textarea code="student.enrolment.form.label.goals" path="goals"/>
 	<acme:input-integer code="student.enrolment.form.label.workTime" path="workTime" readonly="true"/>
 	<br>
-	<h3><acme:message code="student.enrolment.form.message.creditCard"/></h3>
-	<acme:input-textbox code="student.enrolment.form.label.creditCardHolder" path="creditCardHolder"/>
-	<acme:input-textbox code="student.enrolment.form.label.creditCardNumber" path="creditCardNumber"/>
-	<acme:input-moment code="student.enrolment.form.label.expiryDate" path="expiryDate"/>
-	<acme:input-textbox code="student.enrolment.form.label.cvc" path="cvc"/>	
+	<jstl:if test="${acme:anyOf(_command, 'show|update|delete|finalise') && draftMode == true}">
+		<h3><acme:message code="student.enrolment.form.message.creditCard"/></h3>
+		<acme:input-textbox code="student.enrolment.form.label.creditCardHolder" path="creditCardHolder"/>
+		<acme:input-textbox code="student.enrolment.form.label.creditCardNumber" path="creditCardNumber"/>
+		<acme:input-moment code="student.enrolment.form.label.expiryDate" path="expiryDate"/>
+		<acme:input-textbox code="student.enrolment.form.label.cvc" path="cvc"/>
+	</jstl:if>
+		
 	
 	<jstl:choose>	 
 		<jstl:when test="${_command == 'show' && draftMode == false}">

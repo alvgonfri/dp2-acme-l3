@@ -147,7 +147,7 @@ public class StudentEnrolmentFinaliseService extends AbstractService<Student, En
 		String creditCardLowerNibble;
 		Tuple tuple;
 
-		courses = this.repository.findAllCourses();
+		courses = this.repository.findPublishedCourses();
 		choices = SelectChoices.from(courses, "title", object.getCourse());
 
 		creditCardNumber = super.getRequest().getData("creditCardNumber", String.class);

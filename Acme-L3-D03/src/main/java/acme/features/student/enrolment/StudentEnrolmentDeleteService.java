@@ -98,7 +98,7 @@ public class StudentEnrolmentDeleteService extends AbstractService<Student, Enro
 		SelectChoices choices;
 		Tuple tuple;
 
-		courses = this.repository.findAllCourses();
+		courses = this.repository.findPublishedCourses();
 		choices = SelectChoices.from(courses, "title", object.getCourse());
 
 		tuple = super.unbind(object, "code", "motivation", "goals", "draftMode");

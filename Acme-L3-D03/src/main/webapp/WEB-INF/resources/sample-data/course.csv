@@ -1,4 +1,4 @@
-key,code,title,summary,retailPrice,moreInfo,key:lecturer
-course-01,ABC 123,Writing Mastery,Lorem ipsum dolor sit amet,"EUR 15,000.00",https://www.google.es/,lecturer-01
-course-02,RCG 873,Financial Planning and Analysis,Lorem ipsum dolor sit amet,"EUR 20,000.00",https://www.google.es/,lecturer-02
-course-03,GHR 971,Tech for Non-Techies,Lorem ipsum dolor sit amet,"EUR 25,000.00",https://www.google.es/,lecturer-03
+key,code,title,summary,retailPrice,moreInfo,draftMode,key:lecturer
+course-01,ABC 123,Writing Mastery,Lorem ipsum dolor sit amet,"EUR 15,000.00",https://www.google.es/,true,lecturer-01
+course-02,RCG 873,Financial Planning and Analysis,Lorem ipsum dolor sit amet,"EUR 20,000.00",https://www.google.es/,false,lecturer-02
+course-03,GHR 971,Tech for Non-Techies,Lorem ipsum dolor sit amet,"EUR 25,000.00",https://www.google.es/,false,lecturer-03
