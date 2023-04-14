@@ -41,6 +41,10 @@ master.menu.authenticated.company.create = Hazte empresa
 master.menu.authenticated = Autenticado
 master.menu.authenticated.bulletins = Boletínes
 
+# master.menu.student ########################################################
+master.menu.student = Estudiante
+master.menu.student.list-my-enrolments = Ver mis matrículas
+
 # master.menu.user-account ####################################################
 master.menu.user-account = Cuenta
 master.menu.user-account.general-data = Datos generales

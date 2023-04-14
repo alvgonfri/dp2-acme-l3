@@ -42,20 +42,16 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
 		</acme:menu-option>
-		
+    
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">			
 			<acme:menu-suboption code="master.menu.authenticated.bulletins" action="/authenticated/bulletin/list"/>			
 			<acme:menu-suboption code="master.menu.authenticated.notes" action="/authenticated/note/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.offers"  action="/authenticated/offer/list"/>
 		</acme:menu-option>
-
-		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
-			<acme:menu-suboption code="master.menu.provider.favourite-link" action="http://www.example.com/"/>
-		</acme:menu-option>
-
-		<acme:menu-option code="master.menu.consumer" access="hasRole('Consumer')">
-			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
-		</acme:menu-option>
+    
+    <acme:menu-option code="master.menu.student" access="hasRole('Student')">
+      		<acme:menu-suboption code="master.menu.student.list-my-enrolments" action="/student/enrolment/list-mine"/>
+    </acme:menu-option>
 	</acme:menu-left>
 	
 	
