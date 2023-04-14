@@ -44,6 +44,7 @@ master.menu.authenticated.bulletins = Bulletins
 # master.menu.student ########################################################
 master.menu.student = Student
 master.menu.student.list-my-enrolments = List my enrolments
+master.menu.student.list-courses = List courses
 
 # master.menu.user-account ####################################################
 master.menu.user-account = Account
