@@ -16,17 +16,17 @@ public class StudentCourseController extends AbstractController<Student, Course>
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected StudentCourseListAllService	listAllService;
+	protected StudentCourseListService	listService;
 
 	@Autowired
-	protected StudentCourseShowService		showService;
+	protected StudentCourseShowService	showService;
 
 	// Constructors -----------------------------------------------------------
 
 
 	@PostConstruct
 	protected void initialise() {
-		super.addBasicCommand("list", this.listAllService);
+		super.addBasicCommand("list", this.listService);
 		super.addBasicCommand("show", this.showService);
 	}
 

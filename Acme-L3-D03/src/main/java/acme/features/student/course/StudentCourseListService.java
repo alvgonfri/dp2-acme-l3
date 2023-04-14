@@ -12,7 +12,7 @@ import acme.framework.services.AbstractService;
 import acme.roles.Student;
 
 @Service
-public class StudentCourseListAllService extends AbstractService<Student, Course> {
+public class StudentCourseListService extends AbstractService<Student, Course> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -36,7 +36,7 @@ public class StudentCourseListAllService extends AbstractService<Student, Course
 	public void load() {
 		Collection<Course> objects;
 
-		objects = this.repository.findAllCourses();
+		objects = this.repository.findPublishedCourses();
 
 		super.getBuffer().setData(objects);
 	}

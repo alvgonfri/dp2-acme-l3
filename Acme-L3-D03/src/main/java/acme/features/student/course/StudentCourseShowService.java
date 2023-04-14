@@ -31,7 +31,15 @@ public class StudentCourseShowService extends AbstractService<Student, Course> {
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status;
+		int courseId;
+		Course course;
+
+		courseId = super.getRequest().getData("id", int.class);
+		course = this.repository.findOneCourseById(courseId);
+		status = !course.isDraftMode();
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
