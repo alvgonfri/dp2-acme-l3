@@ -36,6 +36,10 @@ master.menu.administrator.shut-down = Shut down
 master.menu.authenticated = Authenticated
 master.menu.authenticated.notes = List recent notes
 master.menu.authenticated.offers = List offers
+master.menu.authenticated.company.update = Company data
+master.menu.authenticated.company.create = Become a company
+master.menu.authenticated = Authenticated
+master.menu.authenticated.bulletins = Bulletins
 
 # master.menu.user-account ####################################################
 master.menu.user-account = Account
@@ -48,10 +52,9 @@ master.menu.user-account.student = Student data
 master.menu.user-account.become-student = Become a student
 master.menu.user-account.assistant = Assistant data
 master.menu.user-account.become-assistant = Become an assistant
-master.menu.authenticated.company.update = Company data
-master.menu.authenticated.company.create = Become a company
 master.menu.user-account.lecturer = Lecturer data
 master.menu.user-account.become-lecturer = Become a lecturer
 
+# master.menu.any ####################################################
 master.menu.any.course = Courses
 master.menu.any= Any
