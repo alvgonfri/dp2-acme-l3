@@ -63,7 +63,7 @@ public class StudentEnrolmentListMineService extends AbstractService<Student, En
 
 	// Aux --------------------------------------------------------------------
 
-	public int getWorkTime(final int enrolmentId) {
+	private int getWorkTime(final int enrolmentId) {
 		int result = 0;
 		final Collection<Activity> activities = this.repository.findActivitiesByEnrolmentId(enrolmentId);
 		for (final Activity activity : activities) {

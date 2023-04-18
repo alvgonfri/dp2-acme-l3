@@ -45,6 +45,7 @@ master.menu.authenticated.bulletins = Boletínes
 master.menu.student = Estudiante
 master.menu.student.list-my-enrolments = Ver mis matrículas
 master.menu.student.list-courses = Ver cursos
+master.menu.student.dashboard = Panel de indicadores
 
 # master.menu.user-account ####################################################
 master.menu.user-account = Cuenta
