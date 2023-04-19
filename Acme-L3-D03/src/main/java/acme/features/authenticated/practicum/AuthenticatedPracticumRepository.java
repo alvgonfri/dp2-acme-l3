@@ -18,6 +18,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.entities.practicums.Practicum;
+import acme.entities.practicums.PracticumSession;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
@@ -28,5 +29,8 @@ public interface AuthenticatedPracticumRepository extends AbstractRepository {
 
 	@Query("select p from Practicum p where p.id = :id")
 	Practicum findPracticumById(int id);
+
+	@Query("Select s from PracticumSession s where s.practicum.id = :id")
+	Collection<PracticumSession> findSessionsByPracticum(int id);
 
 }

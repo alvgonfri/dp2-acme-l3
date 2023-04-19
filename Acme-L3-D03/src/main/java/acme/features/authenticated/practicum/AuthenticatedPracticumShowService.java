@@ -12,10 +12,13 @@
 
 package acme.features.authenticated.practicum;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.practicums.Practicum;
+import acme.entities.practicums.PracticumSession;
 import acme.framework.components.accounts.Authenticated;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
@@ -55,11 +58,16 @@ public class AuthenticatedPracticumShowService extends AbstractService<Authentic
 	@Override
 	public void unbind(final Practicum object) {
 		assert object != null;
+		final Collection<PracticumSession> sessions;
+
+		sessions = this.repository.findSessionsByPracticum(object.getId());
+		final Double estimatedTime = object.estimatedTime(sessions);
 
 		Tuple tuple;
 
 		tuple = super.unbind(object, "code", "title", "summary", "goals");
 		tuple.put("company", object.getCompany().getName());
+		tuple.put("estimatedTime", estimatedTime);
 
 		super.getResponse().setData(tuple);
 	}

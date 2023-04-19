@@ -1,9 +1,12 @@
 
 package acme.entities.practicums;
 
+import java.util.Collection;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -47,28 +50,31 @@ public class Practicum extends AbstractRole {
 
 	// Derived attributes -----------------------------------------------------
 
-	//	@Transient
-	//	public Integer estimatedTime() {
-	//		int result = 0;
-	//		for (final PracticumSession session : this.sessions) {
-	//			final int diffInMillies = (int) Math.abs(session.getEndDate().getTime() - session.getStartDate().getTime());
-	//			final int diffInHours = (int) TimeUnit.HOURS.convert(diffInMillies, TimeUnit.MILLISECONDS);
-	//			result += diffInHours;
-	//		}
-	//		return result;
-	//	}
+
+	@Transient
+	public Double estimatedTime(final Collection<PracticumSession> sessions) {
+		double estimatedTime = 0;
+		if (sessions.size() > 0)
+			for (final PracticumSession session : sessions) {
+				final long diffInMilliseconds = session.getEndDate().getTime() - session.getStartDate().getTime();
+				final double diffInHours = diffInMilliseconds / (1000.0 * 60 * 60);
+				estimatedTime = estimatedTime + diffInHours;
+			}
+		return estimatedTime;
+	}
 
 	// Relationships ----------------------------------------------------------
 
-	//	protected List<PracticumSession>	sessions;
+
+	//	protected Collection<PracticumSession>	sessions;
 	@ManyToOne(optional = false)
 	@Valid
 	@NotNull
-	protected Course			course;
+	protected Course	course;
 
 	@ManyToOne(optional = false)
 	@Valid
 	@NotNull
-	protected Company			company;
+	protected Company	company;
 
 }

@@ -13,6 +13,7 @@ authenticated.practicum.form.label.code = Código:
 authenticated.practicum.form.label.title = Título:
 authenticated.practicum.form.label.summary = Resumen:
 authenticated.practicum.form.label.goals = Metas:
+authenticated.practicum.form.label.estimatedTime = Horas estimadas (aprox. +-10%):
 authenticated.practicum.form.label.company = Empresa:
 
 authenticated.practicum.list.label.title = Título
