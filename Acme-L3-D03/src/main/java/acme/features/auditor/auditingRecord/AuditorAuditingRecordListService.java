@@ -44,7 +44,6 @@ public class AuditorAuditingRecordListService extends AbstractService<Auditor, A
 		auditId = super.getRequest().getData("auditId", int.class);
 		audit = this.repository.findOneAuditById(auditId);
 		loggedAuditor = this.repository.findOneAuditorByUsername(super.getRequest().getPrincipal().getUsername());
-		System.out.println("esto" + loggedAuditor + audit.getAuditor());
 		status = audit != null && loggedAuditor == audit.getAuditor();
 
 		super.getResponse().setAuthorised(status);
