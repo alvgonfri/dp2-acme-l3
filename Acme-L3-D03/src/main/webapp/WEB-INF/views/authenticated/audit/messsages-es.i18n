@@ -1,4 +1,4 @@
-# messages-en.i18n
+# messages-es.i18n
 #
 # Copyright (C) 2012-2023 Rafael Corchuelo.
 #
@@ -8,3 +8,11 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+authenticated.bulletin.list.label.title=Título
+authenticated.bulletin.list.label.message=Mensaje
+authenticated.bulletin.list.label.moment=Momento
+authenticated.bulletin.form.label.title=Título
+authenticated.bulletin.form.label.message=Mensaje
+authenticated.bulletin.form.label.critical=Crítico
+authenticated.bulletin.form.label.moreInfo=Link para más información
+authenticated.bulletin.form.label.moment=Momento

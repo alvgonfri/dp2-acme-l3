@@ -1,5 +1,5 @@
 
-package acme.features.auditor.audit;
+package acme.features.authenticated.audit;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -13,38 +13,46 @@ import org.springframework.stereotype.Service;
 import acme.entities.audits.Audit;
 import acme.entities.audits.AuditingRecord;
 import acme.entities.audits.Mark;
-import acme.framework.components.accounts.Principal;
+import acme.framework.components.accounts.Authenticated;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
-import acme.roles.Auditor;
 
 @Service
-public class AuditorAuditListMineService extends AbstractService<Auditor, Audit> {
+public class AuthenticatedAuditListService extends AbstractService<Authenticated, Audit> {
+
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AuditorAuditRepository repository;
+	protected AuthenticatedAuditRepository repository;
 
 	// AbstractService interface ----------------------------------------------
 
 
 	@Override
 	public void check() {
-		super.getResponse().setChecked(true);
+		boolean status;
+
+		status = super.getRequest().hasData("courseId", int.class);
+
+		super.getResponse().setChecked(status);
 	}
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status;
+
+		status = super.getRequest().getPrincipal().isAuthenticated();
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
 		Collection<Audit> objects;
-		Principal principal;
+		int courseId;
 
-		principal = super.getRequest().getPrincipal();
-		objects = this.repository.findManyAuditsByAuditorId(principal.getActiveRoleId());
+		courseId = super.getRequest().getData("courseId", int.class);
+		objects = this.repository.findManyAuditsByCourseId(courseId);
 
 		super.getBuffer().setData(objects);
 	}
@@ -88,7 +96,6 @@ public class AuditorAuditListMineService extends AbstractService<Auditor, Audit>
 			return aux.stream().filter(x -> x.getSecond() == mode).findAny().get().getFirst();
 
 		}
-
 	}
 
 }
