@@ -62,6 +62,10 @@ master.menu.user-account.become-assistant = Become an assistant
 master.menu.user-account.lecturer = Lecturer data
 master.menu.user-account.become-lecturer = Become a lecturer
 
+# master.menu.auditor ###################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.audits = Audits
 # master.menu.any ####################################################
 master.menu.any.course = Courses
 master.menu.any= Any
