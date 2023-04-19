@@ -54,6 +54,8 @@ public class AuditingRecord extends AbstractEntity {
 	@URL
 	protected String			moreInfo;
 
+	protected boolean			isCorrection;
+
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
