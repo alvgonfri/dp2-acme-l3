@@ -7,3 +7,11 @@
 # this software. It has been tested carefully, but it is not guaranteed for any particular
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
+
+authenticated.auditor.form.label.firm = Firma
+authenticated.auditor.form.label.professionalId = Identificación profesional
+authenticated.auditor.form.label.certifications = Certificaciones
+authenticated.auditor.form.label.moreInfo = Información adicional
+
+authenticated.auditor.form.button.create = Guardar
+authenticated.auditor.form.button.update = Actualiza
