@@ -14,4 +14,4 @@ authenticated.auditor.form.label.certifications = Certificaciones
 authenticated.auditor.form.label.moreInfo = Información adicional
 
 authenticated.auditor.form.button.create = Guardar
-authenticated.auditor.form.button.update = Actualizar
+authenticated.auditor.form.button.update = Actualiza

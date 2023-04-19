@@ -64,6 +64,11 @@ master.menu.user-account.become-lecturer = Hazte profesor
 master.menu.user-account.auditor = Datos del auditor
 master.menu.user-account.become-auditor = Hazte auditor
 
+# master.menu.auditor ###################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.audits = Auditorias
 # master.menu.any ####################################################
 master.menu.any.course = Cursos
 master.menu.any = Cualquiera
+
