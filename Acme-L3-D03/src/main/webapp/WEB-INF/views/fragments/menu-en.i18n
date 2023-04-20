@@ -48,6 +48,13 @@ master.menu.student.list-my-enrolments = List my enrolments
 master.menu.student.list-courses = List courses
 master.menu.student.dashboard = Dashboard
 
+
+# master.menu.assistant ########################################################
+master.menu.assistant = Assistant
+master.menu.assistant.list-my-tutorials= Tutorials
+
+
+
 # master.menu.user-account ####################################################
 master.menu.user-account = Account
 master.menu.user-account.general-data = General data

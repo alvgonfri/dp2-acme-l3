@@ -45,6 +45,8 @@ public class Tutorial extends AbstractEntity {
 	@Length(max = 100)
 	protected String			goals;
 
+	protected boolean			draftMode;
+
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------

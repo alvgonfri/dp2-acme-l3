@@ -48,6 +48,13 @@ master.menu.student.list-my-enrolments = Ver mis matrículas
 master.menu.student.list-courses = Ver cursos
 master.menu.student.dashboard = Panel de indicadores
 
+
+# master.menu.assistant ########################################################
+master.menu.assistant = Asistente
+master.menu.assistant.list-my-tutorials= Ver mis tutorías
+
+
+
 # master.menu.user-account ####################################################
 master.menu.user-account = Cuenta
 master.menu.user-account.general-data = Datos generales
