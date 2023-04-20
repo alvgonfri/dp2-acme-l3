@@ -8,6 +8,13 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+administrator.offer.form.label.moment = Instantiation moment
+administrator.offer.form.label.heading = Heading
+administrator.offer.form.label.startAvailable = Start Avalible
+administrator.offer.form.label.endAvailable = End Avalible
+administrator.offer.form.label.price = Price
+administrator.offer.form.label.moreInfo = More Info
+administrator.offer.form.label.summary = Summary
 
 administrator.offer.list.label.heading = Heading
 administrator.offer.list.label.startAvailable = Start Avalible
@@ -15,3 +22,12 @@ administrator.offer.list.label.endAvailable = End Avalible
 administrator.offer.list.label.price = Price
 administrator.offer.list.label.moreInfo = More Info
 administrator.offer.list.label.summary = Summary
+
+administrator.offer.list.button.create = New offer
+
+administrator.offer.form.button.create = Save
+administrator.offer.form.button.update = Update
+administrator.offer.form.button.delete = Delete
+
+administrator.offer.error.onedayfuture = Must be available at least 1 day after the current moment
+administrator.offer.error.oneweeklong = Must be available at least for 1 week

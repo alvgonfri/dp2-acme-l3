@@ -72,7 +72,7 @@ public class AdministratorOfferUpdateService extends AbstractService<Administrat
 
 			isValid = MomentHelper.isLongEnough(object.getMoment(), object.getStartAvailable(), 1, ChronoUnit.DAYS) && MomentHelper.isFuture(object.getStartAvailable());
 
-			super.state(isValid, "startAvailable", "Debe estar disponible al menos un dia despues del momento");
+			super.state(isValid, "startAvailable", "administrator.offer.error.onedayfuture");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("endAvailable") && !super.getBuffer().getErrors().hasErrors("startAvailable")) {
@@ -80,8 +80,8 @@ public class AdministratorOfferUpdateService extends AbstractService<Administrat
 
 			isValid = MomentHelper.isLongEnough(object.getStartAvailable(), object.getEndAvailable(), 1, ChronoUnit.WEEKS);
 
-			super.state(isValid, "startAvailable", "Debe estar disponible al menos durante una semana");
-			super.state(isValid, "endAvailable", "Debe estar disponible al menos durante una semana");
+			super.state(isValid, "startAvailable", "administrator.offer.error.oneweeklong");
+			super.state(isValid, "endAvailable", "administrator.offer.error.oneweeklong");
 		}
 	}
 

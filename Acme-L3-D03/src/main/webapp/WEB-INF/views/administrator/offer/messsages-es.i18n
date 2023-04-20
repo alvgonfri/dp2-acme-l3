@@ -8,6 +8,13 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+administrator.offer.form.label.moment = Momento de instanciación
+administrator.offer.form.label.heading = Título
+administrator.offer.form.label.startAvailable = Comienzo de disponibilidad
+administrator.offer.form.label.endAvailable = Fin de disponibilidad
+administrator.offer.form.label.price = Precio
+administrator.offer.form.label.moreInfo = Más información
+administrator.offer.form.label.summary = Resumen
 
 administrator.offer.list.label.heading = Título
 administrator.offer.list.label.startAvailable = Comienzo de disponibilidad
@@ -15,3 +22,12 @@ administrator.offer.list.label.endAvailable = Fin de disponibilidad
 administrator.offer.list.label.price = Precio
 administrator.offer.list.label.moreInfo = Más información
 administrator.offer.list.label.summary = Resumen
+
+administrator.offer.list.button.create = Nueva oferta
+
+administrator.offer.form.button.create = Guardar
+administrator.offer.form.button.update = Actualizar
+administrator.offer.form.button.delete = Eliminar
+
+administrator.offer.error.onedayfuture = Debe estar disponible al menos 1 día despues del momento actual
+administrator.offer.error.oneweeklong = Debe estar disponible al menos durante 1 semana

@@ -17,18 +17,18 @@
 
 <acme:form>
 
-	<acme:input-textbox code="administrator.offer.list.label.heading" path="moment" readonly="true"/>
-	<acme:input-textbox code="administrator.offer.list.label.heading" path="heading" />
-	<acme:input-textbox code="administrator.offer.list.label.summary" path="summary" />
-	<acme:input-moment code="administrator.offer.list.label.startAvailable" path="startAvailable" />
-	<acme:input-moment code="administrator.offer.list.label.endAvailable" path="endAvailable" />
-	<acme:input-money code="administrator.offer.list.label.price" path="price" />
-	<acme:input-url code="administrator.offer.list.label.moreInfo" path="moreInfo"/>
+	<acme:input-textbox code="administrator.offer.form.label.moment" path="moment" readonly="true"/>
+	<acme:input-textbox code="administrator.offer.form.label.heading" path="heading" />
+	<acme:input-textbox code="administrator.offer.form.label.summary" path="summary" />
+	<acme:input-moment code="administrator.offer.form.label.startAvailable" path="startAvailable" />
+	<acme:input-moment code="administrator.offer.form.label.endAvailable" path="endAvailable" />
+	<acme:input-money code="administrator.offer.form.label.price" path="price" />
+	<acme:input-url code="administrator.offer.form.label.moreInfo" path="moreInfo"/>
 	
 	<jstl:choose>
 	<jstl:when test="${acme:anyOf(_command, 'show|update|delete')}">
-			<acme:submit code="employer.job.form.button.update" action="/administrator/offer/update"/>
-			<acme:submit code="employer.job.form.button.delete" action="/administrator/offer/delete"/>
+			<acme:submit code="administrator.offer.form.button.update" action="/administrator/offer/update"/>
+			<acme:submit code="administrator.offer.form.button.delete" action="/administrator/offer/delete"/>
 		</jstl:when>
 	<jstl:when test="${_command == 'create'}">
 			<acme:submit code="administrator.offer.form.button.create" action="/administrator/offer/create"/>
