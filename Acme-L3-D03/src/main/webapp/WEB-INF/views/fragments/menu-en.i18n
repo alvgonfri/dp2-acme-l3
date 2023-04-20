@@ -69,6 +69,8 @@ master.menu.user-account.become-auditor = Become an auditor
 
 master.menu.auditor = Auditor
 master.menu.auditor.audits = Audits
+
 # master.menu.any ####################################################
 master.menu.any.course = Courses
+master.menu.any.peep = Peeps
 master.menu.any= Any
