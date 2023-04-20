@@ -26,17 +26,20 @@ import acme.roles.Company;
 @Repository
 public interface CompanyPracticumRepository extends AbstractRepository {
 
+	@Query("Select p from Practicum p where p.id = :id")
+	Practicum findOnePracticumById(int id);
+
+	@Query("select p from Practicum p where p.code = :code")
+	Practicum findPracticumByCode(String code);
+
 	@Query("Select p from Practicum p where p.course.id = :id")
-	Collection<Practicum> findPracticaByCourseId(int id);
+	Collection<Practicum> findPracticumByCourseId(int id);
 
 	@Query("Select p from Practicum p where p.company.id = :id")
-	Collection<Practicum> findPracticaByCompanyId(int id);
+	Collection<Practicum> findPracticumByCompanyId(int id);
 
-	@Query("Select s from PracticumSession s where s.practicum.id = :id")
-	Collection<PracticumSession> findSessionsByPracticumId(int id);
-
-	@Query("Select p from Practicum p where p.id = :id")
-	Practicum findOnePracticaById(int id);
+	@Query("Select ps from PracticumSession ps where ps.practicum.id = :id")
+	Collection<PracticumSession> findPracticumSessionsByPracticumId(int id);
 
 	@Query("Select c from Course c where c.id = :id")
 	Course findOneCourseById(int id);
@@ -49,10 +52,4 @@ public interface CompanyPracticumRepository extends AbstractRepository {
 
 	@Query("Select c from Company c where c.id = :id")
 	Company findOneCompanyById(int id);
-
-	@Query("Select s from PracticumSession s where s.practicum.id = :id")
-	Collection<PracticumSession> findAllSessionsByPracticumId(int id);
-
-	@Query("select p from Practicum p where p.code = :code")
-	Practicum findPracticumByCode(String code);
 }

@@ -53,7 +53,7 @@ public class CompanyPracticumPublishService extends AbstractService<Company, Pra
 		Company company;
 
 		practicumId = super.getRequest().getData("id", int.class);
-		practicum = this.repository.findOnePracticaById(practicumId);
+		practicum = this.repository.findOnePracticumById(practicumId);
 		company = practicum == null ? null : practicum.getCompany();
 		status = practicum != null && practicum.isDraftMode() && super.getRequest().getPrincipal().hasRole(company);
 
@@ -66,7 +66,7 @@ public class CompanyPracticumPublishService extends AbstractService<Company, Pra
 		int id;
 
 		id = super.getRequest().getData("id", int.class);
-		object = this.repository.findOnePracticaById(id);
+		object = this.repository.findOnePracticumById(id);
 
 		super.getBuffer().setData(object);
 	}
@@ -98,7 +98,7 @@ public class CompanyPracticumPublishService extends AbstractService<Company, Pra
 		assert object != null;
 		object.setDraftMode(false);
 
-		final Collection<PracticumSession> sessions = this.repository.findSessionsByPracticumId(object.getId());
+		final Collection<PracticumSession> sessions = this.repository.findPracticumSessionsByPracticumId(object.getId());
 		for (final PracticumSession s : sessions) {
 			s.setDraftMode(false);
 			this.repository.save(s);
@@ -110,16 +110,25 @@ public class CompanyPracticumPublishService extends AbstractService<Company, Pra
 	@Override
 	public void unbind(final Practicum object) {
 		assert object != null;
-		final Collection<Course> courses;
-		final SelectChoices choices;
+
+		Collection<Course> courses;
+		SelectChoices choices;
+		Collection<PracticumSession> sessions;
+		Double estimatedTime;
+		Tuple tuple;
+
+		sessions = this.repository.findPracticumSessionsByPracticumId(object.getId());
+		estimatedTime = 0.;
+		if (!sessions.isEmpty())
+			estimatedTime = object.estimatedTime(sessions);
 
 		courses = this.repository.findAllCourses();
 		choices = SelectChoices.from(courses, "code", object.getCourse());
-		Tuple tuple;
 
-		tuple = super.unbind(object, "code", "title", "summary", "goals", "estimatedTime", "draftMode");
+		tuple = super.unbind(object, "code", "title", "summary", "goals", "draftMode");
 		tuple.put("course", choices.getSelected().getKey());
 		tuple.put("courses", choices);
+		tuple.put("estimatedTime", estimatedTime);
 
 		super.getResponse().setData(tuple);
 	}

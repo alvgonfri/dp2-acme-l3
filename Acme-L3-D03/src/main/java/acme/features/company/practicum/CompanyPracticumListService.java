@@ -51,7 +51,7 @@ public class CompanyPracticumListService extends AbstractService<Company, Practi
 		int companyId;
 
 		companyId = super.getRequest().getPrincipal().getActiveRoleId();
-		object = this.repository.findPracticaByCompanyId(companyId);
+		object = this.repository.findPracticumByCompanyId(companyId);
 
 		super.getBuffer().setData(object);
 	}
@@ -62,7 +62,7 @@ public class CompanyPracticumListService extends AbstractService<Company, Practi
 
 		final Collection<PracticumSession> sessions;
 
-		sessions = this.repository.findSessionsByPracticumId(object.getId());
+		sessions = this.repository.findPracticumSessionsByPracticumId(object.getId());
 		final Double estimatedTime = object.estimatedTime(sessions);
 
 		Tuple tuple;

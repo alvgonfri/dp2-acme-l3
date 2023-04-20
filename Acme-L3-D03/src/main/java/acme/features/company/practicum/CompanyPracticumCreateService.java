@@ -103,7 +103,7 @@ public class CompanyPracticumCreateService extends AbstractService<Company, Prac
 		Double estimatedTime;
 		Tuple tuple;
 
-		sessions = this.repository.findAllSessionsByPracticumId(object.getId());
+		sessions = this.repository.findPracticumSessionsByPracticumId(object.getId());
 		estimatedTime = 0.;
 		if (!sessions.isEmpty())
 			estimatedTime = object.estimatedTime(sessions);
