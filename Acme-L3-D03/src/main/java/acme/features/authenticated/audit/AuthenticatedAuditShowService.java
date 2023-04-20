@@ -18,7 +18,6 @@ import acme.framework.components.accounts.Authenticated;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
-import acme.roles.Auditor;
 
 @Service
 public class AuthenticatedAuditShowService extends AbstractService<Authenticated, Audit> {
@@ -43,14 +42,8 @@ public class AuthenticatedAuditShowService extends AbstractService<Authenticated
 	@Override
 	public void authorise() {
 		boolean status;
-		int masterId;
-		Audit audit;
-		Auditor auditor;
 
-		masterId = super.getRequest().getData("id", int.class);
-		audit = this.repository.findOneAuditById(masterId);
-		auditor = audit == null ? null : audit.getAuditor();
-		status = super.getRequest().getPrincipal().hasRole(auditor);
+		status = super.getRequest().getPrincipal().isAuthenticated();
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -83,7 +76,7 @@ public class AuthenticatedAuditShowService extends AbstractService<Authenticated
 		tuple = super.unbind(object, "code", "conclusion", "strongPoints", "weakPoints", "draftMode");
 		tuple.put("course", choices.getSelected().getKey());
 		tuple.put("courses", choices);
-		tuple.put("auditor", object.getAuditor());
+		tuple.put("auditor", object.getAuditor().getIdentity().getFullName());
 		if (this.repository.findManyAuditingRecordsByAuditId(object.getId()).isEmpty())
 			tuple.put("mark", "-");
 		else

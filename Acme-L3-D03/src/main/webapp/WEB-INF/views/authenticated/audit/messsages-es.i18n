@@ -8,11 +8,16 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.bulletin.list.label.title=Título
-authenticated.bulletin.list.label.message=Mensaje
-authenticated.bulletin.list.label.moment=Momento
-authenticated.bulletin.form.label.title=Título
-authenticated.bulletin.form.label.message=Mensaje
-authenticated.bulletin.form.label.critical=Crítico
-authenticated.bulletin.form.label.moreInfo=Link para más información
-authenticated.bulletin.form.label.moment=Momento
+authenticated.audit.list.label.code = Código
+authenticated.audit.list.label.course = Curso
+authenticated.audit.list.label.mark = Calificación
+
+authenticated.audit.form.label.mark = Calificación
+authenticated.audit.form.label.code = Código
+authenticated.audit.form.label.conclusion = Conclusión
+authenticated.audit.form.label.strong-points = Puntos fuertes
+authenticated.audit.form.label.weak-points = Puntos débiles
+authenticated.audit.form.label.course = Curso
+authenticated.audit.form.label.mark = Calificación
+authenticated.audit.form.label.course = Curso
+authenticated.audit.form.label.auditor = Auditor

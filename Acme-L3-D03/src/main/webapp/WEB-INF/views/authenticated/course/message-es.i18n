@@ -18,3 +18,5 @@ authenticated.course.form.label.summary = Resumen
 authenticated.course.form.label.retailPrice = Precio
 authenticated.course.form.label.moreInfo = Información adicional
 authenticated.course.form.label.lecturer = Profesor
+
+authenticated.course.form.button.audit = Auditorías

@@ -20,3 +20,5 @@ authenticated.course.form.label.summary = Summary
 authenticated.course.form.label.retailPrice = Price
 authenticated.course.form.label.moreInfo = More information
 authenticated.course.form.label.lecturer = Lecturer
+
+authenticated.course.form.button.audit = Audits
