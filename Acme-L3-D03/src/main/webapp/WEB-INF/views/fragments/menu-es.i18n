@@ -32,6 +32,7 @@ master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.banners = Ver todos los banners
 master.menu.administrator.shut-down = Parar el sistema
 master.menu.administrator.system-configuration = Configuración del sistema
+master.menu.administrator.create-bulletin = Crear boletín
 
 # master.menu.authenticated ########################################################
 master.menu.authenticated = Autentificado
