@@ -20,6 +20,7 @@ import org.springframework.stereotype.Service;
 import acme.entities.peeps.Peep;
 import acme.framework.components.accounts.Any;
 import acme.framework.components.accounts.Principal;
+import acme.framework.components.accounts.UserAccount;
 import acme.framework.components.models.Tuple;
 import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
@@ -46,19 +47,23 @@ public class AnyPeepCreateService extends AbstractService<Any, Peep> {
 	@Override
 	public void load() {
 		Peep object;
+		Date moment;
 		Principal principal;
 		String nick;
-		Date moment;
+		UserAccount userAccount;
 
 		moment = MomentHelper.getCurrentMoment();
-		object = new Peep();
-		object.setMoment(moment);
 		principal = super.getRequest().getPrincipal();
-
-		if (principal.isAuthenticated()) {
-			nick = principal.getUsername();
-			object.setNick(nick);
+		if (principal.isAnonymous())
+			nick = "";
+		else {
+			userAccount = this.repository.findOneUserAccountById(principal.getAccountId());
+			nick = userAccount.getIdentity().getName() + " " + userAccount.getIdentity().getSurname();
 		}
+
+		object = new Peep();
+		object.setNick(nick);
+		object.setMoment(moment);
 
 		super.getBuffer().setData(object);
 	}
