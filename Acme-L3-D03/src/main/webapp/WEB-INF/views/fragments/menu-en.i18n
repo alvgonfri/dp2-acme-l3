@@ -29,13 +29,25 @@ master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.user-accounts = User accounts
 master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
+master.menu.administrator.banners = List all banners
 master.menu.administrator.shut-down = Shut down
 master.menu.administrator.offers = Offers
+master.menu.administrator.system-configuration = System Configuration
 
 # master.menu.authenticated ########################################################
 master.menu.authenticated = Authenticated
 master.menu.authenticated.notes = List recent notes
 master.menu.authenticated.offers = List offers
+master.menu.authenticated.company.update = Company data
+master.menu.authenticated.company.create = Become a company
+master.menu.authenticated = Authenticated
+master.menu.authenticated.bulletins = Bulletins
+
+# master.menu.student ########################################################
+master.menu.student = Student
+master.menu.student.list-my-enrolments = List my enrolments
+master.menu.student.list-courses = List courses
+master.menu.student.dashboard = Dashboard
 
 # master.menu.user-account ####################################################
 master.menu.user-account = Account
@@ -48,7 +60,16 @@ master.menu.user-account.student = Student data
 master.menu.user-account.become-student = Become a student
 master.menu.user-account.assistant = Assistant data
 master.menu.user-account.become-assistant = Become an assistant
-master.menu.authenticated.company.update = Company data
-master.menu.authenticated.company.create = Become a company
 master.menu.user-account.lecturer = Lecturer data
 master.menu.user-account.become-lecturer = Become a lecturer
+master.menu.user-account.auditor = Auditor data
+master.menu.user-account.become-auditor = Become an auditor
+
+
+# master.menu.auditor ###################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.audits = Audits
+# master.menu.any ####################################################
+master.menu.any.course = Courses
+master.menu.any= Any

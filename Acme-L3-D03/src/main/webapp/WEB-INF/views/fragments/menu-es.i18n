@@ -29,13 +29,25 @@ master.menu.administrator.dashboard = Panel de indicadores
 master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
+master.menu.administrator.banners = Ver todos los banners
 master.menu.administrator.shut-down = Parar el sistema
 master.menu.administrator.offers = Ofertas
+master.menu.administrator.system-configuration = Configuración del sistema
 
 # master.menu.authenticated ########################################################
 master.menu.authenticated = Autentificado
 master.menu.authenticated.notes = Ver notas recientes
 master.menu.authenticated.offers = Ver ofertas
+master.menu.authenticated.company.update = Datos de empresa
+master.menu.authenticated.company.create = Hazte empresa
+master.menu.authenticated = Autenticado
+master.menu.authenticated.bulletins = Boletínes
+
+# master.menu.student ########################################################
+master.menu.student = Estudiante
+master.menu.student.list-my-enrolments = Ver mis matrículas
+master.menu.student.list-courses = Ver cursos
+master.menu.student.dashboard = Panel de indicadores
 
 # master.menu.user-account ####################################################
 master.menu.user-account = Cuenta
@@ -48,9 +60,16 @@ master.menu.user-account.student = Datos de estudiante
 master.menu.user-account.become-student = Hazte estudiante
 master.menu.user-account.assistant = Datos de asistente
 master.menu.user-account.become-assistant = Hazte asistente
-master.menu.authenticated.company.update = Datos de empresa
-master.menu.authenticated.company.create = Hazte empresa
 master.menu.user-account.lecturer = Datos del profesor
 master.menu.user-account.become-lecturer = Hazte profesor
+master.menu.user-account.auditor = Datos del auditor
+master.menu.user-account.become-auditor = Hazte auditor
 
+# master.menu.auditor ###################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.audits = Auditorias
+# master.menu.any ####################################################
+master.menu.any.course = Cursos
+master.menu.any = Cualquiera
 
