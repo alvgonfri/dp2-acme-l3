@@ -21,10 +21,12 @@
 	<acme:input-textbox code="company.practicum.form.label.title" path="title"/>
 	<acme:input-textarea code="company.practicum.form.label.summary" path="summary"/>
 	<acme:input-textarea code="company.practicum.form.label.goals" path="goals"/>
+	<acme:input-textbox code="company.practicum.form.label.estimatedTime" path="estimatedTime" readonly = "true"/>
 	
+	<acme:button code="company.practicum.form.button.session.list" action="/company/practicum-session/list?practicumId=${id}"/>
+
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
-			<acme:input-textbox code="company.practicum.form.label.estimatedTime" path="estimatedTime" readonly = "true"/>
 			<acme:submit code="company.practicum.form.button.update" action="/company/practicum/update"/>
 			<acme:submit code="company.practicum.form.button.delete" action="/company/practicum/delete"/>
 			<acme:submit code="company.practicum.form.button.publish" action="/company/practicum/publish"/>
@@ -36,4 +38,3 @@
 	
 </acme:form>
 
-<acme:button code="company.practicum.form.button.session.list" action="/company/session/list?practicumId=${id}"/>
