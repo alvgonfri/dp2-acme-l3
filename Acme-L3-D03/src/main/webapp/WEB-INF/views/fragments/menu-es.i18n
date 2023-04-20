@@ -41,6 +41,7 @@ master.menu.authenticated.company.update = Datos de empresa
 master.menu.authenticated.company.create = Hazte empresa
 master.menu.authenticated = Autenticado
 master.menu.authenticated.bulletins = Boletínes
+master.menu.authenticated.course = Cursos
 
 # master.menu.student ########################################################
 master.menu.student = Estudiante

@@ -13,12 +13,15 @@ import org.springframework.stereotype.Service;
 import acme.entities.audits.Audit;
 import acme.entities.audits.AuditingRecord;
 import acme.entities.audits.Mark;
+import acme.entities.courses.Course;
 import acme.framework.components.accounts.Authenticated;
+import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
+import acme.roles.Auditor;
 
 @Service
-public class AuthenticatedAuditListService extends AbstractService<Authenticated, Audit> {
+public class AuthenticatedAuditShowService extends AbstractService<Authenticated, Audit> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -32,7 +35,7 @@ public class AuthenticatedAuditListService extends AbstractService<Authenticated
 	public void check() {
 		boolean status;
 
-		status = super.getRequest().hasData("courseId", int.class);
+		status = super.getRequest().hasData("id", int.class);
 
 		super.getResponse().setChecked(status);
 	}
@@ -40,21 +43,27 @@ public class AuthenticatedAuditListService extends AbstractService<Authenticated
 	@Override
 	public void authorise() {
 		boolean status;
+		int masterId;
+		Audit audit;
+		Auditor auditor;
 
-		status = super.getRequest().getPrincipal().isAuthenticated();
+		masterId = super.getRequest().getData("id", int.class);
+		audit = this.repository.findOneAuditById(masterId);
+		auditor = audit == null ? null : audit.getAuditor();
+		status = super.getRequest().getPrincipal().hasRole(auditor);
 
 		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
-		Collection<Audit> objects;
-		int courseId;
+		Audit object;
+		int id;
 
-		courseId = super.getRequest().getData("courseId", int.class);
-		objects = this.repository.findManyPublishedAuditsByCourseId(courseId);
+		id = super.getRequest().getData("id", int.class);
+		object = this.repository.findOneAuditById(id);
 
-		super.getBuffer().setData(objects);
+		super.getBuffer().setData(object);
 	}
 
 	@Override
@@ -62,11 +71,19 @@ public class AuthenticatedAuditListService extends AbstractService<Authenticated
 		assert object != null;
 
 		Tuple tuple;
+		Collection<Course> courses;
+		SelectChoices choices;
 		Mark auditMark;
 
 		auditMark = this.getAuditMark(object.getId());
 
-		tuple = super.unbind(object, "code", "conclusion", "course.title");
+		courses = this.repository.findAllCourses();
+		choices = SelectChoices.from(courses, "code", object.getCourse());
+
+		tuple = super.unbind(object, "code", "conclusion", "strongPoints", "weakPoints", "draftMode");
+		tuple.put("course", choices.getSelected().getKey());
+		tuple.put("courses", choices);
+		tuple.put("auditor", object.getAuditor());
 		if (this.repository.findManyAuditingRecordsByAuditId(object.getId()).isEmpty())
 			tuple.put("mark", "-");
 		else

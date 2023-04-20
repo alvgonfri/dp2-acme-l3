@@ -7,15 +7,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.courses.Course;
-import acme.framework.components.accounts.Any;
+import acme.framework.components.accounts.Authenticated;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 
 @Service
-public class AnyCourseListAllService extends AbstractService<Any, Course> {
+public class AuthenticatedCourseListAllService extends AbstractService<Authenticated, Course> {
 
 	@Autowired
-	protected AnyCourseRepository repository;
+	protected AuthenticatedCourseRepository repository;
 
 
 	@Override
