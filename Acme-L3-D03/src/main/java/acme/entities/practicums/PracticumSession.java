@@ -48,6 +48,10 @@ public class PracticumSession extends AbstractEntity {
 	@URL
 	protected String			link;
 
+	boolean						draftMode;
+
+	boolean						addendum;
+
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
