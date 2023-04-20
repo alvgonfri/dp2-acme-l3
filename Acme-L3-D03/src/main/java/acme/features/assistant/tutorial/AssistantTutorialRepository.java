@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import acme.entities.courses.Course;
 import acme.entities.enrolments.Enrolment;
 import acme.entities.tutorial.Tutorial;
+import acme.entities.tutorial.TutorialSession;
 import acme.framework.repositories.AbstractRepository;
 import acme.roles.Assistant;
 
@@ -30,7 +31,9 @@ public interface AssistantTutorialRepository extends AbstractRepository {
 	@Query("select c from Course c where c.id = :id")
 	Course findOneCourseById(int id);
 
-	@Query("select e from Enrolment e where e.code = :code")
+	@Query("select e from Tutorial e where e.code = :code")
 	Enrolment findOneTutorialByCode(String code);
 
+	@Query("select a from TutorialSession a where a.tutorial.id = :tutorialId")
+	Collection<TutorialSession> findTutorialSessionByTutorialId(int tutorialId);
 }

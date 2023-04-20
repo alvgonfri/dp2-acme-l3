@@ -1,26 +1,27 @@
 
 package acme.features.assistant.tutorial;
 
-import java.time.Duration;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.courses.Course;
+import acme.entities.enrolments.Enrolment;
 import acme.entities.tutorial.Tutorial;
-import acme.entities.tutorial.TutorialSession;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
-import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Assistant;
 
 @Service
-public class AssistantTutorialShowService extends AbstractService<Assistant, Tutorial> {
+public class AssistantTutorialUpdateService extends AbstractService<Assistant, Tutorial> {
+	// Internal state ---------------------------------------------------------
 
 	@Autowired
 	protected AssistantTutorialRepository repository;
+
+	// AbstractService interface ----------------------------------------------
 
 
 	@Override
@@ -42,7 +43,7 @@ public class AssistantTutorialShowService extends AbstractService<Assistant, Tut
 		masterId = super.getRequest().getData("id", int.class);
 		tutorial = this.repository.findOneTutorialById(masterId);
 		assistant = tutorial == null ? null : tutorial.getAssistant();
-		status = super.getRequest().getPrincipal().hasRole(assistant);
+		status = tutorial != null && tutorial.isDraftMode() && super.getRequest().getPrincipal().hasRole(assistant);
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -59,37 +60,62 @@ public class AssistantTutorialShowService extends AbstractService<Assistant, Tut
 	}
 
 	@Override
+	public void bind(final Tutorial object) {
+		assert object != null;
+
+		final int LOWER_NIBBLE_START = 12;
+
+		int courseId;
+		Course course;
+
+		courseId = super.getRequest().getData("course", int.class);
+		course = this.repository.findOneCourseById(courseId);
+
+		super.bind(object, "code", "title", "summary", "goals");
+		object.setCourse(course);
+		//			if (creditCardNumber.length() == 16) {
+		//				creditCardLowerNibble = creditCardNumber.substring(LOWER_NIBBLE_START);
+		//				object.setCreditCardLowerNibble(creditCardLowerNibble);
+		//			}
+	}
+
+	@Override
+	public void validate(final Tutorial object) {
+		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			Enrolment existing;
+
+			existing = this.repository.findOneTutorialByCode(object.getCode());
+			super.state(existing == null || existing.equals(object), "code", "student.tutorial.form.error.code-duplicated");
+		}
+
+	}
+
+	@Override
+	public void perform(final Tutorial object) {
+		assert object != null;
+
+		this.repository.save(object);
+	}
+
+	@Override
 	public void unbind(final Tutorial object) {
 		assert object != null;
 
-		Tuple tuple;
-		int workTime;
 		Collection<Course> courses;
 		SelectChoices choices;
+
+		Tuple tuple;
 
 		courses = this.repository.findPublishedCourses();
 		choices = SelectChoices.from(courses, "title", object.getCourse());
 
-		workTime = this.getWorkTime(object.getId());
-
 		tuple = super.unbind(object, "code", "title", "summary", "goals", "draftMode");
-		//tuple.put("workTime", workTime);
 		tuple.put("course", choices.getSelected().getKey());
 		tuple.put("courses", choices);
 
 		super.getResponse().setData(tuple);
 	}
 
-	// Aux --------------------------------------------------------------------
-
-	private int getWorkTime(final int tutorialId) {
-		int result = 0;
-		final Collection<TutorialSession> sessions = this.repository.findTutorialSessionByTutorialId(tutorialId);
-		for (final TutorialSession session : sessions) {
-			final Duration duration = MomentHelper.computeDuration(session.getStartDate(), session.getEndDate());
-			final int diffInHours = (int) duration.toHours();
-			result += diffInHours;
-		}
-		return result;
-	}
 }

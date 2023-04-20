@@ -18,3 +18,5 @@ assistant.tutorial.button.create = Create new tutorial
 assistant.tutorial.list.label.summary = Summary
 assistant.tutorial.list.label.goals= Goals
 student.tutorial.form.error.code-duplicated= The code already exist
+assistant.tutorial.button.delete=  Delete
+assistant.tutorial.button.update = Update
