@@ -12,9 +12,7 @@
 
 package acme.features.company.practicum;
 
-import java.time.Duration;
 import java.util.Collection;
-import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,27 +20,22 @@ import org.springframework.stereotype.Service;
 import acme.entities.courses.Course;
 import acme.entities.practicums.Practicum;
 import acme.entities.practicums.PracticumSession;
-import acme.framework.components.accounts.Principal;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
-import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Company;
 
 @Service
 public class CompanyPracticumPublishService extends AbstractService<Company, Practicum> {
 
-	// Constants -------------------------------------------------------------
-	protected static final String[]			PROPERTIES	= {
-		"code", "title", "summary", "goals", "estimatedTime"
-	};
-
 	// Internal state ---------------------------------------------------------
-	@Autowired
-	protected CompanyPracticumRepository	repository;
 
+	@Autowired
+	protected CompanyPracticumRepository repository;
 
 	// AbstractService interface ----------------------------------------------
+
+
 	@Override
 	public void check() {
 		boolean status;
@@ -58,115 +51,75 @@ public class CompanyPracticumPublishService extends AbstractService<Company, Pra
 		int practicumId;
 		Practicum practicum;
 		Company company;
-		Principal principal;
 
-		principal = super.getRequest().getPrincipal();
 		practicumId = super.getRequest().getData("id", int.class);
-		practicum = this.repository.findPracticumById(practicumId);
+		practicum = this.repository.findOnePracticaById(practicumId);
 		company = practicum == null ? null : practicum.getCompany();
-		status = practicum != null && practicum.isDraftMode() && principal.hasRole(company);
+		status = practicum != null && practicum.isDraftMode() && super.getRequest().getPrincipal().hasRole(company);
 
 		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
-		Practicum practicum;
-		int practicumId;
+		Practicum object;
+		int id;
 
-		practicumId = super.getRequest().getData("id", int.class);
-		practicum = this.repository.findPracticumById(practicumId);
+		id = super.getRequest().getData("id", int.class);
+		object = this.repository.findOnePracticaById(id);
 
-		super.getBuffer().setData(practicum);
+		super.getBuffer().setData(object);
 	}
 
 	@Override
-	public void bind(final Practicum practicum) {
-		assert practicum != null;
+	public void bind(final Practicum object) {
+		assert object != null;
 
 		int courseId;
 		Course course;
 
 		courseId = super.getRequest().getData("course", int.class);
-		course = this.repository.findCourseById(courseId);
+		course = this.repository.findOneCourseById(courseId);
 
-		super.bind(practicum, CompanyPracticumPublishService.PROPERTIES);
-		practicum.setCourse(course);
+		super.bind(object, "code", "title", "summary", "goals", "estimatedTime");
+
+		object.setCourse(course);
+
 	}
 
 	@Override
-	public void validate(final Practicum practicum) {
-		assert practicum != null;
+	public void validate(final Practicum object) {
+		assert object != null;
 
-		if (!super.getBuffer().getErrors().hasErrors("code")) {
-			boolean isUnique;
-			boolean noChangeCode;
-			Practicum oldPracticum;
-			int practicumId;
+	}
 
-			practicumId = super.getRequest().getData("id", int.class);
-			oldPracticum = this.repository.findPracticumById(practicumId);
-			isUnique = this.repository.findPracticumByCode(practicum.getCode()).isEmpty();
-			noChangeCode = oldPracticum.getCode().equals(practicum.getCode()) && oldPracticum.getId() == practicum.getId();
+	@Override
+	public void perform(final Practicum object) {
+		assert object != null;
+		object.setDraftMode(false);
 
-			super.state(isUnique || noChangeCode, "code", "company.practicum.form.error.not-unique-code");
+		final Collection<PracticumSession> sessions = this.repository.findSessionsByPracticumId(object.getId());
+		for (final PracticumSession s : sessions) {
+			s.setDraftMode(false);
+			this.repository.save(s);
 		}
 
-		// Únicamente se deberá de comprobar que el tiempo estimado es correcto cuando se va a publicar.
-		if (!super.getBuffer().getErrors().hasErrors("estimatedTime")) {
-			Collection<PracticumSession> sessions;
-			final double estimatedTime;
-			double totalHours;
-			// Menos de 10% de diferencia entre el tiempo estimado y el tiempo real.
-			boolean moreThan90Percent;
-			boolean lessThan110Percent;
-
-			sessions = this.repository.findPracticumSessionsByPracticumId(practicum.getId());
-			estimatedTime = practicum.estimatedTime(sessions);
-
-			totalHours = sessions.stream().mapToDouble(session -> {
-				Date start;
-				Date end;
-				Duration duration;
-
-				start = session.getStartDate();
-				end = session.getEndDate();
-				duration = MomentHelper.computeDuration(start, end);
-
-				return duration.toHours();
-			}).sum();
-
-			moreThan90Percent = totalHours >= estimatedTime * 0.9;
-			lessThan110Percent = totalHours <= estimatedTime * 1.1;
-
-			super.state(moreThan90Percent && lessThan110Percent, "estimatedTime", "company.practicum.form.error.not-in-range");
-		}
+		this.repository.save(object);
 	}
 
 	@Override
-	public void perform(final Practicum practicum) {
-		assert practicum != null;
-
-		practicum.setDraftMode(false);
-
-		this.repository.save(practicum);
-	}
-
-	@Override
-	public void unbind(final Practicum practicum) {
-		assert practicum != null;
-
-		Collection<Course> courses;
-		SelectChoices choices;
-		Tuple tuple;
+	public void unbind(final Practicum object) {
+		assert object != null;
+		final Collection<Course> courses;
+		final SelectChoices choices;
 
 		courses = this.repository.findAllCourses();
-		choices = SelectChoices.from(courses, "title", practicum.getCourse());
+		choices = SelectChoices.from(courses, "code", object.getCourse());
+		Tuple tuple;
 
-		tuple = super.unbind(practicum, CompanyPracticumPublishService.PROPERTIES);
-		tuple.put("draftMode", practicum.isDraftMode());
-		tuple.put("course", choices);
-		tuple.put("courses", courses);
+		tuple = super.unbind(object, "code", "title", "summary", "goals", "estimatedTime", "draftMode");
+		tuple.put("course", choices.getSelected().getKey());
+		tuple.put("courses", choices);
 
 		super.getResponse().setData(tuple);
 	}

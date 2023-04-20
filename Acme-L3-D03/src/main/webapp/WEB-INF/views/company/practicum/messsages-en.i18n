@@ -8,30 +8,26 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-# Messages for label in form
-company.practicum.form.label.code = Code
-company.practicum.form.label.course = Course
-company.practicum.form.label.title = Title
-company.practicum.form.label.abstractPracticum = Abstract
-company.practicum.form.label.goals = Goals
-company.practicum.form.label.estimatedTime = Time
+company.practicum.list.label.code = Code
+company.practicum.list.label.title = Title
+company.practicum.list.label.summary = Abstract
+company.practicum.list.label.goals = Goals
+company.practicum.list.label.estimatedTime = Estimated time (in hours)
 
-# Messages for button in form
-company.practicum.form.button.sessionPracticum = Session practicums
+company.practicum.list.button.create = Create a practicum
+
+company.practicum.form.error.duplicated = This code is taken
+company.practicum.form.label.code = Code
+company.practicum.form.label.title = Title
+company.practicum.form.label.summary = Abstract
+company.practicum.form.label.goals = Goals
+company.practicum.form.label.estimatedTime = Estimated time (in hours) (+-10%)
+company.practicum.form.label.company.name = Company Name
+company.practicum.form.label.course = Course
+
 company.practicum.form.button.update = Update
 company.practicum.form.button.delete = Delete
 company.practicum.form.button.publish = Publish
 company.practicum.form.button.create = Create
 
-# Messages for label in list
-company.practicum.list.label.code = Code
-company.practicum.list.label.title = Title
-company.practicum.list.label.summary = Abstract
-company.practicum.list.label.estimatedTime = Estimated time
-
-# Messages for button in list
-company.practicum.list.button.create = Create practicum
-
-# Messages for error in form
-company.practicum.form.error.not-in-range = The estimated time in hours must be between the real value per 0.9 and the real value per 1.1
-company.practicum.form.error.not-unique-code = The code must be unique
+company.practicum.form.button.session.list = View sessions

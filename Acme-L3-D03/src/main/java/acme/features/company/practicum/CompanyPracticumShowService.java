@@ -19,7 +19,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.courses.Course;
 import acme.entities.practicums.Practicum;
-import acme.framework.components.accounts.Principal;
+import acme.entities.practicums.PracticumSession;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
@@ -27,18 +27,14 @@ import acme.roles.Company;
 
 @Service
 public class CompanyPracticumShowService extends AbstractService<Company, Practicum> {
-
-	// Constants -------------------------------------------------------------
-	protected static final String[]		PROPERTIES	= {
-		"code", "title", "summary", "goals", "estimatedTime", "draftMode"
-	};
-
 	// Internal state ---------------------------------------------------------
-	@Autowired
-	private CompanyPracticumRepository	repository;
 
+	@Autowired
+	protected CompanyPracticumRepository repository;
 
 	// AbstractService interface ----------------------------------------------
+
+
 	@Override
 	public void check() {
 		boolean status;
@@ -50,45 +46,49 @@ public class CompanyPracticumShowService extends AbstractService<Company, Practi
 
 	@Override
 	public void authorise() {
-		final boolean status;
+		boolean status;
 		int practicumId;
-		Practicum practicum;
-		final Company company;
-		final Principal principal;
+		final Practicum practicum;
 
-		principal = super.getRequest().getPrincipal();
 		practicumId = super.getRequest().getData("id", int.class);
-		practicum = this.repository.findPracticumById(practicumId);
-		company = practicum == null ? null : practicum.getCompany();
-		status = practicum != null && (!practicum.isDraftMode() || principal.hasRole(company));
+		practicum = this.repository.findOnePracticaById(practicumId);
+		status = practicum != null && super.getRequest().getPrincipal().getActiveRoleId() == practicum.getCompany().getId();
 
 		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
-		Practicum practicum;
-		int practicumId;
+		Practicum object;
+		int id;
 
-		practicumId = super.getRequest().getData("id", int.class);
-		practicum = this.repository.findPracticumById(practicumId);
+		id = super.getRequest().getData("id", int.class);
+		object = this.repository.findOnePracticaById(id);
 
-		super.getBuffer().setData(practicum);
+		super.getBuffer().setData(object);
+
 	}
 
 	@Override
-	public void unbind(final Practicum practicum) {
-		assert practicum != null;
-
-		Collection<Course> courses;
-		SelectChoices choices;
-		Tuple tuple;
+	public void unbind(final Practicum object) {
+		assert object != null;
+		final Collection<Course> courses;
+		final SelectChoices choices;
 
 		courses = this.repository.findAllCourses();
-		choices = SelectChoices.from(courses, "title", practicum.getCourse());
-		tuple = super.unbind(practicum, CompanyPracticumShowService.PROPERTIES);
-		tuple.put("course", choices);
-		tuple.put("courses", courses);
+		choices = SelectChoices.from(courses, "code", object.getCourse());
+
+		final Collection<PracticumSession> sessions;
+
+		sessions = this.repository.findSessionsByPracticumId(object.getId());
+		final Double estimatedTime = object.estimatedTime(sessions);
+
+		Tuple tuple;
+
+		tuple = super.unbind(object, "code", "title", "summary", "goals", "draftMode");
+		tuple.put("course", choices.getSelected().getKey());
+		tuple.put("courses", choices);
+		tuple.put("estimatedTime", estimatedTime);
 
 		super.getResponse().setData(tuple);
 	}

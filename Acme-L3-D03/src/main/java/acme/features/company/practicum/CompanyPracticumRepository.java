@@ -26,27 +26,33 @@ import acme.roles.Company;
 @Repository
 public interface CompanyPracticumRepository extends AbstractRepository {
 
-	@Query("select a from Company a where a.id = ?1")
-	Company findCompanyById(int activeRoleId);
+	@Query("Select p from Practicum p where p.course.id = :id")
+	Collection<Practicum> findPracticaByCourseId(int id);
 
-	@Query("select a from Practicum a where a.id = ?1")
-	Practicum findPracticumById(int masterId);
+	@Query("Select p from Practicum p where p.company.id = :id")
+	Collection<Practicum> findPracticaByCompanyId(int id);
 
-	@Query("select sp from SessionPracticum sp where sp.practicum.id = ?1")
-	Collection<PracticumSession> findPracticumSessionsByPracticumId(int id);
+	@Query("Select s from PracticumSession s where s.practicum.id = :id")
+	Collection<PracticumSession> findSessionsByPracticumId(int id);
 
-	@Query("select a from Practicum a where a.company.id = ?1")
-	Collection<Practicum> findPracticumsByCompanyId(int activeRoleId);
+	@Query("Select p from Practicum p where p.id = :id")
+	Practicum findOnePracticaById(int id);
 
-	@Query("select a from Practicum a where a.draftMode = false")
-	Collection<Practicum> findPracticums();
+	@Query("Select c from Course c where c.id = :id")
+	Course findOneCourseById(int id);
 
-	@Query("select a from Course a where a.id = ?1")
-	Course findCourseById(int courseId);
-
-	@Query("select a from Course a")
+	@Query("Select c from Course c")
 	Collection<Course> findAllCourses();
 
-	@Query("select p from Practicum p where p.code = ?1")
-	Collection<Practicum> findPracticumByCode(String code);
+	@Query("Select p.course from Practicum p where p.id = :id")
+	Course findOneCourseByPracticumId(int id);
+
+	@Query("Select c from Company c where c.id = :id")
+	Company findOneCompanyById(int id);
+
+	@Query("Select s from PracticumSession s where s.practicum.id = :id")
+	Collection<PracticumSession> findAllSessionsByPracticumId(int id);
+
+	@Query("select p from Practicum p where p.code = :code")
+	Practicum findPracticumByCode(String code);
 }

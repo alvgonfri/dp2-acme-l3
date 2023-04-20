@@ -20,7 +20,6 @@ import org.springframework.stereotype.Service;
 import acme.entities.courses.Course;
 import acme.entities.practicums.Practicum;
 import acme.entities.practicums.PracticumSession;
-import acme.framework.components.accounts.Principal;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
@@ -28,15 +27,10 @@ import acme.roles.Company;
 
 @Service
 public class CompanyPracticumDeleteService extends AbstractService<Company, Practicum> {
-
-	// Constants -------------------------------------------------------------
-	protected static final String[]		ATTRIBUTES	= {
-		"code", "title", "summary", "goals", "estimatedTime"
-	};
-
 	// Internal state ---------------------------------------------------------
+
 	@Autowired
-	private CompanyPracticumRepository	repository;
+	protected CompanyPracticumRepository repository;
 
 
 	// AbstractService interface ----------------------------------------------
@@ -55,74 +49,73 @@ public class CompanyPracticumDeleteService extends AbstractService<Company, Prac
 		int practicumId;
 		Practicum practicum;
 		Company company;
-		Principal principal;
 
-		principal = super.getRequest().getPrincipal();
 		practicumId = super.getRequest().getData("id", int.class);
-		practicum = this.repository.findPracticumById(practicumId);
+		practicum = this.repository.findOnePracticaById(practicumId);
 		company = practicum == null ? null : practicum.getCompany();
-		status = practicum != null && practicum.isDraftMode() && principal.hasRole(company);
+		status = practicum != null && practicum.isDraftMode() && super.getRequest().getPrincipal().hasRole(company);
 
 		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
-		Practicum practicum;
-		int practicumId;
+		Practicum object;
+		int id;
 
-		practicumId = super.getRequest().getData("id", int.class);
-		practicum = this.repository.findPracticumById(practicumId);
+		id = super.getRequest().getData("id", int.class);
+		object = this.repository.findOnePracticaById(id);
 
-		super.getBuffer().setData(practicum);
+		super.getBuffer().setData(object);
 	}
 
 	@Override
-	public void bind(final Practicum practicum) {
-		assert practicum != null;
+	public void bind(final Practicum object) {
+		assert object != null;
 
 		int courseId;
 		Course course;
 
 		courseId = super.getRequest().getData("course", int.class);
-		course = this.repository.findCourseById(courseId);
+		course = this.repository.findOneCourseById(courseId);
 
-		super.bind(practicum, CompanyPracticumDeleteService.ATTRIBUTES);
-		practicum.setCourse(course);
+		super.bind(object, "code", "title", "summary", "goals", "estimatedTime");
+
+		object.setCourse(course);
+
 	}
 
 	@Override
-	public void validate(final Practicum practicum) {
-		assert practicum != null;
+	public void validate(final Practicum object) {
+		assert object != null;
+
 	}
 
 	@Override
-	public void perform(final Practicum practicum) {
-		assert practicum != null;
-
+	public void perform(final Practicum object) {
+		assert object != null;
 		Collection<PracticumSession> sessions;
 
-		sessions = this.repository.findPracticumSessionsByPracticumId(practicum.getId());
+		sessions = this.repository.findAllSessionsByPracticumId(object.getId());
 		this.repository.deleteAll(sessions);
-		this.repository.delete(practicum);
+
+		this.repository.delete(object);
 	}
 
 	@Override
-	public void unbind(final Practicum practicum) {
-		assert practicum != null;
-
-		Collection<Course> courses;
-		SelectChoices choices;
-		Tuple tuple;
+	public void unbind(final Practicum object) {
+		assert object != null;
+		final Collection<Course> courses;
+		final SelectChoices choices;
 
 		courses = this.repository.findAllCourses();
-		choices = SelectChoices.from(courses, "title", practicum.getCourse());
+		choices = SelectChoices.from(courses, "code", object.getCourse());
+		Tuple tuple;
 
-		tuple = super.unbind(practicum, CompanyPracticumDeleteService.ATTRIBUTES);
-		tuple.put("course", choices);
-		tuple.put("courseChoices", courses);
+		tuple = super.unbind(object, "code", "title", "summary", "goals", "estimatedTime", "draftMode");
+		tuple.put("course", choices.getSelected().getKey());
+		tuple.put("courses", choices);
 
 		super.getResponse().setData(tuple);
 	}
-
 }
