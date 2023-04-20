@@ -62,6 +62,10 @@ master.menu.user-account.become-assistant = Hazte asistente
 master.menu.user-account.lecturer = Datos del profesor
 master.menu.user-account.become-lecturer = Hazte profesor
 
+# master.menu.company #######################################################
+master.menu.company = Company
+master.menu.company.dashboard = Panel de indicadores
+
 # master.menu.auditor ###################################################
 
 master.menu.auditor = Auditor
