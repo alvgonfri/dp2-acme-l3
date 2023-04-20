@@ -25,34 +25,34 @@
 <table class="table table-sm">
 	<tr>
 		<th scope="row">
-			<acme:message code="company.dashboard.form.label.practica-length.count"/>
+			<acme:message code="company.dashboard.form.label.numberOfPracticas"/>
 		</th>
 		<td>
-			<acme:print value="${practicaLength.count}"/>
+			<acme:print value="${numberOfPracticas}"/>
 		</td>
 		<th scope="row">
-			<acme:message code="company.dashboard.form.label.practica-length.average"/>
+			<acme:message code="company.dashboard.form.label.averagePeriodLengthPractica"/>
 		</th>
 		<td>
-			<acme:print value="${practicaLength.average}"/>
+			<acme:print value="${minimumPeriodLengthPractica}"/>
 		</td>
 		<th scope="row">
-			<acme:message code="company.dashboard.form.label.practica-length.min"/>
+			<acme:message code="company.dashboard.form.label.minimumPeriodLengthPractica"/>
 		</th>
 		<td>
-			<acme:print value="${practicaLength.min}"/>
+			<acme:print value="${deviationPeriodLengthPractica}"/>
 		</td>
 		<th scope="row">
 			<acme:message code="company.dashboard.form.label.practica-length.max"/>
 		</th>
 		<td>
-			<acme:print value="${practicaLength.max}"/>
+			<acme:print value="${maximumPeriodLengthPractica}"/>
 		</td>
 		<th scope="row">
-			<acme:message code="company.dashboard.form.label.practica-length.deviation"/>
+			<acme:message code="company.dashboard.form.label.deviationPeriodLengthPractica"/>
 		</th>
 		<td>
-			<acme:print value="${practicaLength.deviation}"/>
+			<acme:print value="${deviationPeriodLengthPractica}"/>
 		</td>
 	</tr>
 </table>
@@ -63,46 +63,46 @@
 <table class="table table-sm">
 	<tr>
 		<th scope="row">
-			<acme:message code="company.dashboard.form.label.session-length.count"/>
+			<acme:message code="company.dashboard.form.label.numberOfSessions"/>
 		</th>
 		<td>
-			<acme:print value="${sessionLength.count}"/>
+			<acme:print value="${numberOfSessions}"/>
 		</td>
 		<th scope="row">
-			<acme:message code="company.dashboard.form.label.session-length.average"/>
+			<acme:message code="company.dashboard.form.label.averagePeriodLengthPractica"/>
 		</th>
 		<td>
-			<acme:print value="${sessionLength.average}"/>
+			<acme:print value="${averagePeriodLengthSession}"/>
 		</td>
 		<th scope="row">
-			<acme:message code="company.dashboard.form.label.session-length.min"/>
+			<acme:message code="company.dashboard.form.label.minimumPeriodLengthPractica"/>
 		</th>
 		<td>
-			<acme:print value="${sessionLength.min}"/>
+			<acme:print value="${minimumPeriodLengthPractica}"/>
 		</td>
 		<th scope="row">
-			<acme:message code="company.dashboard.form.label.session-length.max"/>
+			<acme:message code="company.dashboard.form.label.maximumPeriodLengthPractica"/>
 		</th>
 		<td>
-			<acme:print value="${sessionLength.max}"/>
+			<acme:print value="${maximumPeriodLengthPractica}"/>
 		</td>
 		<th scope="row">
-			<acme:message code="company.dashboard.form.label.session-length.deviation"/>
+			<acme:message code="company.dashboard.form.label.deviationPeriodLengthPractica"/>
 		</th>
 		<td>
-			<acme:print value="${sessionLength.deviation}"/>
+			<acme:print value="${deviationPeriodLengthPractica}"/>
 		</td>
 	</tr>
 </table>
 
 
 <h2>
-	<acme:message code="company.dashboard.form.title.total-number-practica-by-month"/>
+	<acme:message code="company.dashboard.form.title.practicaNumberPerMonth"/>
 </h2>
 
 <div>
 	<canvas id="canvas"></canvas>
-	Total ${totalNumberOfPracticaByMonth.get('FEBRUARY')}
+	Total ${practicaNumberPerMonth.get('FEBRUARY')}
 </div>
 
 <script type="text/javascript">
@@ -114,18 +114,18 @@
 			datasets : [
 				{
 					data : [
-						<jstl:out value="${totalNumberOfPracticaByMonth.get('JANUARY')}"/>,
-						<jstl:out value="${totalNumberOfPracticaByMonth.get('FEBRUARY')}"/>,
-						<jstl:out value="${totalNumberOfPracticaByMonth.get('MARCH')}"/>,
-						<jstl:out value="${totalNumberOfPracticaByMonth.get('APRIL')}"/>,
-						<jstl:out value="${totalNumberOfPracticaByMonth.get('MAY')}"/>,
-						<jstl:out value="${totalNumberOfPracticaByMonth.get('JUNE')}"/>,
-						<jstl:out value="${totalNumberOfPracticaByMonth.get('JULY')}"/>,
-						<jstl:out value="${totalNumberOfPracticaByMonth.get('AUGUST')}"/>,
-						<jstl:out value="${totalNumberOfPracticaByMonth.get('SEPTEMBER')}"/>,
-						<jstl:out value="${totalNumberOfPracticaByMonth.get('OCTOBER')}"/>,
-						<jstl:out value="${totalNumberOfPracticaByMonth.get('NOVEMBER')}"/>,
-						<jstl:out value="${totalNumberOfPracticaByMonth.get('DECEMBER')}"/>
+						<jstl:out value="${practicaNumberPerMonth.get('JANUARY')}"/>,
+						<jstl:out value="${practicaNumberPerMonth.get('FEBRUARY')}"/>,
+						<jstl:out value="${practicaNumberPerMonth.get('MARCH')}"/>,
+						<jstl:out value="${practicaNumberPerMonth.get('APRIL')}"/>,
+						<jstl:out value="${practicaNumberPerMonth.get('MAY')}"/>,
+						<jstl:out value="${practicaNumberPerMonth.get('JUNE')}"/>,
+						<jstl:out value="${practicaNumberPerMonth.get('JULY')}"/>,
+						<jstl:out value="${practicaNumberPerMonth.get('AUGUST')}"/>,
+						<jstl:out value="${practicaNumberPerMonth.get('SEPTEMBER')}"/>,
+						<jstl:out value="${practicaNumberPerMonth.get('OCTOBER')}"/>,
+						<jstl:out value="${practicaNumberPerMonth.get('NOVEMBER')}"/>,
+						<jstl:out value="${practicaNumberPerMonth.get('DECEMBER')}"/>
 					]
 				}
 			]

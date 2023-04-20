@@ -69,6 +69,8 @@
 		<acme:menu-option code="master.menu.sign-in" action="/master/sign-in" access="isAnonymous()"/>
 
 		<acme:menu-option code="master.menu.company" access="hasRole('Company')">
+			<acme:menu-suboption code="master.menu.company.practicum" action="/company/practicum/list"/>
+			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.company.dashboard" action="/company/company-dashboard/show"/>
 		</acme:menu-option>
 		

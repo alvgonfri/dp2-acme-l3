@@ -19,8 +19,8 @@ public class CompanyDashboardShowService extends AbstractService<Company, Compan
 
 	// Constants --------------------------------------------------------------
 	protected static final String[]		PROPERTIES	= {
-		"practicaNumberPerMonth", "averagePeriodLengthSession", "deviationPeriodLengthSession", "minimumPeriodLengthSession", "maximumPeriodLengthSession", "averagePeriodLengthPractica", "deviationPeriodLengthPractica", "minimumPeriodLengthPractica",
-		"maximumPeriodLengthPractica"
+		"practicaNumberPerMonth", "averagePeriodLengthSession", "deviationPeriodLengthSession", "minimumPeriodLengthSession", "maximumPeriodLengthSession", "numberOfSessions", "averagePeriodLengthPractica", "deviationPeriodLengthPractica",
+		"minimumPeriodLengthPractica", "maximumPeriodLengthPractica", "numberOfPracticas"
 	};
 
 	// Internal state ---------------------------------------------------------
@@ -63,34 +63,34 @@ public class CompanyDashboardShowService extends AbstractService<Company, Compan
 		final double deviationPeriodLengthSession;
 		final double minimumPeriodLengthSession;
 		final double maximumPeriodLengthSession;
-		int countSession;
+		int numberOfSessions;
 
 		final double averagePeriodLengthPractica;
 		final double deviationPeriodLengthPractica;
 		final double minimumPeriodLengthPractica;
 		final double maximumPeriodLengthPractica;
-		int countPractica;
+		int numberOfPracticas;
 
-		final Map<String, Integer> practicaNumberPerMonth;
+		final Map<String, Long> practicaNumberPerMonth;
 
 		principal = super.getRequest().getPrincipal();
 		userAccountId = principal.getAccountId();
 		company = this.repository.findOneCompanyByUserAccountId(userAccountId);
 		companyId = company.getId();
 
-		practicaNumberPerMonth = this.repository.findTotalNumberOfPracticaByMonth(companyId).stream().collect(Collectors.toMap(key -> Month.of((int) key[0]).toString(), value -> (int) value[1]));
+		practicaNumberPerMonth = this.repository.findTotalNumberOfPracticaByMonth(companyId).stream().collect(Collectors.toMap(key -> Month.of((int) key[0]).toString(), value -> (long) value[1]));
 
 		averagePeriodLengthSession = this.repository.findAverageSessionLength(companyId);
 		deviationPeriodLengthSession = this.repository.findDeviationSessionLength(companyId);
 		minimumPeriodLengthSession = this.repository.findMinimumSessionLength(companyId);
 		maximumPeriodLengthSession = this.repository.findMaximumSessionLength(companyId);
-		countSession = this.repository.findCountSession(companyId);
+		numberOfSessions = this.repository.findCountSession(companyId);
 
 		averagePeriodLengthPractica = this.repository.findAveragePracticaLength(companyId);
 		deviationPeriodLengthPractica = this.repository.findDeviationPracticaLength(companyId);
 		minimumPeriodLengthPractica = this.repository.findMinimumPracticaLength(companyId);
 		maximumPeriodLengthPractica = this.repository.findMaximumPracticaLength(companyId);
-		countPractica = this.repository.findCountPractica(companyId);
+		numberOfPracticas = this.repository.findCountPractica(companyId);
 
 		companyDashboard.setPracticaNumberPerMonth(practicaNumberPerMonth);
 
@@ -98,11 +98,13 @@ public class CompanyDashboardShowService extends AbstractService<Company, Compan
 		companyDashboard.setDeviationPeriodLengthSession(deviationPeriodLengthSession);
 		companyDashboard.setMinimumPeriodLengthSession(minimumPeriodLengthSession);
 		companyDashboard.setMaximumPeriodLengthSession(maximumPeriodLengthSession);
+		companyDashboard.setNumberOfSessions(numberOfSessions);
 
 		companyDashboard.setAveragePeriodLengthPractica(averagePeriodLengthPractica);
 		companyDashboard.setDeviationPeriodLengthPractica(deviationPeriodLengthPractica);
 		companyDashboard.setMinimumPeriodLengthPractica(minimumPeriodLengthPractica);
 		companyDashboard.setMaximumPeriodLengthPractica(maximumPeriodLengthPractica);
+		companyDashboard.setNumberOfPracticas(numberOfPracticas);
 
 		super.getBuffer().setData(companyDashboard);
 	}
