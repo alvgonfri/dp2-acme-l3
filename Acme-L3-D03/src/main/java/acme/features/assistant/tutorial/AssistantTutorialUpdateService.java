@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.courses.Course;
-import acme.entities.enrolments.Enrolment;
 import acme.entities.tutorial.Tutorial;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
@@ -84,7 +83,7 @@ public class AssistantTutorialUpdateService extends AbstractService<Assistant, T
 		assert object != null;
 
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
-			Enrolment existing;
+			Tutorial existing;
 
 			existing = this.repository.findOneTutorialByCode(object.getCode());
 			super.state(existing == null || existing.equals(object), "code", "student.tutorial.form.error.code-duplicated");
