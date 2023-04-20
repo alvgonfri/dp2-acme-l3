@@ -24,12 +24,19 @@ import acme.framework.services.AbstractService;
 import acme.roles.Company;
 
 @Service
-public class CompanyPracticumListService extends AbstractService<Company, Practicum> {
+public class CompanyPracticumListMineService extends AbstractService<Company, Practicum> {
 
+	// Constants -------------------------------------------------------------
+	protected static final String[]			PROPERTIES	= {
+		"code", "title", "summary", "goals", "estimatedTime"
+	};
+
+	// Internal state ---------------------------------------------------------
 	@Autowired
-	protected CompanyPracticumRepository repository;
+	protected CompanyPracticumRepository	repository;
 
 
+	// AbstractService interface ----------------------------------------------
 	@Override
 	public void check() {
 		super.getResponse().setChecked(true);
@@ -42,25 +49,26 @@ public class CompanyPracticumListService extends AbstractService<Company, Practi
 
 	@Override
 	public void load() {
-		Collection<Practicum> objects;
+		Collection<Practicum> practicums;
 		Principal principal;
 
 		principal = super.getRequest().getPrincipal();
-		objects = this.repository.findPracticaByCompanyId(principal.getActiveRoleId());
+		practicums = this.repository.findPracticumsByCompanyId(principal.getActiveRoleId());
 
-		super.getBuffer().setData(objects);
+		super.getBuffer().setData(practicums);
 	}
 
 	@Override
-	public void unbind(final Practicum object) {
-		assert object != null;
+	public void unbind(final Practicum practicum) {
+		assert practicum != null;
 
 		Tuple tuple;
+		String payload;
 
-		tuple = super.unbind(object, "code", "title");
-		tuple.put("courseCode", object.getCourse().getCode());
+		tuple = super.unbind(practicum, CompanyPracticumListMineService.PROPERTIES);
+		payload = String.format("%s; %s; %s; %s", practicum.getCourse().getTitle(), practicum.getCourse().getCode(), practicum.getSummary(), practicum.getGoals());
+		tuple.put("payload", payload);
 
 		super.getResponse().setData(tuple);
 	}
-
 }

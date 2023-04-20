@@ -68,8 +68,8 @@
 		<acme:menu-option code="master.menu.sign-up" action="/anonymous/user-account/create" access="isAnonymous()"/>
 		<acme:menu-option code="master.menu.sign-in" action="/master/sign-in" access="isAnonymous()"/>
 
-		<acme:menu-option code="master.menu.company" access="hasRole('Company')">			
-			<acme:menu-suboption code="master.menu.company.practicas" action="/company/practicum/list"/>			
+		<acme:menu-option code="master.menu.company" access="hasRole('Company')">
+			<acme:menu-suboption code="master.menu.company.list-mine" action="/company/practicum/list-mine"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.user-account" access="isAuthenticated()">

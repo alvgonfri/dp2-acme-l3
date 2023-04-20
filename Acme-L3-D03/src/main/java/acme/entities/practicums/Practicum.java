@@ -48,6 +48,8 @@ public class Practicum extends AbstractRole {
 	@Length(max = 100)
 	protected String			goals;
 
+	protected boolean			draftMode;
+
 	// Derived attributes -----------------------------------------------------
 
 

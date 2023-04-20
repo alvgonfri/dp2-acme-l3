@@ -28,8 +28,16 @@ import acme.roles.Company;
 @Service
 public class CompanyPracticumUpdateService extends AbstractService<Company, Practicum> {
 
+	// Constants -------------------------------------------------------------
+	protected static final String[]			PROPERTIES	= {
+		"code", "title", "abstractPracticum", "goals", "estimatedTimeInHours"
+	};
+
+	// Internal state ---------------------------------------------------------
 	@Autowired
-	protected CompanyPracticumRepository repository;
+	protected CompanyPracticumRepository	repository;
+
+	// AbstractService interface ----------------------------------------------
 
 
 	@Override
@@ -44,28 +52,29 @@ public class CompanyPracticumUpdateService extends AbstractService<Company, Prac
 	@Override
 	public void authorise() {
 		boolean status;
-		Practicum object;
-		Principal principal;
 		int practicumId;
+		Practicum practicum;
+		Company company;
+		Principal principal;
 
-		practicumId = super.getRequest().getData("id", int.class);
-		object = this.repository.findPracticumById(practicumId);
 		principal = super.getRequest().getPrincipal();
-
-		status = object.getCompany().getId() == principal.getActiveRoleId();
+		practicumId = super.getRequest().getData("id", int.class);
+		practicum = this.repository.findPracticumById(practicumId);
+		company = practicum == null ? null : practicum.getCompany();
+		status = practicum != null && practicum.isDraftMode() && principal.hasRole(company);
 
 		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
-		Practicum object;
-		int id;
+		Practicum practicum;
+		int practicumId;
 
-		id = super.getRequest().getData("id", int.class);
-		object = this.repository.findPracticumById(id);
+		practicumId = super.getRequest().getData("id", int.class);
+		practicum = this.repository.findPracticumById(practicumId);
 
-		super.getBuffer().setData(object);
+		super.getBuffer().setData(practicum);
 	}
 
 	@Override
@@ -78,38 +87,52 @@ public class CompanyPracticumUpdateService extends AbstractService<Company, Prac
 		courseId = super.getRequest().getData("course", int.class);
 		course = this.repository.findCourseById(courseId);
 
-		super.bind(object, "code", "title", "summary", "goals");
+		super.bind(object, CompanyPracticumUpdateService.PROPERTIES);
 		object.setCourse(course);
 	}
 
 	@Override
-	public void validate(final Practicum object) {
-		assert object != null;
+	public void validate(final Practicum practicum) {
+		assert practicum != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			boolean isUnique;
+			boolean noChangeCode;
+			Practicum oldPracticum;
+			int practicumId;
+
+			practicumId = super.getRequest().getData("id", int.class);
+			oldPracticum = this.repository.findPracticumById(practicumId);
+			isUnique = this.repository.findPracticumByCode(practicum.getCode()).isEmpty();
+			noChangeCode = oldPracticum.getCode().equals(practicum.getCode()) && oldPracticum.getId() == practicum.getId();
+
+			super.state(isUnique || noChangeCode, "code", "company.practicum.form.error.not-unique-code");
+		}
 	}
 
 	@Override
-	public void perform(final Practicum object) {
-		assert object != null;
+	public void perform(final Practicum practicum) {
+		assert practicum != null;
 
-		this.repository.save(object);
+		this.repository.save(practicum);
 	}
 
 	@Override
-	public void unbind(final Practicum object) {
-		assert object != null;
+	public void unbind(final Practicum practicum) {
+		assert practicum != null;
 
 		Collection<Course> courses;
 		SelectChoices choices;
 		Tuple tuple;
 
 		courses = this.repository.findAllCourses();
-		choices = SelectChoices.from(courses, "code", object.getCourse());
+		choices = SelectChoices.from(courses, "title", practicum.getCourse());
 
-		tuple = super.unbind(object, "code", "title", "summary", "goals");
-		tuple.put("course", choices.getSelected().getKey());
-		tuple.put("courses", choices);
+		tuple = super.unbind(practicum, CompanyPracticumUpdateService.PROPERTIES);
+		tuple.put("draftMode", practicum.isDraftMode());
+		tuple.put("course", choices);
+		tuple.put("courses", courses);
 
 		super.getResponse().setData(tuple);
 	}
-
 }

@@ -1,4 +1,4 @@
-# messages-es.i18n
+# messages-en.i18n
 #
 # Copyright (C) 2012-2023 Rafael Corchuelo.
 #
@@ -8,20 +8,30 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+# Messages for label in form
+company.practicum.form.label.code = Código
+company.practicum.form.label.course = Curso
+company.practicum.form.label.title = Título
+company.practicum.form.label.summary = Resumen
+company.practicum.form.label.goals = Objetivos
+company.practicum.form.label.estimatedTime = Tiempo estimado
 
-company.practicum.list.label.practicum-code = Código de la práctica
-company.practicum.list.label.title = Título
-company.practicum.list.label.course-code = Código del curso
-
-company.practicum.list.button.create = Crear
-
-company.practicum.form.label.course = Curso:
-company.practicum.form.label.practicum-code = Código de la práctica:
-company.practicum.form.label.practicum-title = Título de la práctica:
-company.practicum.form.label.summary = Resumen:
-company.practicum.form.label.goals = Metas:
-
-company.practicum.form.button.create = Crear
+# Messages for buttons in form
+company.practicum.form.button.practicumSessions = Sesiones prácticas
 company.practicum.form.button.update = Actualizar
 company.practicum.form.button.delete = Eliminar
 company.practicum.form.button.publish = Publicar
+company.practicum.form.button.create = Crear
+
+# Messages for label in list
+company.practicum.list.label.code = Código
+company.practicum.list.label.title = Título
+company.practicum.list.label.summary = Resumen
+company.practicum.list.label.estimatedTime = Tiempo estimado
+
+# Messages for buttons in list
+company.practicum.list.button.create = Crear práctica
+
+# Messages for error in form
+company.practicum.form.error.not-in-range = El tiempo estimado en horas debe estar entre el valor real por 0.9 y el valor real por 1.1
+company.practicum.form.error.not-unique-code = El código debe ser único
