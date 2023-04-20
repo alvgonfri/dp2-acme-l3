@@ -21,6 +21,9 @@
 	<acme:input-textbox code="authenticated.course.form.label.summary" path="summary" readonly="true"/>	
 	<acme:input-textbox code="authenticated.course.form.label.retailPrice" path="retailPrice" readonly="true"/>	
 	<acme:input-textbox code="authenticated.course.form.label.moreInfo" path="moreInfo" readonly="true"/>	
-	<acme:input-textbox code="authenticated.course.form.label.lecturer" path="lecturerFullName" readonly="true"/>	
+	<acme:input-textbox code="authenticated.course.form.label.lecturer" path="lecturerFullName" readonly="true"/>
+	
+	<acme:button code="authenticated.course.form.button.audit" action="/authenticated/audit/list?courseId=${id}"/>
+		
 
 </acme:form>
