@@ -1,0 +1,19 @@
+lecturer.course.list.label.code = Código
+lecturer.course.list.label.title = Título
+lecturer.course.list.label.retailPrice = Precio
+
+lecturer.course.form.label.code = Código
+lecturer.course.form.label.title = Título
+lecturer.course.form.label.summary = Resumen
+lecturer.course.form.label.retailPrice = Precio
+lecturer.course.form.label.moreInfo = Más información
+
+lecturer.course.form.button.lectures = Ver lecciones
+lecturer.course.form.button.update = Actualizar
+lecturer.course.form.button.delete = Borrar
+lecturer.course.form.button.publish = Publicar
+lecturer.course.form.button.create = Crear
+
+lecturer.course.form.error.negative-price = El precio debe ser cero o una cantidad positiva
+lecturer.course.form.error.unpublishedLectures = Todas las lecciones deben estar publicadas antes de publicar un curso.
+lecturer.course.form.error.allLecturesAreTheory = Los cursos no pueden ser puramente teóricos.

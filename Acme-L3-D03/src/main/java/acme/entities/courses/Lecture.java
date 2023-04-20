@@ -46,6 +46,14 @@ public class Lecture extends AbstractEntity {
 	@NotNull
 	protected LectureType		lectureType;
 
+	@NotNull
+	protected Boolean			draftMode;
+
+
+	public Boolean isDraftMode() {
+		return this.draftMode;
+	}
+
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
