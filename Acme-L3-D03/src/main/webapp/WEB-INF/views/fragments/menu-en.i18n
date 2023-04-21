@@ -43,6 +43,7 @@ master.menu.authenticated.company.update = Company data
 master.menu.authenticated.company.create = Become a company
 master.menu.authenticated = Authenticated
 master.menu.authenticated.bulletins = Bulletins
+master.menu.authenticated.course = Courses
 
 # master.menu.student ########################################################
 master.menu.student = Student

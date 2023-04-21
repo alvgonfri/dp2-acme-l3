@@ -53,6 +53,7 @@
 			</acme:menu-option>
 
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">			
+			<acme:menu-suboption code="master.menu.authenticated.course" action="/authenticated/course/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.bulletins" action="/authenticated/bulletin/list"/>		
 			<acme:menu-suboption code="master.menu.authenticated.notes" action="/authenticated/note/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.offers"  action="/authenticated/offer/list"/>
