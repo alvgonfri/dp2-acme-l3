@@ -20,7 +20,7 @@ student.activity.form.button.update = Actualizar
 student.activity.form.button.delete = Borrar
 
 student.activity.form.error.wrong-start = La fecha de inicio debe ser posterior a 01/01/2000 00:00
-student.activity.form.error.wrong-end = La fecha de fin debe ser anterior a 31/12/2100 00:00
+student.activity.form.error.wrong-end = La fecha de fin debe ser anterior a 31/12/2100 23:59
 student.activity.form.error.wrong-dates = La fecha de fin debe ser posterior a la fecha de inicio
 
 student.activity.list.label.title = Título
