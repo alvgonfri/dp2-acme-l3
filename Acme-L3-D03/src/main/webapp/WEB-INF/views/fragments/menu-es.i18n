@@ -69,7 +69,7 @@ master.menu.user-account.become-auditor = Hazte auditor
 # master.menu.auditor ###################################################
 
 master.menu.auditor = Auditor
-master.menu.auditor.audits = Auditorias
+master.menu.auditor.audits = Mis auditorias
 
 # master.menu.any ####################################################
 master.menu.any.course = Cursos
