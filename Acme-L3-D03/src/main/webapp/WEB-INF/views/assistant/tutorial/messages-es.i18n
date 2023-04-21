@@ -21,3 +21,4 @@ assistant.tutorial.button.update = Actualizar
 student.enrolment.form.button.tutorialSession= Sesiones de tutoría
 assistant.tutorial.list.label.totalTime= Tiempo total 
 assistant.tutorial.button.publish= Publicar
+assistant.tutorial.button.unpublish= Ocultar
