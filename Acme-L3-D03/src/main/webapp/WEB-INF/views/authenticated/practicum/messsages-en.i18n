@@ -9,16 +9,12 @@
 # they accept any liabilities with respect to them.
 
 
-authenticated.course.list.label.title = Title
-authenticated.course.list.label.summary = Summary
-authenticated.course.list.label.retailPrice = Price
+authenticated.practicum.form.label.code = Code:
+authenticated.practicum.form.label.title = Title:
+authenticated.practicum.form.label.summary = Abstract:
+authenticated.practicum.form.label.goals = Goals:
+authenticated.practicum.form.label.estimatedTime = Hours estimated (aprox. +-10%):
+authenticated.practicum.form.label.company = Company:
 
-
-any.course.form.label.code = Code
-any.course.form.label.title = Title
-any.course.form.label.summary = Summary
-any.course.form.label.retailPrice = Price
-any.course.form.label.moreInfo = More information
-any.course.form.label.lecturer = Lecturer
-
-authenticated.practica.form.button = Course practicas
+authenticated.practicum.list.label.title = Title
+authenticated.practicum.list.label.summary = Abstract

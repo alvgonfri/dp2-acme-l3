@@ -57,6 +57,14 @@ master.menu.user-account.provider = Datos de proveedor
 master.menu.user-account.become-provider = Hazte proveedor
 master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
+
+# master.menu.company #######################################################
+
+master.menu.company = Empresa
+master.menu.company.practicum = Lista de prácticas
+master.menu.company.dashboard = Panel de indicadores
+
+
 master.menu.user-account.student = Datos de estudiante
 master.menu.user-account.become-student = Hazte estudiante
 master.menu.user-account.assistant = Datos de asistente
@@ -75,4 +83,3 @@ master.menu.auditor.audits = Mis auditorias
 master.menu.any.course = Cursos
 master.menu.any.peep = Peeps
 master.menu.any = Cualquiera
-

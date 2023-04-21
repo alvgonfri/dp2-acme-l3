@@ -24,21 +24,23 @@ public class CompanyDashboard extends AbstractForm {
 
 	// Serialisation identifier -----------------------------------------------
 
-	protected static final long		serialVersionUID	= 1L;
+	protected static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
 
-	protected Map<String, Integer>	practicaNumberPerMonth;
+	protected Map<String, Long>	practicaNumberPerMonth;
 
-	protected Double				averagePeriodLengthSession;
-	protected Double				deviationPeriodLengthSession;
-	protected Double				minimumPeriodLengthSession;
-	protected Double				maximumPeriodLengthSession;
+	protected Double			averagePeriodLengthSession;
+	protected Double			deviationPeriodLengthSession;
+	protected Double			minimumPeriodLengthSession;
+	protected Double			maximumPeriodLengthSession;
+	protected Integer			numberOfSessions;
 
-	protected Double				averagePeriodLengthPractica;
-	protected Double				deviationPeriodLengthPractica;
-	protected Double				minimumPeriodLengthPractica;
-	protected Double				maximumPeriodLengthPractica;
+	protected Double			averagePeriodLengthPractica;
+	protected Double			deviationPeriodLengthPractica;
+	protected Double			minimumPeriodLengthPractica;
+	protected Double			maximumPeriodLengthPractica;
+	protected Integer			numberOfPracticas;
 
 	// Derived attributes -----------------------------------------------------
 

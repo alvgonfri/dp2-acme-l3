@@ -1,0 +1,38 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2023 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+company.practicum-session.list.label.title = Title
+company.practicum-session.list.label.startDate = Start date
+company.practicum-session.list.label.endDate = End date
+
+company.practicum-session.list.button.create = Create a practicum session
+company.practicum-session.list.button.create.addendum = Create an addendum session
+
+company.practicum-session.form.label.title = Title
+company.practicum-session.form.label.summary = Abstract
+company.practicum-session.form.label.startDate = Start date
+company.practicum-session.form.label.endDate = End date
+company.practicum-session.form.label.link = More information
+company.practicum-session.form.label.practicum = Practicum
+
+company.practicum-session.form.button.update = Update
+company.practicum-session.form.button.delete = Delete
+company.practicum-session.form.button.publish = Publish
+company.practicum-session.form.button.create = Create
+
+company.practicum-session.form.message.addendum = WARNING! YOU ARE CREATING AN ADDENDUM PRACTICUM SESSION
+company.practicum-session.form.label.confirmation = Confirmation
+company.practicum-session.form.button.createAddendum = Create addendum session
+
+company.practicum-session.validation.startDate.error.AtLeastOneWeekAntiquity = Error: The "Start date" must be at least one week ahead
+company.practicum-session.validation.endDate.error.AtLeastOneWeekDuration = Error: The "End date" must be at least one week ahead from the "Start date"
+company.practicum-session.validation.practicum.error.Published = Error: This Practicum has been already published
+company.practicum-session.validation.confirmation = Error: You have to mark the confirmation checkbox to create an addendum session
+company.practicum-session.validation.practicum.error.AddendumUsed = Error: Already exits an addendum session for this practica. Only is allowed one addendum per practica 
