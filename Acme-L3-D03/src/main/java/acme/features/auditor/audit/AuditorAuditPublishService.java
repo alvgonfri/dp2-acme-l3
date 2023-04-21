@@ -97,12 +97,10 @@ public class AuditorAuditPublishService extends AbstractService<Auditor, Audit> 
 	public void unbind(final Audit object) {
 		assert object != null;
 
-		int auditorId;
 		Collection<Course> courses;
 		SelectChoices choices;
 		Tuple tuple;
 
-		auditorId = super.getRequest().getPrincipal().getActiveRoleId();
 		courses = this.repository.findAllCourses();
 		choices = SelectChoices.from(courses, "code", object.getCourse());
 

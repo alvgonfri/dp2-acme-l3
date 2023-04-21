@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.courses.Course;
-import acme.entities.practicums.PracticumSession;
 import acme.entities.tutorial.Tutorial;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
@@ -95,8 +94,6 @@ public class AssistantTutorialPublishService extends AbstractService<Assistant, 
 
 		Collection<Course> courses;
 		SelectChoices choices;
-		final Collection<PracticumSession> sessions;
-		final Double estimatedTime;
 		Tuple tuple;
 
 		courses = this.repository.findPublishedCourses();

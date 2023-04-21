@@ -62,8 +62,6 @@ public class AssistantTutorialUpdateService extends AbstractService<Assistant, T
 	public void bind(final Tutorial object) {
 		assert object != null;
 
-		final int LOWER_NIBBLE_START = 12;
-
 		int courseId;
 		Course course;
 
@@ -72,10 +70,6 @@ public class AssistantTutorialUpdateService extends AbstractService<Assistant, T
 
 		super.bind(object, "code", "title", "summary", "goals");
 		object.setCourse(course);
-		//			if (creditCardNumber.length() == 16) {
-		//				creditCardLowerNibble = creditCardNumber.substring(LOWER_NIBBLE_START);
-		//				object.setCreditCardLowerNibble(creditCardLowerNibble);
-		//			}
 	}
 
 	@Override
