@@ -33,18 +33,19 @@
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
-			<acme:menu-suboption code="master.menu.administrator.offers"  action="/administrator/offer/list"/>
-			<acme:menu-separator/>
+			
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.populate-initial" action="/administrator/populate-initial"/>
 			<acme:menu-suboption code="master.menu.administrator.populate-sample" action="/administrator/populate-sample"/>			
 			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.offers"  action="/administrator/offer/list"/>
 			<acme:menu-suboption code="master.menu.administrator.banners" action="/administrator/banner/list"/>
-			<acme:menu-separator/>
-			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
-			<acme:menu-suboption code="master.menu.administrator.system-configuration" action="/administrator/system-configuration/show"/>
 			<acme:menu-suboption code="master.menu.administrator.create-bulletin" action="/administrator/bulletin/create"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.system-configuration" action="/administrator/system-configuration/show"/>
+			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
+			
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.auditor" access="hasRole('Auditor')">
@@ -71,6 +72,7 @@
 		<acme:menu-option code="master.menu.lecturer" access="hasRole('Lecturer')">
 				<acme:menu-suboption code="master.menu.lecturer.list" action="/lecturer/course/list"/>
 				<acme:menu-suboption code="master.menu.lecturer.create" action="/lecturer/course/create"/>
+				<acme:menu-suboption code="master.menu.lecturer.lecture.list" action="/lecturer/lecture/list-all"/>
 		</acme:menu-option>
 		<acme:menu-option code="master.menu.assistant" access="hasRole('Assistant')">
 				<acme:menu-suboption code="master.menu.assistant.list-my-tutorials" action="/assistant/tutorial/list"/>

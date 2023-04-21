@@ -19,6 +19,7 @@ administrator.banner.form.button.update = Actualizar
 administrator.banner.form.button.delete = Eliminar
 administrator.banner.form.button.create = Crear
 
+administrator.banner.form.error.wrong-end = La fecha de fin debe ser anterior o igual a 31/12/2100 23:59
 administrator.banner.form.error.wrong-displayStart = El periodo de display debe empezar en una fecha posterior a la actual
 administrator.banner.form.error.wrong-displayEnd = El periodo de display debe durar al menos una semana
 

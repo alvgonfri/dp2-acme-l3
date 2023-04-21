@@ -116,7 +116,7 @@ public class AdministratorOfferUpdateService extends AbstractService<Administrat
 
 			boolean isValid;
 
-			isValid = MomentHelper.isBefore(object.getStartAvailable(), latestDate);
+			isValid = MomentHelper.isBeforeOrEqual(object.getStartAvailable(), latestDate);
 			super.state(isValid, "startAvailable", "administrator.offer.error.datelimits");
 		}
 
@@ -124,7 +124,7 @@ public class AdministratorOfferUpdateService extends AbstractService<Administrat
 
 			boolean isValid;
 
-			isValid = MomentHelper.isAfter(object.getEndAvailable(), earliestDate) && MomentHelper.isBefore(object.getEndAvailable(), latestDate);
+			isValid = MomentHelper.isAfterOrEqual(object.getEndAvailable(), earliestDate) && MomentHelper.isBeforeOrEqual(object.getEndAvailable(), latestDate);
 			super.state(isValid, "endAvailable", "administrator.offer.error.datelimits");
 		}
 	}

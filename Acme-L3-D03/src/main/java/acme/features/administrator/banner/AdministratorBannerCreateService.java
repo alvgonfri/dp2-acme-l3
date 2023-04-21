@@ -75,6 +75,23 @@ public class AdministratorBannerCreateService extends AbstractService<Administra
 	public void validate(final Banner object) {
 		assert object != null;
 
+		if (!super.getBuffer().getErrors().hasErrors("displayEnd")) {
+			Calendar calendar;
+			final Date date;
+
+			calendar = Calendar.getInstance();
+			calendar.set(Calendar.YEAR, 2100);
+			calendar.set(Calendar.MONTH, Calendar.DECEMBER);
+			calendar.set(Calendar.DAY_OF_MONTH, 31);
+			calendar.set(Calendar.HOUR_OF_DAY, 23);
+			calendar.set(Calendar.MINUTE, 59);
+			calendar.set(Calendar.SECOND, 59);
+			calendar.set(Calendar.MILLISECOND, 0);
+			date = new Date(calendar.getTimeInMillis());
+
+			super.state(MomentHelper.isBeforeOrEqual(object.getDisplayEnd(), date), "displayEnd", "administrator.banner.form.error.wrong-end");
+		}
+
 		if (!super.getBuffer().getErrors().hasErrors("displayStart"))
 			super.state(MomentHelper.isFuture(object.getDisplayStart()), "displayStart", "administrator.banner.form.error.wrong-displayStart");
 
