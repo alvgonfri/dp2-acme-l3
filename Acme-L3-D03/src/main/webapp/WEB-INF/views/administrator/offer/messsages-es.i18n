@@ -30,4 +30,5 @@ administrator.offer.form.button.update = Actualizar
 administrator.offer.form.button.delete = Eliminar
 
 administrator.offer.error.onedayfuture = Debe estar disponible al menos 1 día despues del momento actual
-administrator.offer.error.oneweeklong = Debe estar disponible al menos durante 1 semana
+administrator.offer.error.oneweeklong = La fecha fin debe ser al menos 1 semana posterior a la decha de inicio
+administrator.offer.error.datelimits = La fecha debe ser entre 01/01/2000 00:00 and 31/12/2100 00:00
