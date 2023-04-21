@@ -20,3 +20,4 @@ any.course.form.label.moreInfo = Información adicional
 any.course.form.label.lecturer = Profesor
 
 authenticated.practica.form.button = Prácticas del curso
+authenticated.tutorial.form.button = Tutorías del curso
