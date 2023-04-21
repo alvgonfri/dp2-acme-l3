@@ -90,3 +90,9 @@ master.menu.auditor.audits = Mis auditorias
 master.menu.any.course = Cursos
 master.menu.any.peep = Peeps
 master.menu.any = Cualquiera
+
+# master.menu.lecturer ##########################################################
+
+master.menu.lecturer = Profesor
+master.menu.lecturer.list = Mis cursos
+master.menu.lecturer.create = Crear un Curso
