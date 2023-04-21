@@ -10,14 +10,18 @@
 	<acme:input-textbox code="assistant.tutorial.list.label.summary" path="summary"/>
 	<acme:input-textbox code="assistant.tutorial.list.label.goals" path="goals"/>
 	<acme:input-select code="assistant.tutorial.list.label.course" path="course" choices="${courses}"/>
-
+	<acme:input-integer code="assistant.tutorial.list.label.totalTime" path="totalTime" readonly="true"/>
+	
+	
 	<jstl:choose>	 
-		<jstl:when test="${_command == 'show' && draftMode == false}">
-			<acme:button code="student.enrolment.form.button.activities" action="/student/activity/list?enrolmentId=${id}"/>			
+		<jstl:when test="${_command == 'show'&& draftMode == false}">
+			<acme:button code="student.enrolment.form.button.tutorialSession" action="/assistant/tutorial-session/list?tutorialId=${id}"/>			
 		</jstl:when>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete') && draftMode == true}">
 			<acme:submit code="assistant.tutorial.button.update" action="/assistant/tutorial/update"/>
 			<acme:submit code="assistant.tutorial.button.delete" action="/assistant/tutorial/delete"/>
+			<acme:submit code="assistant.tutorial.button.publish" action="/assistant/tutorial/publish"/>
+			<acme:button code="student.enrolment.form.button.tutorialSession" action="/assistant/tutorial-session/list?tutorialId=${id}"/>	
 
 		</jstl:when>
 		<jstl:when test="${_command == 'create'}">

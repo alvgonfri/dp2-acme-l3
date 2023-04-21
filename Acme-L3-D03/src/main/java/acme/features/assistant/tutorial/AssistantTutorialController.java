@@ -25,6 +25,8 @@ public class AssistantTutorialController extends AbstractController<Assistant, T
 	protected AssistantTutorialDeleteService	deleteService;
 	@Autowired
 	protected AssistantTutorialUpdateService	updateService;
+	@Autowired
+	protected AssistantTutorialPublishService	publishService;
 
 
 	@PostConstruct
@@ -34,6 +36,7 @@ public class AssistantTutorialController extends AbstractController<Assistant, T
 		super.addBasicCommand("list", this.listService);
 		super.addBasicCommand("update", this.updateService);
 		super.addBasicCommand("delete", this.deleteService);
+		super.addCustomCommand("publish", "update", this.publishService);
 
 	}
 

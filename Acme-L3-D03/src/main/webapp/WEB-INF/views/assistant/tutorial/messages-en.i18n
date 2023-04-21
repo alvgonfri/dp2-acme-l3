@@ -20,3 +20,6 @@ assistant.tutorial.list.label.goals= Goals
 student.tutorial.form.error.code-duplicated= The code already exist
 assistant.tutorial.button.delete=  Delete
 assistant.tutorial.button.update = Update
+student.enrolment.form.button.tutorialSession= Tutorial Session
+assistant.tutorial.list.label.totalTime= Total Time
+assistant.tutorial.button.publish= Publish

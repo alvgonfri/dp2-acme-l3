@@ -52,7 +52,7 @@ master.menu.student.dashboard = Dashboard
 # master.menu.assistant ########################################################
 master.menu.assistant = Assistant
 master.menu.assistant.list-my-tutorials= Tutorials
-
+master.menu.assistant.list-my-tutorials-session= Tutiarls Session
 
 
 # master.menu.user-account ####################################################
