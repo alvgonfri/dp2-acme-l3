@@ -36,4 +36,5 @@ auditor.auditingRecord.form.button.create = Guardar
 auditor.auditingRecord.form.button.update = Actualizar
 auditor.auditingRecord.form.button.delete = Eliminar
 
-auditor.auditingRecord.form.error.duration = El periodo auditado debe ser de al menos 1 hora
+auditor.auditingRecord.form.error.duration = La fecha fin debe ser al menos 1 hora posterior a la decha de inicio
+auditor.auditingRecord.form.error.earliesdate = La fecha debe ser posterior al 01/01/2000 00:00
