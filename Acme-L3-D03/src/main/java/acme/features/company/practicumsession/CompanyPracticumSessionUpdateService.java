@@ -92,18 +92,16 @@ public class CompanyPracticumSessionUpdateService extends AbstractService<Compan
 	public void validate(final PracticumSession object) {
 		assert object != null;
 
-		//Date Validations
-
 		final Date startDate = super.getRequest().getData("startDate", Date.class);
 		final Date endDate = super.getRequest().getData("endDate", Date.class);
 		final Date availableStart = MomentHelper.deltaFromCurrentMoment(7, ChronoUnit.DAYS);
 		final Date availableEnd = MomentHelper.deltaFromMoment(startDate, 7, ChronoUnit.DAYS);
 
 		final boolean validStart = startDate.getTime() >= availableStart.getTime();
-		super.state(validStart, "startDate", "company.practicum-session.validation.startDate.error.WeekAhead");
+		super.state(validStart, "startDate", "company.practicum-session.validation.startDate.error.AtLeastOneWeekAntiquity");
 
 		final boolean validEnd = endDate.getTime() >= availableEnd.getTime();
-		super.state(validEnd, "endDate", "company.practicum-session.validation.endDate.error.WeekLong");
+		super.state(validEnd, "endDate", "company.practicum-session.validation.endDate.error.AtLeastOneWeekDuration");
 
 		//Practicum Validation
 		final Collection<Practicum> practica;
@@ -131,7 +129,6 @@ public class CompanyPracticumSessionUpdateService extends AbstractService<Compan
 	@Override
 	public void unbind(final PracticumSession object) {
 		assert object != null;
-		assert object != null;
 		final Collection<Practicum> practica;
 		final SelectChoices choices;
 		final int companyId = super.getRequest().getPrincipal().getActiveRoleId();
@@ -143,7 +140,6 @@ public class CompanyPracticumSessionUpdateService extends AbstractService<Compan
 		tuple = super.unbind(object, "title", "summary", "startDate", "endDate", "draftMode", "addendum", "link");
 		tuple.put("practicum", choices.getSelected().getKey());
 		tuple.put("practica", choices);
-		tuple.put("draftMode", object.getPracticum().isDraftMode());
 
 		super.getResponse().setData(tuple);
 	}

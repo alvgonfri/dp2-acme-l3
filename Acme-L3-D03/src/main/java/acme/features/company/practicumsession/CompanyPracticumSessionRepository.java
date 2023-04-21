@@ -25,16 +25,16 @@ import acme.roles.Company;
 @Repository
 public interface CompanyPracticumSessionRepository extends AbstractRepository {
 
-	@Query("Select ps from PracticumSession ps Where ps.id = :id")
+	@Query("Select s from PracticumSession s Where s.id = :id")
 	PracticumSession findOneSessionById(int id);
 
-	@Query("Select ps From PracticumSession ps Where ps.practicum.id = :id")
+	@Query("Select s From PracticumSession s Where s.practicum.id = :id")
 	Collection<PracticumSession> findManySessionsByPracticumId(int id);
 
-	@Query("Select ps From PracticumSession ps Where ps.practicum.company.id = :id")
+	@Query("Select s From PracticumSession s Where s.practicum.company.id = :id")
 	Collection<PracticumSession> findManySessionsByCompanyId(int id);
 
-	@Query("Select ps From PracticumSession ps Where ps.practicum.id = :id And ps.addendum = true")
+	@Query("Select s From PracticumSession s Where s.practicum.id = :id And s.addendum = true")
 	Collection<PracticumSession> findAddendumSessionsByPracticumId(int id);
 
 	@Query("Select p From Practicum p Where p.company.id = :id")
@@ -49,7 +49,7 @@ public interface CompanyPracticumSessionRepository extends AbstractRepository {
 	@Query("Select p From Practicum p Where p.id = :id")
 	Practicum findOnePracticaById(int id);
 
-	@Query("Select ps.practicum From PracticumSession ps Where ps.id = :id")
+	@Query("Select s.practicum From PracticumSession s Where s.id = :id")
 	Practicum findOnePracticumBySessionId(int id);
 
 	@Query("Select p From Practicum p where p.draftMode = false")

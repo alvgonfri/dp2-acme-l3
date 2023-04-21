@@ -28,8 +28,7 @@ import acme.framework.services.AbstractService;
 import acme.roles.Company;
 
 @Service
-public class CompanyPracticumSessionCreateService extends AbstractService<Company, PracticumSession> {
-
+public class CompanyPracticumSessionCreateAddendumService extends AbstractService<Company, PracticumSession> {
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
@@ -56,7 +55,7 @@ public class CompanyPracticumSessionCreateService extends AbstractService<Compan
 
 		object = new PracticumSession();
 		object.setDraftMode(true);
-		object.setAddendum(false);
+		object.setAddendum(true);
 
 		super.getBuffer().setData(object);
 	}
@@ -92,12 +91,29 @@ public class CompanyPracticumSessionCreateService extends AbstractService<Compan
 		final boolean validEnd = endDate.getTime() >= availableEnd.getTime();
 		super.state(validEnd, "endDate", "company.practicum-session.validation.endDate.error.AtLeastOneWeekDuration");
 
+		boolean confirmation;
+		confirmation = super.getRequest().getData("confirmation", boolean.class);
+		super.state(confirmation, "confirmation", "company.practicum-session.validation.confirmation");
+
+		final Collection<Practicum> practica;
+		Collection<PracticumSession> addendums;
+		final SelectChoices choices;
+		final int companyId = super.getRequest().getPrincipal().getActiveRoleId();
+
+		practica = this.repository.findManyPublishedPracticaByCompanyId(companyId);
+		choices = SelectChoices.from(practica, "code", object.getPracticum());
+
+		final int selectedId = Integer.parseInt(choices.getSelected().getKey());
+		addendums = this.repository.findAddendumSessionsByPracticumId(selectedId);
+
+		final boolean valid = addendums.size() == 0;
+		super.state(valid, "practicum", "company.practicum-session.validation.practicum.error.AddendumUsed");
 	}
 
 	@Override
 	public void perform(final PracticumSession object) {
 		assert object != null;
-
+		object.setDraftMode(false);
 		this.repository.save(object);
 	}
 
@@ -108,13 +124,14 @@ public class CompanyPracticumSessionCreateService extends AbstractService<Compan
 		final SelectChoices choices;
 		final int companyId = super.getRequest().getPrincipal().getActiveRoleId();
 
-		practica = this.repository.findManyPrivatePracticaByCompanyId(companyId);
+		practica = this.repository.findManyPublishedPracticaByCompanyId(companyId);
 		choices = SelectChoices.from(practica, "code", object.getPracticum());
 		Tuple tuple;
 
 		tuple = super.unbind(object, "title", "summary", "startDate", "endDate", "draftMode", "addendum", "link");
 		tuple.put("practicum", choices.getSelected().getKey());
 		tuple.put("practica", choices);
+		tuple.put("confirmation", false);
 
 		super.getResponse().setData(tuple);
 	}

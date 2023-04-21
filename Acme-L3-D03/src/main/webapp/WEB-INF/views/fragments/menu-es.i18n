@@ -60,6 +60,7 @@ master.menu.user-account.become-consumer = Hazte consumidor
 
 master.menu.company = Empresa
 master.menu.company.practicum = Lista de prácticas
+master.menu.company.dashboard = Panel de indicadores
 
 
 master.menu.user-account.student = Datos de estudiante
@@ -69,10 +70,6 @@ master.menu.user-account.become-assistant = Hazte asistente
 master.menu.user-account.lecturer = Datos del profesor
 master.menu.user-account.become-lecturer = Hazte profesor
 
-# master.menu.company #######################################################
-master.menu.company = Company
-master.menu.company.dashboard = Panel de indicadores
-
 # master.menu.auditor ###################################################
 
 master.menu.auditor = Auditor
@@ -80,5 +77,3 @@ master.menu.auditor.audits = Auditorias
 # master.menu.any ####################################################
 master.menu.any.course = Cursos
 master.menu.any = Cualquiera
-
->>>>>>> refs/remotes/origin/main

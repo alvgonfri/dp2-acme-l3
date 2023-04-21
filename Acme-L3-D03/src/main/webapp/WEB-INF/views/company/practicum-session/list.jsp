@@ -21,4 +21,5 @@
 	<acme:list-column code="company.practicum-session.list.label.endDate" path="endDate"/>
 </acme:list>
 
-<acme:button test="${showCreate}" code="company.practicum-session.list.button.create" action="/company/practicum-session/create"/>
+<acme:button code="company.practicum-session.list.button.create" action="/company/practicum-session/create"/>
+<acme:button code="company.practicum-session.list.button.create.addendum" action="/company/practicum-session/create-addendum"/>

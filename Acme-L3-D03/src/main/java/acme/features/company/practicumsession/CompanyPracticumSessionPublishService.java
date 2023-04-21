@@ -99,10 +99,10 @@ public class CompanyPracticumSessionPublishService extends AbstractService<Compa
 		final Date availableEnd = MomentHelper.deltaFromMoment(startDate, 7, ChronoUnit.DAYS);
 
 		final boolean validStart = startDate.getTime() >= availableStart.getTime();
-		super.state(validStart, "startDate", "company.practicum-session.validation.startDate.error.WeekAhead");
+		super.state(validStart, "startDate", "company.practicum-session.validation.startDate.error.AtLeastOneWeekAntiquity");
 
 		final boolean validEnd = endDate.getTime() >= availableEnd.getTime();
-		super.state(validEnd, "endDate", "company.practicum-session.validation.endDate.error.WeekLong");
+		super.state(validEnd, "endDate", "company.practicum-session.validation.endDate.error.AtLeastOneWeekDuration");
 
 		//Practicum Validation
 		final Collection<Practicum> practica;
@@ -142,8 +142,6 @@ public class CompanyPracticumSessionPublishService extends AbstractService<Compa
 		tuple = super.unbind(object, "title", "summary", "startDate", "endDate", "draftMode", "addendum", "link");
 		tuple.put("practicum", choices.getSelected().getKey());
 		tuple.put("practica", choices);
-		tuple.put("draftMode", object.getPracticum().isDraftMode());
-		tuple.put("confirmation", false);
 
 		super.getResponse().setData(tuple);
 	}

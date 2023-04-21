@@ -69,10 +69,6 @@ master.menu.user-account.become-assistant = Become an assistant
 master.menu.user-account.lecturer = Lecturer data
 master.menu.user-account.become-lecturer = Become a lecturer
 
-# master.menu.company #######################################################
-master.menu.company = Company
-master.menu.company.dashboard = Dashboard
-
 # master.menu.auditor ###################################################
 
 master.menu.auditor = Auditor

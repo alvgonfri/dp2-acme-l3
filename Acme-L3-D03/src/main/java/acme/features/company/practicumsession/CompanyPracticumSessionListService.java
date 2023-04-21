@@ -69,20 +69,10 @@ public class CompanyPracticumSessionListService extends AbstractService<Company,
 	@Override
 	public void unbind(final PracticumSession object) {
 		assert object != null;
-		int practicumId;
-		Practicum practicum;
-		final boolean showCreate;
-		final boolean draftMode;
-		practicumId = super.getRequest().getData("practicumId", int.class);
-		practicum = this.repository.findOnePracticaById(practicumId);
-		showCreate = practicum.isDraftMode() && super.getRequest().getPrincipal().hasRole(practicum.getCompany());
-		draftMode = practicum.isDraftMode();
 
 		Tuple tuple;
 
-		tuple = super.unbind(object, "title", "summary", "startDate", "endDate", "link", "draftMode", "addendum");
-		tuple.put("showCreate", showCreate);
-		tuple.put("draftMode", draftMode);
+		tuple = super.unbind(object, "title", "summary", "startDate", "endDate", "draftMode", "addendum");
 
 		super.getResponse().setData(tuple);
 	}

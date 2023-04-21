@@ -16,6 +16,12 @@
 <%@taglib prefix="acme" uri="http://www.the-acme-framework.org/"%>
 
 <acme:form>
+	<jstl:if test="${addendum == true}">
+		<h2 style="text-align: center; color: red;">
+			<acme:message code="company.practicum-session.form.message.addendum"/>
+		</h2>
+	</jstl:if>
+	
 	<acme:input-textbox code="company.practicum-session.form.label.title" path="title"/>
 	<acme:input-textarea code="company.practicum-session.form.label.summary" path="summary"/>
 	<acme:input-moment code="company.practicum-session.form.label.startDate" path="startDate"/>
@@ -29,17 +35,17 @@
 			<acme:submit code="company.practicum-session.form.button.delete" action="/company/practicum-session/delete"/>
 			<acme:submit code="company.practicum-session.form.button.publish" action="/company/practicum-session/publish"/>
 		</jstl:when>
-
-		<jstl:when test="${_command == 'create' && draftMode == true}">
+		<jstl:when test="${acme:anyOf(_command, 'show|update|delete') && draftMode == false}">
+			<acme:input-textbox code="company.practicum-session.form.label.practicum" path="practicum.code"/>			
+		</jstl:when>
+		<jstl:when test="${_command == 'create'}">
 			<acme:input-select code="company.practicum-session.form.label.practicum" path="practicum" choices="${practica}"/>
 			<acme:submit code="company.practicum-session.form.button.create" action="/company/practicum-session/create"/>
 		</jstl:when>
-		<jstl:when test="${_command == 'create' && draftMode == false}">
+		<jstl:when test="${_command == 'create-addendum'}">
+			<acme:input-select code="company.practicum-session.form.label.practicum" path="practicum" choices="${practica}"/>
 			<acme:input-checkbox code="company.practicum-session.form.label.confirmation" path="confirmation"/>
-			<acme:submit code="company.practicum-session.form.button.createAddendum" action="/company/practicum-session/create"/>
+			<acme:submit code="company.practicum-session.form.button.create" action="/company/practicum-session/create-addendum"/>
 		</jstl:when>		
 	</jstl:choose>
-	<jstl:if test="${addendum == true}">
-		<acme:message code="company.practicum-session.form.message.addendum"/>
-	</jstl:if>
 </acme:form>
