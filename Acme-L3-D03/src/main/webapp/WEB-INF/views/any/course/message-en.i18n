@@ -20,3 +20,6 @@ any.course.form.label.summary = Summary
 any.course.form.label.retailPrice = Price
 any.course.form.label.moreInfo = More information
 any.course.form.label.lecturer = Lecturer
+
+authenticated.practica.form.button = Course practicas
+authenticated.tutorial.form.button = Course tutorials

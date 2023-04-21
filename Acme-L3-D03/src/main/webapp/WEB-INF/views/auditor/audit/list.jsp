@@ -17,7 +17,6 @@
 
 <acme:list>
 	<acme:list-column code="auditor.audit.list.label.code" path="code"/>
-	<acme:list-column code="auditor.audit.list.label.conclusion" path="conclusion"/>
 	<acme:list-column code="auditor.audit.list.label.course" path="course.title"/>
 	<acme:list-column code="auditor.audit.list.label.mark" path="mark"/>
 	

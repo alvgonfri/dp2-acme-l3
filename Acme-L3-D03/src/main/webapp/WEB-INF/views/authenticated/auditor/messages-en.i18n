@@ -13,6 +13,5 @@ authenticated.auditor.form.label.professionalId = Professional ID
 authenticated.auditor.form.label.certifications = Certifications
 authenticated.auditor.form.label.moreInfo = More info
 
-
 authenticated.auditor.form.button.create = Save
 authenticated.auditor.form.button.update = Update

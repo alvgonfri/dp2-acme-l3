@@ -1,0 +1,30 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2023 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+company.dashboard.form.title.general-indicators = General indicators
+
+# Messages for the dashboard form about the practica
+company.dashboard.form.title.practica-length = Practica length
+company.dashboard.form.label.numberOfPracticas = Total number of practica
+company.dashboard.form.label.averagePeriodLengthPractica = Average lenght
+company.dashboard.form.label.minimumPeriodLengthPractica = Minimum lenght
+company.dashboard.form.label.practica-length.max = Maximum lenght
+company.dashboard.form.label.deviationPeriodLengthPractica = Deviation
+
+# Messages for the dashboard form about the sessions
+company.dashboard.form.title.session-length = Session length
+company.dashboard.form.label.numberOfSessions = Total number of sessions
+company.dashboard.form.label.averagePeriodLengthPractica = Average lenght
+company.dashboard.form.label.minimumPeriodLengthPractica = Minimum lenght
+company.dashboard.form.label.maximumPeriodLengthPractica = Maximum lenght
+company.dashboard.form.label.deviationPeriodLengthPractica = Deviation
+
+# Messages for the dashboard form about the practica by month
+company.dashboard.form.title.practicaNumberPerMonth = Number of practicas per months

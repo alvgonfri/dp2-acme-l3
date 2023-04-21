@@ -1,0 +1,19 @@
+lecturer.course.list.label.code = Code
+lecturer.course.list.label.title = Title
+lecturer.course.list.label.retailPrice = Retail price
+
+lecturer.course.form.label.code = Code
+lecturer.course.form.label.title = Title
+lecturer.course.form.label.summary = Summary
+lecturer.course.form.label.retailPrice = Retail price
+lecturer.course.form.label.moreInfo = More information
+
+lecturer.course.form.button.lectures = See lectures
+lecturer.course.form.button.update = Update
+lecturer.course.form.button.delete = Delete
+lecturer.course.form.button.publish = Publish
+lecturer.course.form.button.create = Create
+
+lecturer.course.form.error.negative-price = Price must be zero or positive
+lecturer.course.form.error.unpublishedLectures = All lectures must be published before publishing a course.
+lecturer.course.form.error.allLecturesAreTheory = Purely theoretical courses cannot be published.

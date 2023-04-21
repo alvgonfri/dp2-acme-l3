@@ -31,7 +31,9 @@ master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
 master.menu.administrator.banners = List all banners
 master.menu.administrator.shut-down = Shut down
+master.menu.administrator.offers = Offers
 master.menu.administrator.system-configuration = System Configuration
+master.menu.administrator.create-bulletin = Create Bulletin
 
 # master.menu.authenticated ########################################################
 master.menu.authenticated = Authenticated
@@ -49,6 +51,13 @@ master.menu.student.list-my-enrolments = List my enrolments
 master.menu.student.list-courses = List courses
 master.menu.student.dashboard = Dashboard
 
+
+# master.menu.assistant ########################################################
+master.menu.assistant = Assistant
+master.menu.assistant.list-my-tutorials= Tutorials
+master.menu.assistant.list-my-tutorials-session= Tutiarls Session
+
+
 # master.menu.user-account ####################################################
 master.menu.user-account = Account
 master.menu.user-account.general-data = General data
@@ -56,17 +65,35 @@ master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
+
+# master.menu.company #######################################################
+
+master.menu.company = Company
+master.menu.company.practicum = Practicas list
+
+
 master.menu.user-account.student = Student data
 master.menu.user-account.become-student = Become a student
 master.menu.user-account.assistant = Assistant data
 master.menu.user-account.become-assistant = Become an assistant
 master.menu.user-account.lecturer = Lecturer data
 master.menu.user-account.become-lecturer = Become a lecturer
+master.menu.user-account.auditor = Auditor data
+master.menu.user-account.become-auditor = Become an auditor
+
 
 # master.menu.auditor ###################################################
 
 master.menu.auditor = Auditor
-master.menu.auditor.audits = Audits
+master.menu.auditor.audits = My audits
+
 # master.menu.any ####################################################
 master.menu.any.course = Courses
+master.menu.any.peep = Peeps
 master.menu.any= Any
+
+# master.menu.lecturer ##########################################################
+
+master.menu.lecturer = Lecturer
+master.menu.lecturer.list = My courses
+master.menu.lecturer.create = Create a Course
