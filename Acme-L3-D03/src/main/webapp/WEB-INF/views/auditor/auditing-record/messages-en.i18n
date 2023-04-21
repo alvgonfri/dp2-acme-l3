@@ -34,4 +34,5 @@ auditor.auditingRecord.form.button.create = Save
 auditor.auditingRecord.form.button.update = Update
 auditor.auditingRecord.form.button.delete = Delete
 
-auditor.auditingRecord.form.error.duration = The auditing period must be at least 1 hour long
+auditor.auditingRecord.form.error.duration = The end date must be at least 1 hour after the start date
+auditor.auditingRecord.form.error.earliesdate = The date must be after than 2000/01/01 00:00

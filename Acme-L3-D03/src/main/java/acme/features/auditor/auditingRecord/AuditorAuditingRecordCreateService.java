@@ -2,6 +2,8 @@
 package acme.features.auditor.auditingRecord;
 
 import java.time.temporal.ChronoUnit;
+import java.util.Calendar;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -80,13 +82,34 @@ public class AuditorAuditingRecordCreateService extends AbstractService<Auditor,
 
 		assert object != null;
 
+		Calendar calendar;
+		final Date earliestDate;
+
+		calendar = Calendar.getInstance();
+		calendar.set(Calendar.YEAR, 2000);
+		calendar.set(Calendar.MONTH, Calendar.JANUARY);
+		calendar.set(Calendar.DAY_OF_MONTH, 1);
+		calendar.set(Calendar.HOUR_OF_DAY, 0);
+		calendar.set(Calendar.MINUTE, 0);
+		calendar.set(Calendar.SECOND, 0);
+		calendar.set(Calendar.MILLISECOND, 0);
+		earliestDate = new Date(calendar.getTimeInMillis());
+
 		if (!super.getBuffer().getErrors().hasErrors("startDate") && !super.getBuffer().getErrors().hasErrors("endDate")) {
 			boolean isValid;
 
-			isValid = MomentHelper.isLongEnough(object.getStartDate(), object.getEndDate(), 1, ChronoUnit.HOURS);
+			isValid = MomentHelper.isLongEnough(object.getStartDate(), object.getEndDate(), 1, ChronoUnit.HOURS) && MomentHelper.isBefore(object.getStartDate(), object.getEndDate());
 
 			super.state(isValid, "startDate", "auditor.auditingRecord.form.error.duration");
 			super.state(isValid, "endDate", "auditor.auditingRecord.form.error.duration");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("startDate")) {
+
+			boolean isValid;
+
+			isValid = MomentHelper.isAfter(object.getStartDate(), earliestDate);
+			super.state(isValid, "startDate", "auditor.auditingRecord.form.error.earliesdate");
 		}
 
 	}

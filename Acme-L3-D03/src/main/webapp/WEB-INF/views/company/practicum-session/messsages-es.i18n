@@ -1,0 +1,38 @@
+# messages-es.i18n
+#
+# Copyright (C) 2012-2023 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+company.practicum-session.list.label.title = Título
+company.practicum-session.list.label.startDate = Fecha inicio
+company.practicum-session.list.label.endDate = Fecha fin
+
+company.practicum-session.list.button.create = Crear una sesión práctica
+company.practicum-session.list.button.create.addendum = Crear una sesión adenda
+
+company.practicum-session.form.label.title = Título
+company.practicum-session.form.label.summary = Resumen
+company.practicum-session.form.label.startDate = Fecha inicio
+company.practicum-session.form.label.endDate = Fecha fin
+company.practicum-session.form.label.link = Más información
+company.practicum-session.form.label.practicum = Práctica
+
+company.practicum-session.form.button.update = Actualizar
+company.practicum-session.form.button.delete = Eliminar
+company.practicum-session.form.button.publish = Publicar
+company.practicum-session.form.button.create = Crear
+
+company.practicum-session.form.message.addendum = ¡PRECAUCIÓN! ESTÁS CREANDO UNA SESIÓN PRÁCTICA ANEXA
+company.practicum-session.form.label.confirmation = Confirmación
+company.practicum-session.form.button.createAddendum = Crear sesión adenda
+
+company.practicum-session.validation.startDate.error.AtLeastOneWeekAntiquity = Error: La "Fecha inicio" debe comenzar al menos una semana después del momento actual
+company.practicum-session.validation.endDate.error.AtLeastOneWeekDuration = Error: La "Fecha fin" debe establecerse al menos una semana después de la "Fecha inicio"
+company.practicum-session.validation.practicum.error.Published = Error: Esta práctica ya ha sido publicada
+company.practicum-session.validation.confirmation = Error: Debe marcar la casilla de confirmación para poder crear una sesión adenda
+company.practicum-session.validation.practicum.error.AddendumUsed = Error: Ya existe una sesión adenda para esta práctica. Sólo está permitida una adenda por práctica
