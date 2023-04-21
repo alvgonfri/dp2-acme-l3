@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.course;
+package acme.features.any.course;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -54,7 +54,6 @@ public class AnyCourseShowService extends AbstractService<Any, Course> {
 		tuple.put("lecturerFullName", lecturerFullName);
 		tuple.put("confirmation", false);
 		tuple.put("readonly", true);
-		tuple.put("isAuthenticated", super.getRequest().getPrincipal().isAuthenticated());
 
 		super.getResponse().setData(tuple);
 	}

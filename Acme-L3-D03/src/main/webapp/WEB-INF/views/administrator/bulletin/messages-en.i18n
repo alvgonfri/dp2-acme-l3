@@ -8,10 +8,10 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.auditor.form.label.firm = Firm
-authenticated.auditor.form.label.professionalId = Professional ID
-authenticated.auditor.form.label.certifications = Certifications
-authenticated.auditor.form.label.moreInfo = More info
-
-authenticated.auditor.form.button.create = Save
-authenticated.auditor.form.button.update = Update
+administrator.bulletin.form.label.moment = Moment
+administrator.bulletin.form.label.title = Title
+administrator.bulletin.form.label.message = Message
+administrator.bulletin.form.label.critical = Critical
+administrator.bulletin.form.label.moreInfo = More information
+administrator.bulletin.form.label.confirmation = Confirm Bulletin
+administrator.bulletin.form.button.create = Create Bulletin

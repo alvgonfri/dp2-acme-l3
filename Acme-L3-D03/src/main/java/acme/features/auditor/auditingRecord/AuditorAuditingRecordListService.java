@@ -39,10 +39,12 @@ public class AuditorAuditingRecordListService extends AbstractService<Auditor, A
 		boolean status;
 		int auditId;
 		Audit audit;
+		Auditor loggedAuditor;
 
 		auditId = super.getRequest().getData("auditId", int.class);
 		audit = this.repository.findOneAuditById(auditId);
-		status = audit != null;
+		loggedAuditor = this.repository.findOneAuditorByUsername(super.getRequest().getPrincipal().getUsername());
+		status = audit != null && loggedAuditor == audit.getAuditor();
 
 		super.getResponse().setAuthorised(status);
 	}

@@ -32,6 +32,7 @@ master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.banners = Ver todos los banners
 master.menu.administrator.shut-down = Parar el sistema
 master.menu.administrator.system-configuration = Configuración del sistema
+master.menu.administrator.create-bulletin = Crear boletín
 
 # master.menu.authenticated ########################################################
 master.menu.authenticated = Autentificado
@@ -69,11 +70,15 @@ master.menu.user-account.assistant = Datos de asistente
 master.menu.user-account.become-assistant = Hazte asistente
 master.menu.user-account.lecturer = Datos del profesor
 master.menu.user-account.become-lecturer = Hazte profesor
+master.menu.user-account.auditor = Datos del auditor
+master.menu.user-account.become-auditor = Hazte auditor
 
 # master.menu.auditor ###################################################
 
 master.menu.auditor = Auditor
 master.menu.auditor.audits = Auditorias
+
 # master.menu.any ####################################################
 master.menu.any.course = Cursos
+master.menu.any.peep = Peeps
 master.menu.any = Cualquiera

@@ -8,10 +8,16 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.auditor.form.label.firm = Firm
-authenticated.auditor.form.label.professionalId = Professional ID
-authenticated.auditor.form.label.certifications = Certifications
-authenticated.auditor.form.label.moreInfo = More info
+any.peep.list.label.moment = Date
+any.peep.list.label.title = Title
+any.peep.list.label.nick = Nick
 
-authenticated.auditor.form.button.create = Save
-authenticated.auditor.form.button.update = Update
+any.peep.form.label.moment = Date
+any.peep.form.label.title = Title
+any.peep.form.label.nick = Nick
+any.peep.form.label.message = Message
+any.peep.form.label.email = Email
+any.peep.form.label.moreInfo = More info
+
+any.peep.list.button.create = Create
+any.peep.form.button.create = Create

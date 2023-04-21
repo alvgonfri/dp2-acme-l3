@@ -32,6 +32,7 @@ master.menu.administrator.populate-sample = Populate DB (samples)
 master.menu.administrator.banners = List all banners
 master.menu.administrator.shut-down = Shut down
 master.menu.administrator.system-configuration = System Configuration
+master.menu.administrator.create-bulletin = Create Bulletin
 
 # master.menu.authenticated ########################################################
 master.menu.authenticated = Authenticated
@@ -68,11 +69,16 @@ master.menu.user-account.assistant = Assistant data
 master.menu.user-account.become-assistant = Become an assistant
 master.menu.user-account.lecturer = Lecturer data
 master.menu.user-account.become-lecturer = Become a lecturer
+master.menu.user-account.auditor = Auditor data
+master.menu.user-account.become-auditor = Become an auditor
+
 
 # master.menu.auditor ###################################################
 
 master.menu.auditor = Auditor
 master.menu.auditor.audits = Audits
+
 # master.menu.any ####################################################
 master.menu.any.course = Courses
+master.menu.any.peep = Peeps
 master.menu.any= Any
