@@ -1,4 +1,4 @@
-# messages-en.i18n
+# messages-es.i18n
 #
 # Copyright (C) 2012-2023 Rafael Corchuelo.
 #
@@ -8,10 +8,16 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.auditor.form.label.firm = Firm
-authenticated.auditor.form.label.professionalId = Professional ID
-authenticated.auditor.form.label.certifications = Certifications
-authenticated.auditor.form.label.moreInfo = More info
+any.peep.list.label.moment = Fecha
+any.peep.list.label.title = Título
+any.peep.list.label.nick = Alias
 
-authenticated.auditor.form.button.create = Save
-authenticated.auditor.form.button.update = Update
+any.peep.form.label.moment = Fecha
+any.peep.form.label.title = Título
+any.peep.form.label.nick = Alias
+any.peep.form.label.message = Mensaje
+any.peep.form.label.email = Email
+any.peep.form.label.moreInfo = Mas información
+
+any.peep.list.button.create = Crear
+any.peep.form.button.create = Crear

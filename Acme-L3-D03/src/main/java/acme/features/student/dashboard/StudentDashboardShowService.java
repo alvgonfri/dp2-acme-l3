@@ -72,13 +72,13 @@ public class StudentDashboardShowService extends AbstractService<Student, Studen
 		periods = this.getPeriodsOfTheStudentActivities(studentId);
 		learningTimes = this.getLearningTimesOfTheStudentCourses(studentId);
 
-		averagePeriodOfTheStudentActivities = periods.stream().mapToDouble(Double::doubleValue).sum() / periods.size();
-		minimumPeriodOfTheStudentActivities = periods.stream().mapToDouble(Double::doubleValue).min().getAsDouble();
-		maximumPeriodOfTheStudentActivities = periods.stream().mapToDouble(Double::doubleValue).max().getAsDouble();
+		averagePeriodOfTheStudentActivities = periods.isEmpty() ? 0 : periods.stream().mapToDouble(Double::doubleValue).sum() / periods.size();
+		minimumPeriodOfTheStudentActivities = periods.stream().mapToDouble(Double::doubleValue).min().orElse(0);
+		maximumPeriodOfTheStudentActivities = periods.stream().mapToDouble(Double::doubleValue).max().orElse(0);
 		deviationOfThePeriodOfTheStudentActivities = this.standardDeviation(periods);
-		averageLearningTimeOfTheEnrolledCourses = learningTimes.stream().mapToDouble(Double::doubleValue).sum() / learningTimes.size();
-		minimumLearningTimeOfTheEnrolledCourses = learningTimes.stream().mapToDouble(Double::doubleValue).min().getAsDouble();
-		maximumLearningTimeOfTheEnrolledCourses = learningTimes.stream().mapToDouble(Double::doubleValue).max().getAsDouble();
+		averageLearningTimeOfTheEnrolledCourses = periods.isEmpty() ? 0 : learningTimes.stream().mapToDouble(Double::doubleValue).sum() / learningTimes.size();
+		minimumLearningTimeOfTheEnrolledCourses = learningTimes.stream().mapToDouble(Double::doubleValue).min().orElse(0);
+		maximumLearningTimeOfTheEnrolledCourses = learningTimes.stream().mapToDouble(Double::doubleValue).max().orElse(0);
 		deviationLearningTimeOfTheEnrolledCourses = this.standardDeviation(learningTimes);
 
 		dashboard = new StudentDashboard();
@@ -138,7 +138,9 @@ public class StudentDashboardShowService extends AbstractService<Student, Studen
 	}
 
 	private double standardDeviation(final List<Double> list) {
-		final double avg = list.stream().mapToDouble(Double::doubleValue).average().orElse(Double.NaN);
+		if (list.isEmpty() || list.size() == 1)
+			return 0;
+		final double avg = list.stream().mapToDouble(Double::doubleValue).average().orElse(0);
 		final double summation = list.stream().mapToDouble(numero -> Math.pow(numero - avg, 2)).sum();
 		return Math.sqrt(summation / (list.size() - 1));
 	}

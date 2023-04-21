@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.course;
+package acme.features.any.course;
 
 import javax.annotation.PostConstruct;
 
