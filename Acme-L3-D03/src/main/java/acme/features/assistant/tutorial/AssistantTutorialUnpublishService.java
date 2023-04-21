@@ -7,20 +7,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.courses.Course;
+import acme.entities.practicums.PracticumSession;
 import acme.entities.tutorial.Tutorial;
-import acme.entities.tutorial.TutorialSession;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Assistant;
 
 @Service
-public class AssistantTutorialDeleteService extends AbstractService<Assistant, Tutorial> {
-
+public class AssistantTutorialUnpublishService extends AbstractService<Assistant, Tutorial> {
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
 	protected AssistantTutorialRepository repository;
+
+	// AbstractService interface ----------------------------------------------
 
 
 	@Override
@@ -35,14 +36,14 @@ public class AssistantTutorialDeleteService extends AbstractService<Assistant, T
 	@Override
 	public void authorise() {
 		boolean status;
-		int masterId;
+		int practicumId;
 		Tutorial tutorial;
 		Assistant assistant;
 
-		masterId = super.getRequest().getData("id", int.class);
-		tutorial = this.repository.findOneTutorialById(masterId);
+		practicumId = super.getRequest().getData("id", int.class);
+		tutorial = this.repository.findOneTutorialById(practicumId);
 		assistant = tutorial == null ? null : tutorial.getAssistant();
-		status = tutorial != null && super.getRequest().getPrincipal().hasRole(assistant);
+		status = tutorial != null && !tutorial.isDraftMode() && super.getRequest().getPrincipal().hasRole(assistant);
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -69,23 +70,23 @@ public class AssistantTutorialDeleteService extends AbstractService<Assistant, T
 		course = this.repository.findOneCourseById(courseId);
 
 		super.bind(object, "code", "title", "summary", "goals");
+
 		object.setCourse(course);
+
 	}
 
 	@Override
 	public void validate(final Tutorial object) {
 		assert object != null;
+
 	}
 
 	@Override
 	public void perform(final Tutorial object) {
 		assert object != null;
+		object.setDraftMode(true);
 
-		Collection<TutorialSession> duties;
-
-		duties = this.repository.findTutorialSessionByTutorialId(object.getId());
-		this.repository.deleteAll(duties);
-		this.repository.delete(object);
+		this.repository.save(object);
 	}
 
 	@Override
@@ -94,16 +95,17 @@ public class AssistantTutorialDeleteService extends AbstractService<Assistant, T
 
 		Collection<Course> courses;
 		SelectChoices choices;
+		final Collection<PracticumSession> sessions;
+		final Double estimatedTime;
 		Tuple tuple;
 
 		courses = this.repository.findPublishedCourses();
 		choices = SelectChoices.from(courses, "title", object.getCourse());
 
-		tuple = super.unbind(object, "code", "title", "summary", "goals");
+		tuple = super.unbind(object, "code", "title", "summary", "goals", "draftMode");
 		tuple.put("course", choices.getSelected().getKey());
 		tuple.put("courses", choices);
 
 		super.getResponse().setData(tuple);
 	}
-
 }

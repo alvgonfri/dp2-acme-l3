@@ -54,7 +54,7 @@ master.menu.student.dashboard = Panel de indicadores
 # master.menu.assistant ########################################################
 master.menu.assistant = Asistente
 master.menu.assistant.list-my-tutorials= Ver mis tutorías
-
+master.menu.assistant.list-my-tutorials-session= Mis sesiones de tutorías
 
 
 # master.menu.user-account ####################################################

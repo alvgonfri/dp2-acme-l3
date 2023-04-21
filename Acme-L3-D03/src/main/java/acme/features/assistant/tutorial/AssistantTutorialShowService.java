@@ -1,7 +1,6 @@
 
 package acme.features.assistant.tutorial;
 
-import java.time.Duration;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,6 @@ import acme.entities.tutorial.Tutorial;
 import acme.entities.tutorial.TutorialSession;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
-import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Assistant;
 
@@ -63,33 +61,23 @@ public class AssistantTutorialShowService extends AbstractService<Assistant, Tut
 		assert object != null;
 
 		Tuple tuple;
-		int workTime;
+		int totalTime;
 		Collection<Course> courses;
 		SelectChoices choices;
+		Collection<TutorialSession> sessions;
 
 		courses = this.repository.findPublishedCourses();
 		choices = SelectChoices.from(courses, "title", object.getCourse());
 
-		workTime = this.getWorkTime(object.getId());
+		sessions = this.repository.findTutorialSessionByTutorialId(object.getId());
+		totalTime = object.totalTime(sessions);
 
 		tuple = super.unbind(object, "code", "title", "summary", "goals", "draftMode");
-		//tuple.put("workTime", workTime);
+		tuple.put("totalTime", totalTime);
 		tuple.put("course", choices.getSelected().getKey());
 		tuple.put("courses", choices);
 
 		super.getResponse().setData(tuple);
 	}
 
-	// Aux --------------------------------------------------------------------
-
-	private int getWorkTime(final int tutorialId) {
-		int result = 0;
-		final Collection<TutorialSession> sessions = this.repository.findTutorialSessionByTutorialId(tutorialId);
-		for (final TutorialSession session : sessions) {
-			final Duration duration = MomentHelper.computeDuration(session.getStartDate(), session.getEndDate());
-			final int diffInHours = (int) duration.toHours();
-			result += diffInHours;
-		}
-		return result;
-	}
 }

@@ -68,6 +68,7 @@
 		
 		<acme:menu-option code="master.menu.assistant" access="hasRole('Assistant')">
 				<acme:menu-suboption code="master.menu.assistant.list-my-tutorials" action="/assistant/tutorial/list"/>
+		
 				<acme:menu-separator/>
 				<acme:menu-suboption code="master.menu.student.dashboard" action="/student/student-dashboard/show"/>
 		</acme:menu-option>

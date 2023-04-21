@@ -1,6 +1,9 @@
 
 package acme.entities.tutorial;
 
+import java.time.Duration;
+import java.util.Collection;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -13,6 +16,7 @@ import org.hibernate.validator.constraints.Length;
 
 import acme.entities.courses.Course;
 import acme.framework.data.AbstractEntity;
+import acme.framework.helpers.MomentHelper;
 import acme.roles.Assistant;
 import lombok.Getter;
 import lombok.Setter;
@@ -49,16 +53,30 @@ public class Tutorial extends AbstractEntity {
 
 	// Derived attributes -----------------------------------------------------
 
+
+	public int totalTime(final Collection<TutorialSession> sessions) {
+		int result = 0;
+		if (sessions.size() > 0)
+			for (final TutorialSession session : sessions) {
+				final Duration duration = MomentHelper.computeDuration(session.getStartDate(), session.getEndDate());
+				final int diffInHours = (int) duration.toHours();
+				result += diffInHours;
+
+			}
+		return result;
+	}
+
 	// Relationships ----------------------------------------------------------
 
-	@ManyToOne(optional = false)
-	@Valid
-	@NotNull
-	protected Assistant			assistant;
 
 	@ManyToOne(optional = false)
 	@Valid
 	@NotNull
-	protected Course			course;
+	protected Assistant	assistant;
+
+	@ManyToOne(optional = false)
+	@Valid
+	@NotNull
+	protected Course	course;
 
 }

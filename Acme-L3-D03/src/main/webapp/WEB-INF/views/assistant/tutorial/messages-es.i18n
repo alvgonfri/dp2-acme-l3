@@ -18,3 +18,7 @@ assistant.tutorial.list.label.goals= Objetivo
 student.tutorial.form.error.code-duplicated= Ya existe este código
 assistant.tutorial.button.delete=  Borrar
 assistant.tutorial.button.update = Actualizar
+student.enrolment.form.button.tutorialSession= Sesiones de tutoría
+assistant.tutorial.list.label.totalTime= Tiempo total 
+assistant.tutorial.button.publish= Publicar
+assistant.tutorial.button.unpublish= Ocultar
