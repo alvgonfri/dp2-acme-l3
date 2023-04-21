@@ -8,7 +8,7 @@ lecturer.course.form.label.summary = Summary
 lecturer.course.form.label.retailPrice = Retail price
 lecturer.course.form.label.moreInfo = More information
 
-lecturer.course.form.button.lectures = See lectures
+
 lecturer.course.form.button.update = Update
 lecturer.course.form.button.delete = Delete
 lecturer.course.form.button.publish = Publish

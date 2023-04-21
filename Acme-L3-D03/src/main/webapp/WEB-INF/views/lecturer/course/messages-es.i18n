@@ -8,7 +8,6 @@ lecturer.course.form.label.summary = Resumen
 lecturer.course.form.label.retailPrice = Precio
 lecturer.course.form.label.moreInfo = Más información
 
-lecturer.course.form.button.lectures = Ver lecciones
 lecturer.course.form.button.update = Actualizar
 lecturer.course.form.button.delete = Borrar
 lecturer.course.form.button.publish = Publicar
