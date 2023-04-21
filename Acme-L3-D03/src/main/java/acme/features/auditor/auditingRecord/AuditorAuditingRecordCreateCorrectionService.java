@@ -107,7 +107,7 @@ public class AuditorAuditingRecordCreateCorrectionService extends AbstractServic
 
 			boolean isValid;
 
-			isValid = MomentHelper.isAfter(object.getStartDate(), earliestDate);
+			isValid = MomentHelper.isAfterOrEqual(object.getStartDate(), earliestDate);
 			super.state(isValid, "startDate", "auditor.auditingRecord.form.error.earliesdate");
 		}
 	}

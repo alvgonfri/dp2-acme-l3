@@ -19,8 +19,8 @@ student.activity.form.button.create = Create
 student.activity.form.button.update = Update
 student.activity.form.button.delete = Delete
 
-student.activity.form.error.wrong-start = The start date must be after 2000/01/01 00:00
-student.activity.form.error.wrong-end = The end date must be before 2100/12/31 23:59
+student.activity.form.error.wrong-start = The start date must be after or equal 2000/01/01 00:00
+student.activity.form.error.wrong-end = The end date must be before or equal 2100/12/31 23:59
 student.activity.form.error.wrong-dates = The end date must be after the start date 
 
 student.activity.list.label.title = Title

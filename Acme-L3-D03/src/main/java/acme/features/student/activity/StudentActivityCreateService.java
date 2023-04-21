@@ -89,7 +89,7 @@ public class StudentActivityCreateService extends AbstractService<Student, Activ
 			calendar.set(Calendar.MILLISECOND, 0);
 			date = new Date(calendar.getTimeInMillis());
 
-			super.state(MomentHelper.isAfter(object.getStartDate(), date), "startDate", "student.activity.form.error.wrong-start");
+			super.state(MomentHelper.isAfterOrEqual(object.getStartDate(), date), "startDate", "student.activity.form.error.wrong-start");
 		}
 		if (!super.getBuffer().getErrors().hasErrors("endDate")) {
 			Calendar calendar;
@@ -105,7 +105,7 @@ public class StudentActivityCreateService extends AbstractService<Student, Activ
 			calendar.set(Calendar.MILLISECOND, 0);
 			date = new Date(calendar.getTimeInMillis());
 
-			super.state(MomentHelper.isBefore(object.getEndDate(), date), "endDate", "student.activity.form.error.wrong-end");
+			super.state(MomentHelper.isBeforeOrEqual(object.getEndDate(), date), "endDate", "student.activity.form.error.wrong-end");
 		}
 		if (!super.getBuffer().getErrors().hasErrors("endDate"))
 			super.state(MomentHelper.isBefore(object.getStartDate(), object.getEndDate()), "endDate", "student.activity.form.error.wrong-dates");
