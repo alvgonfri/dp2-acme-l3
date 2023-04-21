@@ -31,6 +31,7 @@ master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.banners = Ver todos los banners
 master.menu.administrator.shut-down = Parar el sistema
+master.menu.administrator.offers = Ofertas
 master.menu.administrator.system-configuration = Configuración del sistema
 master.menu.administrator.create-bulletin = Crear boletín
 
