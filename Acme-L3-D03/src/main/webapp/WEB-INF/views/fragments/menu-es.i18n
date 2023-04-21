@@ -96,3 +96,4 @@ master.menu.any = Cualquiera
 master.menu.lecturer = Profesor
 master.menu.lecturer.list = Mis cursos
 master.menu.lecturer.create = Crear un Curso
+master.menu.lecturer.lecture.list = Mis lecciones
