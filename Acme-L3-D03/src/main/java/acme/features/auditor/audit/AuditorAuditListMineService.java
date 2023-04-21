@@ -67,7 +67,7 @@ public class AuditorAuditListMineService extends AbstractService<Auditor, Audit>
 		super.getResponse().setData(tuple);
 	}
 
-	public Mark getAuditMark(final int auditId) {
+	private Mark getAuditMark(final int auditId) {
 
 		final List<Pair<Mark, Integer>> aux = new ArrayList<>();
 

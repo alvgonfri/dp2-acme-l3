@@ -16,5 +16,7 @@
 <%@taglib prefix="acme" uri="http://www.the-acme-framework.org/"%>
 
 <acme:list>
+	<acme:list-column code="authenticated.audit.list.label.code" path="code" width="35%"/>
+	<acme:list-column code="authenticated.audit.list.label.course" path="course.title" width="45%"/>
+	<acme:list-column code="authenticated.audit.list.label.mark" path="mark" width="20%"/>
 </acme:list>
-

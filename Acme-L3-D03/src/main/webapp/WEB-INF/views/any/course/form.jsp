@@ -25,7 +25,11 @@
 	<acme:input-textbox code="any.course.form.label.moreInfo" path="moreInfo" readonly="true"/>	
 	<acme:input-textbox code="any.course.form.label.lecturer" path="lecturerFullName" readonly="true"/>	
 
-	<jstl:if test="${isAuthenticated == true}">
-		<acme:button code="authenticated.practica.form.button" action="/authenticated/practicum/list?courseId=${id}"/>
-	</jstl:if>
+
+		<jstl:if test="${isAuthenticated == true}">
+			<acme:button code="authenticated.tutorial.form.button" action="/authenticated/tutorial/list?courseId=${id}"/>
+			<acme:button code="authenticated.practica.form.button" action="/authenticated/practicum/list?courseId=${id}"/>
+		</jstl:if>
+	
+
 </acme:form>

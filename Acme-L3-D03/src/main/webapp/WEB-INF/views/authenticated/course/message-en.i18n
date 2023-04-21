@@ -14,12 +14,11 @@ authenticated.course.list.label.summary = Summary
 authenticated.course.list.label.retailPrice = Price
 
 
-any.course.form.label.code = Code
-any.course.form.label.title = Title
-any.course.form.label.summary = Summary
-any.course.form.label.retailPrice = Price
-any.course.form.label.moreInfo = More information
-any.course.form.label.lecturer = Lecturer
+authenticated.course.form.label.code = Code
+authenticated.course.form.label.title = Title
+authenticated.course.form.label.summary = Summary
+authenticated.course.form.label.retailPrice = Price
+authenticated.course.form.label.moreInfo = More information
+authenticated.course.form.label.lecturer = Lecturer
 
-authenticated.practica.form.button = Course practicas
-authenticated.tutorial.form.button = Course tutorials
+authenticated.course.form.button.audit = Audits

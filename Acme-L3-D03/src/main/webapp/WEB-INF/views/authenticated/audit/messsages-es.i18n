@@ -1,0 +1,23 @@
+# messages-es.i18n
+#
+# Copyright (C) 2012-2023 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+authenticated.audit.list.label.code = Código
+authenticated.audit.list.label.course = Curso
+authenticated.audit.list.label.mark = Calificación
+
+authenticated.audit.form.label.mark = Calificación
+authenticated.audit.form.label.code = Código
+authenticated.audit.form.label.conclusion = Conclusión
+authenticated.audit.form.label.strong-points = Puntos fuertes
+authenticated.audit.form.label.weak-points = Puntos débiles
+authenticated.audit.form.label.course = Curso
+authenticated.audit.form.label.mark = Calificación
+authenticated.audit.form.label.course = Curso
+authenticated.audit.form.label.auditor = Auditor
