@@ -21,6 +21,7 @@ import acme.entities.practicums.Practicum;
 import acme.framework.components.accounts.Authenticated;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
+import acme.roles.Company;
 
 @Service
 public class AuthenticatedPracticumListService extends AbstractService<Authenticated, Practicum> {
@@ -45,7 +46,7 @@ public class AuthenticatedPracticumListService extends AbstractService<Authentic
 	public void authorise() {
 		boolean status;
 
-		status = true;
+		status = !super.getRequest().getPrincipal().hasRole(Company.class);
 
 		super.getResponse().setAuthorised(status);
 	}

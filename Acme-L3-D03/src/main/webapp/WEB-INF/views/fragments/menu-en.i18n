@@ -70,7 +70,7 @@ master.menu.user-account.become-consumer = Become a consumer
 
 master.menu.company = Company
 master.menu.company.practicum = Practicas list
-
+master.menu.company.dashboard = Company dashboard
 
 master.menu.user-account.student = Student data
 master.menu.user-account.become-student = Become a student
