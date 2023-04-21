@@ -24,6 +24,7 @@
 	<acme:input-textbox code="authenticated.course.form.label.lecturer" path="lecturerFullName" readonly="true"/>
 	
 	<acme:button code="authenticated.course.form.button.audit" action="/authenticated/audit/list?courseId=${id}"/>
-		
+	<acme:button code="authenticated.tutorial.form.button" action="/authenticated/tutorial/list?courseId=${id}"/>
+	<acme:button code="authenticated.practica.form.button" action="/authenticated/practicum/list?courseId=${id}"/>
 
 </acme:form>

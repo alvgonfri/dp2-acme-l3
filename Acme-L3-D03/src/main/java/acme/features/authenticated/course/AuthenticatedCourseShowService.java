@@ -54,6 +54,7 @@ public class AuthenticatedCourseShowService extends AbstractService<Authenticate
 		tuple.put("lecturerFullName", lecturerFullName);
 		tuple.put("confirmation", false);
 		tuple.put("readonly", true);
+		tuple.put("isAuthenticated", super.getRequest().getPrincipal().isAuthenticated());
 
 		super.getResponse().setData(tuple);
 	}
