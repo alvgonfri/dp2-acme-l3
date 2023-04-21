@@ -16,6 +16,7 @@
 <%@taglib prefix="acme" uri="http://www.the-acme-framework.org/"%>
 
 <acme:form>
+	<acme:input-moment code="authenticated.offer.list.label.momment" path="momment" />
 	<acme:input-textbox code="authenticated.offer.list.label.heading" path="heading" />
 	<acme:input-textbox code="authenticated.offer.list.label.summary" path="summary" />
 	<acme:input-moment code="authenticated.offer.list.label.startAvailable" path="startAvailable" />
