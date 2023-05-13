@@ -99,6 +99,9 @@ public class StudentDashboardShowService extends AbstractService<Student, Studen
 	@Override
 	public void unbind(final StudentDashboard object) {
 		Tuple tuple;
+		int studentId;
+		Collection<Activity> activities;
+		boolean noActivities;
 
 		tuple = super.unbind(object, //
 			"numberOfTheoryActivites", "numberOfHandsOnActivites", // 
@@ -106,6 +109,11 @@ public class StudentDashboardShowService extends AbstractService<Student, Studen
 			"maximumPeriodOfTheStudentActivities", "deviationOfThePeriodOfTheStudentActivities", //
 			"averageLearningTimeOfTheEnrolledCourses", "minimumLearningTimeOfTheEnrolledCourses", //
 			"maximumLearningTimeOfTheEnrolledCourses", "deviationLearningTimeOfTheEnrolledCourses");
+
+		studentId = super.getRequest().getPrincipal().getActiveRoleId();
+		activities = this.repository.findActivitiesByStudentId(studentId);
+		noActivities = activities.isEmpty();
+		tuple.put("noActivities", noActivities);
 
 		super.getResponse().setData(tuple);
 	}

@@ -4,3 +4,14 @@ enrolment-02,CTR888,I want to gain a better understanding of personal finance,To
 enrolment-03,DFD390,I want to make a career transition into the tech industry,To become proficient in coding languages and frameworks,true,null,null,student-01,course-03
 enrolment-04,ERT912,I am excited to learn from experienced writers,To improve my writing skills in various genres and styles,false,Student Two,1524,student-02,course-01
 enrolment-05,AAH563,I want to gain a better understanding of investment strategies,To potentially become a financial planner or advisor in the future,true,null,null,student-02,course-02
+enrolment-06,AAA100,Base motivation,Base goals,true,null,null,student-03,course-01
+enrolment-07,AAA101,Motivación base,ñ*.,true,null,null,student-03,course-02
+enrolment-08,AAA102,道らぶま土吾せ及,薬表ラかまル着編,true,null,null,student-03,course-03
+enrolment-09,AAA103,खण्ड मार्गदर्शन विश्व,शुरुआत प्रेरना,true,null,null,student-03,course-01
+enrolment-10,AAA104,This motivation has exactly 75 characters!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!,This goals have exactly 100 characters!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!,true,null,null,student-03,course-02
+enrolment-11,AAA105,.,;,false,It's me,9999,student-03,course-03
+enrolment-12,ABC100,Base motivation,Base goals,true,null,null,student-03,course-01
+enrolment-13,XYZ100,<h1>Base motivation</h1>,Base goals,true,null,null,student-03,course-01
+enrolment-14,ZZZ999,Base motivation,<script>alert("hi")</script>,true,null,null,student-03,course-01
+enrolment-15,AAA107,Base motivation,Base goals,false,%%%%%%%%%%%%%%%%%%This holder has exactly 75 characters%%%%%%%%%%%%%%%%%%%%,1234,student-03,course-02
+enrolment-16,AAA108,Base motivation,Base goals,false,Еирмод лобортис партиендо,0000,student-03,course-03
