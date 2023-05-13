@@ -25,7 +25,12 @@
 			<acme:message code="student.dashboard.form.label.average"/>
 		</th>
 		<td>
-			<acme:print value="${averagePeriodOfTheStudentActivities}"/>
+			<jstl:if test="${noActivities == true}">
+				<acme:print value="-"/>
+			</jstl:if>
+			<jstl:if test="${noActivities == false}">
+				<acme:print value="${averagePeriodOfTheStudentActivities}"/>
+			</jstl:if>
 		</td>
 	</tr>
 	<tr>
@@ -33,7 +38,12 @@
 			<acme:message code="student.dashboard.form.label.minimum"/>
 		</th>
 		<td>
-			<acme:print value="${minimumPeriodOfTheStudentActivities}"/>
+			<jstl:if test="${noActivities == true}">
+				<acme:print value="-"/>
+			</jstl:if>
+			<jstl:if test="${noActivities == false}">
+				<acme:print value="${minimumPeriodOfTheStudentActivities}"/>
+			</jstl:if>
 		</td>
 	</tr>
 	<tr>
@@ -41,7 +51,12 @@
 			<acme:message code="student.dashboard.form.label.maximum"/>
 		</th>
 		<td>
-			<acme:print value="${maximumPeriodOfTheStudentActivities}"/>
+			<jstl:if test="${noActivities == true}">
+				<acme:print value="-"/>
+			</jstl:if>
+			<jstl:if test="${noActivities == false}">
+				<acme:print value="${maximumPeriodOfTheStudentActivities}"/>
+			</jstl:if>
 		</td>
 	</tr>	
 	<tr>
@@ -49,7 +64,12 @@
 			<acme:message code="student.dashboard.form.label.deviation"/>
 		</th>
 		<td>
-			<acme:print value="${deviationOfThePeriodOfTheStudentActivities}"/>
+			<jstl:if test="${noActivities == true}">
+				<acme:print value="-"/>
+			</jstl:if>
+			<jstl:if test="${noActivities == false}">
+				<acme:print value="${deviationOfThePeriodOfTheStudentActivities}"/>
+			</jstl:if>
 		</td>
 	</tr>
 </table>
@@ -64,7 +84,12 @@
 			<acme:message code="student.dashboard.form.label.average"/>
 		</th>
 		<td>
-			<acme:print value="${averageLearningTimeOfTheEnrolledCourses}"/>
+			<jstl:if test="${noActivities == true}">
+				<acme:print value="-"/>
+			</jstl:if>
+			<jstl:if test="${noActivities == false}">
+				<acme:print value="${averageLearningTimeOfTheEnrolledCourses}"/>
+			</jstl:if>
 		</td>
 	</tr>
 	<tr>
@@ -72,7 +97,12 @@
 			<acme:message code="student.dashboard.form.label.minimum"/>
 		</th>
 		<td>
-			<acme:print value="${minimumLearningTimeOfTheEnrolledCourses}"/>
+			<jstl:if test="${noActivities == true}">
+				<acme:print value="-"/>
+			</jstl:if>
+			<jstl:if test="${noActivities == false}">
+				<acme:print value="${minimumLearningTimeOfTheEnrolledCourses}"/>
+			</jstl:if>
 		</td>
 	</tr>
 	<tr>
@@ -80,7 +110,12 @@
 			<acme:message code="student.dashboard.form.label.maximum"/>
 		</th>
 		<td>
-			<acme:print value="${maximumLearningTimeOfTheEnrolledCourses}"/>
+			<jstl:if test="${noActivities == true}">
+				<acme:print value="-"/>
+			</jstl:if>
+			<jstl:if test="${noActivities == false}">
+				<acme:print value="${maximumLearningTimeOfTheEnrolledCourses}"/>
+			</jstl:if>
 		</td>
 	</tr>	
 	<tr>
@@ -88,7 +123,12 @@
 			<acme:message code="student.dashboard.form.label.deviation"/>
 		</th>
 		<td>
-			<acme:print value="${deviationLearningTimeOfTheEnrolledCourses}"/>
+			<jstl:if test="${noActivities == true}">
+				<acme:print value="-"/>
+			</jstl:if>
+			<jstl:if test="${noActivities == false}">
+				<acme:print value="${deviationLearningTimeOfTheEnrolledCourses}"/>
+			</jstl:if>
 		</td>
 	</tr>
 </table>
