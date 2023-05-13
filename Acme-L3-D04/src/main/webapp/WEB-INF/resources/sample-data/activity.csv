@@ -7,3 +7,12 @@ activity-05,Stock Market Simulation,Group activity designed to give students han
 activity-06,Writing Workshop,Group activity designed to provide students with the opportunity to practice their writing skills,HANDS_ON,2022/01/29 11:00,2022/01/29 18:00,null,enrolment-04
 activity-07,Creative Writing Seminar,Small group activity designed to allow students to engage with experienced writers,THEORY,2022/01/30 09:00,2022/01/30 11:00,null,enrolment-04
 activity-08,Writing Retreat,Weekend-long activity designed to provide students with an immersive writing experience,HANDS_ON,2022/02/05 08:00,2022/02/07 20:00,http://www.example.org,enrolment-04
+activity-09,Base title,Base summary,THEORY,2022/01/01 10:00,2022/01/01 14:00,http://www.example.org,enrolment-11
+activity-10,Título base,ñññññ,THEORY,2022/01/01 10:00,2022/01/01 14:00,null,enrolment-15
+activity-11,պեռ եու գռաեծի ադվե,մինիմում սուավիթաթե,THEORY,2022/01/01 10:00,2022/01/01 14:00,http://www.example.org,enrolment-15
+activity-12,This title has exactly 75 characters!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!,This summary has exactly 100 characters!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!,THEORY,2022/01/01 10:00,2022/01/01 14:00,null,enrolment-15
+activity-13,<script>alert("hi")</script>,<h1>Base summary</h1>,THEORY,2022/01/01 10:00,2022/01/01 14:00,http://www.example.org,enrolment-15
+activity-14,Base title,Base summary,HANDS_ON,2000/01/01 00:00,2100/12/31 23:59,http://www.example.org,enrolment-15
+activity-15,Base title,Base summary,HANDS_ON,2000/01/01 00:01,2100/12/31 23:58,http://www.example.org,enrolment-15
+activity-16,Base title,Base summary,HANDS_ON,2022/01/01 10:00,2022/01/01 14:00,http://server.local/cccc?a=1&b=2,enrolment-15
+activity-17,Base title,Base summary,HANDS_ON,2022/01/01 10:00,2022/01/01 14:00,http://a.b/c?d&e,enrolment-15
