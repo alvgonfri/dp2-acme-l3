@@ -1,0 +1,7 @@
+timestamp,method,feature,time,status
+"2023-04-08 18:46:56.226","GET","/authenticated/company/update","87","200 OK"
+"2023-04-08 18:47:50.389","POST","/authenticated/company/update","167","200 OK"
+"2023-04-08 18:48:02.438","POST","/authenticated/company/update","91","200 OK"
+"2023-04-08 18:48:06.171","GET","/authenticated/company/update","15","200 OK"
+"2023-04-08 18:48:16.668","POST","/authenticated/company/update","27","200 OK"
+"2023-04-08 18:48:19.571","GET","/authenticated/company/update","10","200 OK"

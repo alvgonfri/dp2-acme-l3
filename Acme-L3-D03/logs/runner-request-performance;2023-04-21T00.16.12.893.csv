@@ -1,0 +1,2 @@
+timestamp,method,feature,time,status
+"2023-04-21 00:10:39.472","GET","/company/company-dashboard/show","97","500 INTERNAL_SERVER_ERROR"

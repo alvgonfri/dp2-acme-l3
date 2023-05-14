@@ -1,0 +1,13 @@
+timestamp,method,feature,time,status
+"2023-04-12 20:21:15.092","GET","/anonymous/user-account/create","69","200 OK"
+"2023-04-12 20:21:45.116","POST","/anonymous/user-account/create","204","200 OK"
+"2023-04-12 20:21:57.334","GET","/authenticated/offer/list","34","200 OK"
+"2023-04-12 20:21:59.914","GET","/authenticated/note/list","29","200 OK"
+"2023-04-12 20:22:08.032","GET","/authenticated/note/create","30","200 OK"
+"2023-04-12 20:22:26.517","POST","/authenticated/note/create","151","200 OK"
+"2023-04-12 20:22:42.173","POST","/authenticated/note/create","20","200 OK"
+"2023-04-12 20:22:42.702","GET","/authenticated/note/list","18","200 OK"
+"2023-04-12 20:22:46.444","GET","/authenticated/note/show","22","200 OK"
+"2023-04-12 20:22:46.598","GET","/authenticated/note/show","12","200 OK"
+"2023-04-12 20:24:50.316","GET","/authenticated/note/list","7","200 OK"
+"2023-04-12 20:25:03.931","GET","/authenticated/note/list","8","200 OK"

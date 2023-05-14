@@ -1,0 +1,2 @@
+timestamp,method,feature,time,status
+"2023-04-08 21:27:42.801","GET","/company/practicum/list","45","200 OK"

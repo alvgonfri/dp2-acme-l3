@@ -1,0 +1,2 @@
+timestamp,method,feature,time,status
+"2023-04-21 01:43:17.004","GET","/company/practicum-session/create","130","200 OK"

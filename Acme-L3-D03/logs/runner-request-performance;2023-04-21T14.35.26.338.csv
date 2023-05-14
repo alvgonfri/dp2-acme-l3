@@ -1,0 +1,7 @@
+timestamp,method,feature,time,status
+"2023-04-21 14:33:50.22","GET","/authenticated/company/update","101","200 OK"
+"2023-04-21 14:33:56.688","GET","/company/practicum/list","11","200 OK"
+"2023-04-21 14:34:04.887","GET","/company/practicum/create","80","200 OK"
+"2023-04-21 14:34:14.785","POST","/company/practicum/create","256","200 OK"
+"2023-04-21 14:34:16.086","GET","/company/practicum/list","39","200 OK"
+"2023-04-21 14:34:18.862","GET","/company/practicum/show","58","200 OK"

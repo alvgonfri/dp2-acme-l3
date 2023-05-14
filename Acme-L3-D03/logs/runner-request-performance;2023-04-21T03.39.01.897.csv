@@ -1,0 +1,11 @@
+timestamp,method,feature,time,status
+"2023-04-21 03:34:07.358","GET","/company/practicum/list","141","200 OK"
+"2023-04-21 03:34:17.354","GET","/company/practicum/show","63","200 OK"
+"2023-04-21 03:34:23.12","GET","/company/practicum-session/list","31","200 OK"
+"2023-04-21 03:34:30.742","GET","/company/practicum-session/create","16","200 OK"
+"2023-04-21 03:34:38.426","GET","/company/practicum-session/list","16","200 OK"
+"2023-04-21 03:34:40.297","GET","/company/practicum-session/create-addendum","18","200 OK"
+"2023-04-21 03:36:01.927","GET","/company/practicum-session/create-addendum","25","200 OK"
+"2023-04-21 03:36:22.506","GET","/company/practicum-session/create-addendum","17","200 OK"
+"2023-04-21 03:38:25.806","GET","/company/practicum-session/create-addendum","21","200 OK"
+"2023-04-21 03:38:50.801","GET","/company/practicum-session/create-addendum","24","200 OK"

@@ -1,0 +1,11 @@
+timestamp,method,feature,time,status
+"2023-04-20 14:19:08.435","GET","/company/practicum/list","142","200 OK"
+"2023-04-20 14:19:23.318","GET","/company/practicum/create","81","200 OK"
+"2023-04-20 14:19:37.685","POST","/company/practicum/create","232","200 OK"
+"2023-04-20 14:21:09.2","GET","/company/practicum/create","28","500 INTERNAL_SERVER_ERROR"
+"2023-04-20 14:21:22.957","GET","/company/practicum/list","50","200 OK"
+"2023-04-20 14:21:24.714","GET","/company/practicum/create","31","200 OK"
+"2023-04-20 14:21:36.363","POST","/company/practicum/create","34","200 OK"
+"2023-04-20 14:21:40.161","POST","/company/practicum/create","52","200 OK"
+"2023-04-20 14:21:44.602","POST","/company/practicum/create","52","200 OK"
+"2023-04-20 14:21:46.466","POST","/company/practicum/create","40","200 OK"

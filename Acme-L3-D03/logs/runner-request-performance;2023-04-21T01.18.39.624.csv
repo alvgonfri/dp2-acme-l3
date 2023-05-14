@@ -1,0 +1,3 @@
+timestamp,method,feature,time,status
+"2023-04-21 01:09:06.201","GET","/company/company-dashboard/show","154","200 OK"
+"2023-04-21 01:09:12.816","GET","/company/practicum/list","51","200 OK"

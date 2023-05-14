@@ -1,0 +1,4 @@
+timestamp,method,feature,time,status
+"2023-04-11 23:21:55.973","GET","/authenticated/bulletin/list","80","200 OK"
+"2023-04-11 23:22:04.665","GET","/authenticated/bulletin/show","11","200 OK"
+"2023-04-11 23:22:04.82","GET","/authenticated/bulletin/show","9","200 OK"

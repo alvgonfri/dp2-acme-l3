@@ -1,0 +1,8 @@
+timestamp,method,feature,time,status
+"2023-04-12 21:03:24.73","GET","/anonymous/user-account/create","52","200 OK"
+"2023-04-12 21:03:37.264","POST","/anonymous/user-account/create","252","200 OK"
+"2023-04-12 21:04:15.14","GET","/authenticated/company/create","21","200 OK"
+"2023-04-12 21:04:24.29","POST","/authenticated/company/create","50","200 OK"
+"2023-04-12 21:04:26.827","GET","/company/practicum/list","11","200 OK"
+"2023-04-12 21:04:31.482","GET","/company/practicum/create","40","200 OK"
+"2023-04-12 21:04:40.278","POST","/company/practicum/create","121","200 OK"

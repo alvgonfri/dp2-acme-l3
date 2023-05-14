@@ -1,0 +1,9 @@
+timestamp,method,feature,time,status
+"2023-04-21 14:23:26.999","GET","/authenticated/course/list","180","200 OK"
+"2023-04-21 14:23:31.681","GET","/authenticated/course/show","16","200 OK"
+"2023-04-21 14:23:36.932","GET","/authenticated/tutorial/list","31","200 OK"
+"2023-04-21 14:23:39.06","GET","/authenticated/course/show","27","200 OK"
+"2023-04-21 14:23:41.157","GET","/authenticated/audit/list","61","200 OK"
+"2023-04-21 14:23:44.138","GET","/authenticated/audit/show","58","200 OK"
+"2023-04-21 14:24:25.13","GET","/authenticated/course/list","28","200 OK"
+"2023-04-21 14:24:27.422","GET","/authenticated/bulletin/list","33","200 OK"

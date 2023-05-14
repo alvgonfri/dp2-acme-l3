@@ -1,0 +1,3 @@
+timestamp,method,feature,time,status
+"2023-04-21 01:57:14.189","GET","/company/practicum-session/list","145","200 OK"
+"2023-04-21 01:57:25.288","GET","/company/practicum-session/create","8","500 INTERNAL_SERVER_ERROR"

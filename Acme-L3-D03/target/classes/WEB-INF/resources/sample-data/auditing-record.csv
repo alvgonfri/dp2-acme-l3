@@ -1,0 +1,13 @@
+key,subject,assessment,startDate,endDate,mark,moreInfo,key:audit,isCorrection
+auditing-record-01,Base subject.,Base assessment.,2022/06/15 11:30,2022/06/15 13:30,B,null,audit-01,false
+auditing-record-02,基本主题,Base assessment.,2022/06/15 11:30,2022/06/15 13:30,B,null,audit-01,false
+auditing-record-03,Base subject.,базовый предмет,2022/06/15 11:30,2022/06/15 13:30,B,null,audit-01,false
+auditing-record-04,Base subject.,Base assessment.,2022/06/15 10:30,2022/06/15 13:30,B,null,audit-01,false
+auditing-record-05,Base subject.,Base assessment.,2022/06/15 11:30,2022/06/15 12:30,B,null,audit-01,false
+auditing-record-06,Base subject.,Base assessment.,2022/06/15 11:30,2022/06/15 13:30,C,null,audit-01,false
+auditing-record-07,Base subject.,Base assessment.,2022/06/15 11:30,2022/06/15 13:30,B,https://www.google.es/,audit-01,false
+auditing-record-08,Base subject.,Base assessment.,2022/06/15 11:30,2022/06/15 13:30,B,null,audit-02,false
+auditing-record-09,Tema base con carácteres en español.,Base assessment.,2022/06/15 11:30,2022/06/15 13:30,B,null,audit-01,false
+auditing-record-10,Base subject.,Base assessment.,2022/06/15 11:30,2022/06/15 13:30,B,https://acme.com/a/b,audit-01,false
+auditing-record-11,123451234512345123451234512345123451234512345123451234512345123451234512345,Base assessment.,2022/06/15 11:30,2022/06/15 13:30,B,null,audit-01,false
+auditing-record-12,Base subject.,0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789,2022/06/15 11:30,2022/06/15 13:30,B,null,audit-01,false

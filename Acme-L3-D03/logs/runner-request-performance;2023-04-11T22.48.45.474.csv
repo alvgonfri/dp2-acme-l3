@@ -1,0 +1,4 @@
+timestamp,method,feature,time,status
+"2023-04-11 22:40:03.581","GET","/authenticated/user-account/update","59","200 OK"
+"2023-04-11 22:43:38.552","GET","/authenticated/assistant/create","17","200 OK"
+"2023-04-11 22:43:48.46","GET","/authenticated/company/create","22","200 OK"

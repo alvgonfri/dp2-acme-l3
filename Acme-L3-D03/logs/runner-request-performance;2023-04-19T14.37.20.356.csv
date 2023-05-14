@@ -1,0 +1,6 @@
+timestamp,method,feature,time,status
+"2023-04-19 14:31:21.897","GET","/anonymous/user-account/create","177","200 OK"
+"2023-04-19 14:31:34.676","POST","/anonymous/user-account/create","211","200 OK"
+"2023-04-19 14:31:48.861","GET","/authenticated/company/create","39","200 OK"
+"2023-04-19 14:31:57.751","POST","/authenticated/company/create","65","200 OK"
+"2023-04-19 14:32:02.664","GET","/company/practicum/list","7","500 INTERNAL_SERVER_ERROR"

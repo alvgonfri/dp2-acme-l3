@@ -1,0 +1,2 @@
+timestamp,method,feature,time,status
+"2023-04-19 18:50:45.545","GET","/company/practicum/list","63","500 INTERNAL_SERVER_ERROR"

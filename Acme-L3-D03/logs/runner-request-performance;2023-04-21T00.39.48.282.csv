@@ -1,0 +1,6 @@
+timestamp,method,feature,time,status
+"2023-04-21 00:17:03.776","GET","/company/company-dashboard/show","183","200 OK"
+"2023-04-21 00:24:42.679","GET","/company/company-dashboard/show","67","200 OK"
+"2023-04-21 00:24:59.125","GET","/company/company-dashboard/show","61","200 OK"
+"2023-04-21 00:26:07.881","GET","/company/company-dashboard/show","75","200 OK"
+"2023-04-21 00:27:28.522","GET","/company/company-dashboard/show","48","200 OK"

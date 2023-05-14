@@ -1,0 +1,3 @@
+timestamp,method,feature,time,status
+"2023-04-20 13:02:37.122","GET","/company/practicum/list-mine","86","200 OK"
+"2023-04-20 13:02:48.84","GET","/company/practicum/create","142","200 OK"

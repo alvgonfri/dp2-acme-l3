@@ -1,0 +1,7 @@
+timestamp,method,feature,time,status
+"2023-04-12 17:29:32.727","GET","/authenticated/note/list","41","200 OK"
+"2023-04-12 17:30:01.256","GET","/authenticated/note/create","47","200 OK"
+"2023-04-12 17:30:37.822","POST","/authenticated/note/create","159","500 INTERNAL_SERVER_ERROR"
+"2023-04-12 17:31:08.884","GET","/authenticated/note/list","8","200 OK"
+"2023-04-12 17:31:11.175","GET","/authenticated/note/create","12","200 OK"
+"2023-04-12 17:31:23.649","POST","/authenticated/note/create","14","500 INTERNAL_SERVER_ERROR"

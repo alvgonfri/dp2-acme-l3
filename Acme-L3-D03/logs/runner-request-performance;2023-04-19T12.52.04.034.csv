@@ -1,0 +1,7 @@
+timestamp,method,feature,time,status
+"2023-04-19 12:43:59.963","GET","/any/course/list","133","200 OK"
+"2023-04-19 12:44:04.24","GET","/any/course/show","15","200 OK"
+"2023-04-19 12:44:04.429","GET","/any/course/show","12","200 OK"
+"2023-04-19 12:44:27.221","GET","/any/course/list","20","200 OK"
+"2023-04-19 12:45:12.974","GET","/any/course/show","11","200 OK"
+"2023-04-19 12:45:13.157","GET","/any/course/show","18","200 OK"

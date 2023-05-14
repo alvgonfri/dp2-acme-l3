@@ -1,0 +1,6 @@
+timestamp,method,feature,time,status
+"2023-04-11 22:15:51.871","GET","/anonymous/user-account/create","47","200 OK"
+"2023-04-11 22:16:27.666","GET","/anonymous/user-account/create","23","200 OK"
+"2023-04-11 22:16:43.194","POST","/anonymous/user-account/create","160","200 OK"
+"2023-04-11 22:16:58.068","GET","/authenticated/student/create","23","200 OK"
+"2023-04-11 22:17:01.677","GET","/authenticated/user-account/update","14","200 OK"

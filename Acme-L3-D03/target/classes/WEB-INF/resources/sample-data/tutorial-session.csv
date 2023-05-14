@@ -1,0 +1,5 @@
+key,title,summary,sessionType,startDate,endDate,moreInfo,key:tutorial
+tutorial-session-01,sampledate,esto es una prueba,THEORY,2010/02/03 00:00,2010/02/03 02:00,null,tutorial-01
+tutorial-session-02,prueba,esto es una prueba,HANDS_ON,2010/02/03 00:00,2010/02/03 02:00,http://www.example.org,tutorial-01
+tutorial-session-03,sampledate,esto es una prueba,THEORY,2010/02/03 00:00,2010/02/03 02:00,http://www.example.org,tutorial-02
+tutorial-session-04,sampledate,esto es una prueba,HANDS_ON,2010/02/03 00:00,2010/02/03 02:00,null,tutorial-02

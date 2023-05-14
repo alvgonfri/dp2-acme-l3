@@ -1,0 +1,6 @@
+timestamp,method,feature,time,status
+"2023-04-19 12:06:49.991","GET","/any/course/list","193","200 OK"
+"2023-04-19 12:06:55.611","GET","/any/course/show","43","200 OK"
+"2023-04-19 12:06:55.772","GET","/any/course/show","38","200 OK"
+"2023-04-19 12:07:00.738","GET","/authenticated/practicum/list","15","500 INTERNAL_SERVER_ERROR"
+"2023-04-19 12:07:16.98","GET","/any/course/show","23","200 OK"

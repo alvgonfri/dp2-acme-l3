@@ -1,0 +1,2 @@
+timestamp,method,feature,time,status
+"2023-04-21 01:22:56.233","GET","/authenticated/bulletin/list","88","200 OK"

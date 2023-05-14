@@ -1,0 +1,29 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2023 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+administrator.banner.form.label.moment = Instantiation/update moment:
+administrator.banner.form.label.slogan = Slogan:
+administrator.banner.form.label.displayStart = Start date:
+administrator.banner.form.label.displayEnd = End date:
+administrator.banner.form.label.picture = Picture:
+administrator.banner.form.label.target = Web document:
+
+administrator.banner.form.button.update = Update
+administrator.banner.form.button.delete = Delete
+administrator.banner.form.button.create = Create
+
+administrator.banner.form.error.wrong-displayStart = The display period must start after the current date
+administrator.banner.form.error.wrong-displayEnd = The display period must last for at least one week
+
+administrator.banner.list.label.slogan = Slogan
+administrator.banner.list.label.displayStart = Start date
+administrator.banner.list.label.displayEnd = End date
+
+administrator.banner.list.button.create = Create

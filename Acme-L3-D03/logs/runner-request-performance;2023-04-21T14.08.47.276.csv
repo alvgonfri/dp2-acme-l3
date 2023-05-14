@@ -1,0 +1,9 @@
+timestamp,method,feature,time,status
+"2023-04-21 14:07:09.841","GET","/anonymous/user-account/create","85","200 OK"
+"2023-04-21 14:07:25.461","POST","/anonymous/user-account/create","204","200 OK"
+"2023-04-21 14:08:00.367","GET","/authenticated/course/list","34","200 OK"
+"2023-04-21 14:08:04.561","GET","/authenticated/course/show","10","200 OK"
+"2023-04-21 14:08:08.532","GET","/authenticated/course/list","16","200 OK"
+"2023-04-21 14:08:11.516","GET","/any/course/list","43","200 OK"
+"2023-04-21 14:08:13.975","GET","/any/course/show","16","200 OK"
+"2023-04-21 14:08:16.792","GET","/any/course/list","15","200 OK"
