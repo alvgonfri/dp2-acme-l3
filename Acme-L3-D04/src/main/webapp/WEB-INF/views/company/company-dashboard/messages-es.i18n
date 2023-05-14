@@ -20,10 +20,10 @@ company.dashboard.form.label.deviationPeriodLengthPractica = Desviación
 # Messages for the dashboard form about the sessions
 company.dashboard.form.title.session-length = Duración de las sesiones
 company.dashboard.form.label.numberOfSessions = Número de sesiones
-company.dashboard.form.label.averagePeriodLengthPractica = Duración media
-company.dashboard.form.label.minimumPeriodLengthPractica = Duración mínima
-company.dashboard.form.label.maximumPeriodLengthPractica = Duración máxima
-company.dashboard.form.label.deviationPeriodLengthPractica = Desviación
+company.dashboard.form.label.averagePeriodLengthSession = Duración media
+company.dashboard.form.label.minimumPeriodLengthSession = Duración mínima
+company.dashboard.form.label.maximumPeriodLengthSession = Duración máxima
+company.dashboard.form.label.deviationPeriodLengthSession = Desviación
 
 # Messages for the dashboard form about the practica by month
 company.dashboard.form.title.practicaNumberPerMonth = Número total de prácticas por mes

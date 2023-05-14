@@ -28,31 +28,31 @@
 			<acme:message code="company.dashboard.form.label.numberOfPracticas"/>
 		</th>
 		<td>
-			<acme:print value="${numberOfPracticas}"/>
+			<acme:print value="${numberOfPracticas == null ? '--' : numberOfPracticas}"/>
 		</td>
 		<th scope="row">
 			<acme:message code="company.dashboard.form.label.averagePeriodLengthPractica"/>
 		</th>
 		<td>
-			<acme:print value="${minimumPeriodLengthPractica}"/>
+			<acme:print value="${minimumPeriodLengthPractica == null ? '--' : minimumPeriodLengthPractica}"/>
 		</td>
 		<th scope="row">
 			<acme:message code="company.dashboard.form.label.minimumPeriodLengthPractica"/>
 		</th>
 		<td>
-			<acme:print value="${deviationPeriodLengthPractica}"/>
+			<acme:print value="${deviationPeriodLengthPractica == null ? '--' : deviationPeriodLengthPractica}"/>
 		</td>
 		<th scope="row">
-			<acme:message code="company.dashboard.form.label.practica-length.max"/>
+			<acme:message code="company.dashboard.form.label.maximumPeriodLengthPractica"/>
 		</th>
 		<td>
-			<acme:print value="${maximumPeriodLengthPractica}"/>
+			<acme:print value="${maximumPeriodLengthPractica == null ? '--' : maximumPeriodLengthPractica}"/>
 		</td>
 		<th scope="row">
 			<acme:message code="company.dashboard.form.label.deviationPeriodLengthPractica"/>
 		</th>
 		<td>
-			<acme:print value="${deviationPeriodLengthPractica}"/>
+			<acme:print value="${deviationPeriodLengthPractica == null ? '--' : deviationPeriodLengthPractica}"/>
 		</td>
 	</tr>
 </table>
@@ -66,31 +66,31 @@
 			<acme:message code="company.dashboard.form.label.numberOfSessions"/>
 		</th>
 		<td>
-			<acme:print value="${numberOfSessions}"/>
+			<acme:print value="${numberOfSessions == null ? '--' : numberOfSessions}"/>
 		</td>
 		<th scope="row">
-			<acme:message code="company.dashboard.form.label.averagePeriodLengthPractica"/>
+			<acme:message code="company.dashboard.form.label.averagePeriodLengthSession"/>
 		</th>
 		<td>
-			<acme:print value="${averagePeriodLengthSession}"/>
+			<acme:print value="${averagePeriodLengthSession == null ? '--' : averagePeriodLengthSession}"/>
 		</td>
 		<th scope="row">
-			<acme:message code="company.dashboard.form.label.minimumPeriodLengthPractica"/>
+			<acme:message code="company.dashboard.form.label.minimumPeriodLengthSession"/>
 		</th>
 		<td>
-			<acme:print value="${minimumPeriodLengthPractica}"/>
+			<acme:print value="${minimumPeriodLengthSession == null ? '--' : minimumPeriodLengthSession}"/>
 		</td>
 		<th scope="row">
-			<acme:message code="company.dashboard.form.label.maximumPeriodLengthPractica"/>
+			<acme:message code="company.dashboard.form.label.maximumPeriodLengthSession"/>
 		</th>
 		<td>
-			<acme:print value="${maximumPeriodLengthPractica}"/>
+			<acme:print value="${maximumPeriodLengthSession == null ? '--' : maximumPeriodLengthSession}"/>
 		</td>
 		<th scope="row">
-			<acme:message code="company.dashboard.form.label.deviationPeriodLengthPractica"/>
+			<acme:message code="company.dashboard.form.label.deviationPeriodLengthSession"/>
 		</th>
 		<td>
-			<acme:print value="${deviationPeriodLengthPractica}"/>
+			<acme:print value="${deviationPeriodLengthSession == null ? '--' : deviationPeriodLengthSession}"/>
 		</td>
 	</tr>
 </table>
