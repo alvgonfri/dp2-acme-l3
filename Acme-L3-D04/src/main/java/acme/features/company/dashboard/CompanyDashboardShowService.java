@@ -59,17 +59,17 @@ public class CompanyDashboardShowService extends AbstractService<Company, Compan
 		Company company;
 		companyDashboard = new CompanyDashboard();
 
-		final double averagePeriodLengthSession;
-		final double deviationPeriodLengthSession;
-		final double minimumPeriodLengthSession;
-		final double maximumPeriodLengthSession;
-		int numberOfSessions;
+		final Double averagePeriodLengthSession;
+		final Double deviationPeriodLengthSession;
+		final Double minimumPeriodLengthSession;
+		final Double maximumPeriodLengthSession;
+		Integer numberOfSessions;
 
-		final double averagePeriodLengthPractica;
-		final double deviationPeriodLengthPractica;
-		final double minimumPeriodLengthPractica;
-		final double maximumPeriodLengthPractica;
-		int numberOfPracticas;
+		final Double averagePeriodLengthPractica;
+		final Double deviationPeriodLengthPractica;
+		final Double minimumPeriodLengthPractica;
+		final Double maximumPeriodLengthPractica;
+		Integer numberOfPracticas;
 
 		final Map<String, Long> practicaNumberPerMonth;
 
