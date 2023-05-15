@@ -32,7 +32,6 @@ public class CompanyPracticumCreateTest extends TestHarness {
 		super.checkFormExists();
 
 		super.fillInputBoxIn("code", code);
-		super.fillInputBoxIn("course", course);
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("summary", summary);
 		super.fillInputBoxIn("goals", goals);
