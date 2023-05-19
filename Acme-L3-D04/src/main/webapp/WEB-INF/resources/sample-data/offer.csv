@@ -4,3 +4,20 @@ offer-02,2013/01/12 10:30,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,
 offer-03,2012/03/22 10:30,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,2013/01/01 10:30,2014/01/01 10:30,"EUR 20,000.00",https://www.google.es/
 offer-04,2012/09/22 10:30,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,2013/01/01 10:30,2014/01/01 10:30,"EUR 20,000.00",https://www.google.es/
 offer-05,2012/05/22 10:30,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,2013/01/01 10:30,2014/01/01 10:30,"EUR 20,000.00",https://www.google.es/
+offer-07,2022/07/29 00:00,Base heading,Base summary,2022/07/30 00:00,2022/08/06 00:00,"EUR 1,000.00",http://www.example.org
+offer-08,2022/07/30 00:00,Base heading,Base summary,2022/07/31 00:00,2022/08/07 00:00,"EUR 1,000.00",http://www.example.org
+offer-09,0001/12/31 23:00,Base heading,Base summary,2022/07/30 00:00,2022/08/06 00:00,"EUR 1,000.00",http://www.example.org
+offer-10,2022/07/29 23:59,Base heading,Base summary,2022/07/30 00:00,2022/08/06 00:00,"EUR 1,000.00",http://www.example.org
+offer-11,2022/07/29 00:00,áááá,ññññ,2022/07/30 00:00,2022/08/06 00:00,"EUR 1,000.00",http://www.example.org
+offer-12,2022/07/29 00:00,Цасе хендрерит,Доценди яуалисяуе сит еу,2022/07/30 00:00,2022/08/06 00:00,"EUR 1,000.00",http://www.example.org
+offer-13,2022/07/29 00:00,<h1>Base heading</h1>,<script>alert("hi")</script>,2022/07/30 00:00,2022/08/06 00:00,"EUR 1,000.00",http://www.example.org
+offer-14,2022/07/29 00:00,This text has exactly 75 characters!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!,This text has exactly 100 characters!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!,2022/07/30 00:00,2022/08/06 00:00,"EUR 1,000.00",http://www.example.org
+offer-15,1999/12/31 00:00,Base heading,Base summary,2000/01/01 00:00,2022/08/06 00:00,"EUR 1,000.00",http://www.example.org
+offer-16,2022/07/29 00:00,Base heading,Base summary,2022/07/30 00:00,2100/12/31 23:59,"EUR 1,000.00",http://www.example.org
+offer-17,1999/12/31 00:01,Base heading,Base summary,2000/01/01 00:01,2022/08/06 00:00,"EUR 1,000.00",http://www.example.org
+offer-18,2022/07/29 00:00,Base heading,Base summary,2022/07/30 00:00,2100/12/31 23:58,"EUR 1,000.00",http://www.example.org
+offer-20,2022/07/29 00:00,Base heading,Base summary,2022/07/30 00:00,2022/08/06 00:00,"EUR 0",http://www.example.org
+offer-21,2022/07/29 00:00,Base heading,Base summary,2022/07/30 00:00,2022/08/06 00:00,"EUR 237",http://www.example.org
+offer-22,2022/07/29 00:00,Base heading,Base summary,2022/07/30 00:00,2022/08/06 00:00,"EUR 1,000.00",null
+offer-23,2022/07/29 00:00,Base heading,Base summary,2022/07/30 00:00,2022/08/06 00:00,"EUR 1,000.00",http://a.b/c?d&e
+offer-24,2022/07/29 00:00,Base heading,Base summary,2022/07/30 00:00,2022/08/06 00:00,"EUR 1,000.00",http://www.example.org
