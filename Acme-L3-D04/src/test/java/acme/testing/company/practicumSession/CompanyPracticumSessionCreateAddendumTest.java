@@ -30,9 +30,8 @@ public class CompanyPracticumSessionCreateAddendumTest extends TestHarness {
 
 
 	@ParameterizedTest
-	@CsvFileSource(resources = "/company/practicum-session/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	@Order(10)
-	public void test100Positive(final int recordIndex, final String title, final String summary, final String startDate, final String endDate, final String link, final String practicumTitle) {
+	@CsvFileSource(resources = "/company/practicum-session/create-addendum-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
+	public void test100Positive(final int recordIndex, final int sessionRecordIndex, final String title, final String summary, final String startDate, final String endDate, final String link, final String practicum) {
 
 		super.signIn("company1", "company1");
 
@@ -49,16 +48,18 @@ public class CompanyPracticumSessionCreateAddendumTest extends TestHarness {
 		super.fillInputBoxIn("startDate", startDate);
 		super.fillInputBoxIn("endDate", endDate);
 		super.fillInputBoxIn("link", link);
+		super.fillInputBoxIn("practicum", practicum);
 		super.fillInputBoxIn("confirmation", "true");
 		super.clickOnSubmit("Create");
 
 		super.checkListingExists();
 		super.sortListing(0, "asc");
-		super.checkColumnHasValue(recordIndex, 0, title);
-		super.checkColumnHasValue(recordIndex, 1, startDate);
-		super.checkColumnHasValue(recordIndex, 2, endDate);
+		super.checkColumnHasValue(sessionRecordIndex, 0, title);
+		super.checkColumnHasValue(sessionRecordIndex, 1, startDate);
+		super.checkColumnHasValue(sessionRecordIndex, 2, endDate);
 
-		super.clickOnListingRecord(recordIndex);
+		super.clickOnListingRecord(sessionRecordIndex);
+		super.checkFormExists();
 		super.checkInputBoxHasValue("title", title);
 		super.checkInputBoxHasValue("summary", summary);
 		super.checkInputBoxHasValue("startDate", startDate);
@@ -69,9 +70,27 @@ public class CompanyPracticumSessionCreateAddendumTest extends TestHarness {
 	}
 
 	@ParameterizedTest
-	@CsvFileSource(resources = "/company/practicum-session/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/company/practicum-session/create-addendum-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
+	public void test200Negative(final int recordIndex) {
+
+		super.signIn("company1", "company1");
+
+		super.clickOnMenu("Company", "Practicas list");
+		super.checkListingExists();
+		super.sortListing(0, "asc");
+
+		super.clickOnListingRecord(recordIndex);
+		super.clickOnButton("View sessions");
+
+		super.checkNotSubmitExists("Create an addendum session");
+
+		super.signOut();
+	}
+
+	@ParameterizedTest
+	@CsvFileSource(resources = "/company/practicum-session/create-addendum-negative-2.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)
-	public void test200Negative(final int recordIndex, final String title, final String summary, final String startDate, final String endDate, final String link) {
+	public void test201Negative(final int recordIndex, final int sessionRecordIndex, final String title, final String summary, final String startDate, final String endDate, final String link) {
 
 		super.signIn("company1", "company1");
 
@@ -134,25 +153,23 @@ public class CompanyPracticumSessionCreateAddendumTest extends TestHarness {
 		for (final Practicum practicum : practicums)
 			if (!practicum.isDraftMode()) {
 				param = String.format("practicumId=%d", practicum.getId());
-				super.request("/company/practicum-session/create", param);
+				super.request("/company/practicum-session/create-addendum", param);
 				super.checkPanicExists();
 			}
 	}
 
 	@Test
 	public void test302Hacking() {
-		// HINT: this test tries to create duties for jobs that weren't created 
-		// HINT+ by the principal.
 
 		Collection<Practicum> practicums;
 		String param;
 
 		super.checkLinkExists("Sign in");
-		super.signIn("company1", "company1");
+		super.signIn("company2", "company2");
 		practicums = this.repository.findManyPracticumsByCompanyUsername("company2");
 		for (final Practicum practicum : practicums) {
 			param = String.format("practicumId=%d", practicum.getId());
-			super.request("/company/practicum-session/create", param);
+			super.request("/company/practicum-session/create-addendum", param);
 			super.checkPanicExists();
 		}
 	}

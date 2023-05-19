@@ -30,7 +30,7 @@ public class CompanyPracticumSessionShowTest extends TestHarness {
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/company/practicum-session/show.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test100Positive(final int recordIndex, final int sessionRecordIndex, final String title, final String summary, final String startDate, final String endDate, final String link) {
+	public void test100Positive(final int recordIndex, final int sessionRecordIndex, final String title, final String summary, final String startDate, final String endDate, final String link, final String practicum) {
 		// HINT: this test signs in as an company, lists all of the practicum-sessions, click on  
 		// HINT+ one of them, and checks that the form has the expected data.
 		super.signIn("company1", "company1");
@@ -40,6 +40,7 @@ public class CompanyPracticumSessionShowTest extends TestHarness {
 		super.clickOnListingRecord(recordIndex);
 		super.clickOnButton("View sessions");
 		super.checkListingExists();
+		super.sortListing(0, "asc");
 		super.clickOnListingRecord(sessionRecordIndex);
 		super.checkFormExists();
 

@@ -1,0 +1,3 @@
+record-index,session-record-index,title,summary,start-date,end-date,link
+0,0,<script>alert('Warning')</script>,Aqui va un sumario de la sesion practica de ejemplo,2023/01/01 12:00,2023/02/01 12:00,https://github.com/alvfonfri/dp2-acme-l3
+0,0,Sesion practica,<script>alert('Warning')</script>,2023/01/01 12:00,2023/01/30 08:00,https://ev.us.es

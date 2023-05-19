@@ -12,19 +12,16 @@
 
 package acme.testing.company.practicumSession;
 
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
 import acme.testing.TestHarness;
 
-public class CompanyPracticumSessionListTest extends TestHarness {
+public class CompanyPracticumSessionDeleteTest extends TestHarness {
 
 	@ParameterizedTest
-	@CsvFileSource(resources = "/company/practicum-session/list-all-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test100Positive(final int recordIndex, final int sessionRecordIndex, final String title, final String startDate, final String endDate) {
-		// HINT: this test signs in as an company, lists all of the practicums, 
-		// HINT+ and then checks that the listing shows the expected data.
+	@CsvFileSource(resources = "/company/practicum-session/delete-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
+	public void test100Positive(final int recordIndex, final int sessionRecordIndex, final String title, final String summary, final String startDate, final String endDate, final String link) {
 
 		super.signIn("company1", "company1");
 
@@ -33,35 +30,24 @@ public class CompanyPracticumSessionListTest extends TestHarness {
 		super.sortListing(0, "asc");
 
 		super.clickOnListingRecord(recordIndex);
+		super.checkFormExists();
 		super.clickOnButton("View sessions");
 
-		super.checkListingExists();
 		super.sortListing(0, "asc");
-
 		super.checkColumnHasValue(sessionRecordIndex, 0, title);
 		super.checkColumnHasValue(sessionRecordIndex, 1, startDate);
 		super.checkColumnHasValue(sessionRecordIndex, 2, endDate);
 
-		super.signOut();
-	}
+		super.clickOnListingRecord(sessionRecordIndex);
+		super.checkInputBoxHasValue("title", title);
+		super.checkInputBoxHasValue("summary", summary);
+		super.checkInputBoxHasValue("startDate", startDate);
+		super.checkInputBoxHasValue("endDate", endDate);
+		super.checkInputBoxHasValue("link", link);
 
-	@Test
-	public void test200Negative() {
-		// HINT: there aren't any negative tests for this feature because it's a listing
-	}
+		super.clickOnSubmit("Delete");
 
-	@Test
-	public void test300Hacking() {
-		// HINT: this test tries to list all of the practicum-sessions using 
-		// HINT+ inappropriate roles.
-
-		super.checkLinkExists("Sign in");
-		super.request("/company/practicum-session/list");
-		super.checkPanicExists();
-
-		super.signIn("administrator1", "administrator1");
-		super.request("/company/practicum-session/list");
-		super.checkPanicExists();
+		super.checkListingExists();
 		super.signOut();
 	}
 

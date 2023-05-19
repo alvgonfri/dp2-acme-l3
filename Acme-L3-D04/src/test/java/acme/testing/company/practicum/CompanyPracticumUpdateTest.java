@@ -31,8 +31,11 @@ public class CompanyPracticumUpdateTest extends TestHarness {
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/company/practicum/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	@Order(10)
 	public void test100Positive(final int recordIndex, final String code, final String title, final String summary, final String goals) {
+		// HINT: this test logs in as a company, lists his practicas, 
+		// HINT+ selects one of them, updates it, and then checks that 
+		// HINT+ the update has actually been performed.
+
 		super.signIn("company1", "company1");
 
 		super.clickOnMenu("Company", "Practicas list");
@@ -40,10 +43,10 @@ public class CompanyPracticumUpdateTest extends TestHarness {
 		super.sortListing(0, "asc");
 
 		super.checkColumnHasValue(recordIndex, 0, code);
-		super.checkColumnHasValue(recordIndex, 1, title);
 		super.clickOnListingRecord(recordIndex);
-		super.checkFormExists();
 
+		super.checkFormExists();
+		super.fillInputBoxIn("code", code);
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("summary", summary);
 		super.fillInputBoxIn("goals", goals);
@@ -57,12 +60,12 @@ public class CompanyPracticumUpdateTest extends TestHarness {
 
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
+		super.checkInputBoxHasValue("code", code);
 		super.checkInputBoxHasValue("title", title);
 		super.checkInputBoxHasValue("summary", summary);
 		super.checkInputBoxHasValue("goals", goals);
 
 		super.signOut();
-
 	}
 
 	@ParameterizedTest

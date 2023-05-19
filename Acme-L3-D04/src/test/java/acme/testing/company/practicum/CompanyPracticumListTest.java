@@ -22,18 +22,18 @@ public class CompanyPracticumListTest extends TestHarness {
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/company/practicum/list-all-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test100Positive(final int recordIndex, final String code, final String title) {
+	public void test100Positive(final int recordIndex, final String code, final String title, final String summary) {
 		// HINT: this test signs in as an company, lists all of the practicums, 
 		// HINT+ and then checks that the listing shows the expected data.
 
 		super.signIn("company1", "company1");
 		super.clickOnMenu("Company", "Practicas list");
 		super.checkListingExists();
-		super.checkColumnHasValue(recordIndex, 0, code);
 		super.sortListing(0, "asc");
 
 		super.checkColumnHasValue(recordIndex, 0, code);
 		super.checkColumnHasValue(recordIndex, 1, title);
+		super.checkColumnHasValue(recordIndex, 2, summary);
 
 		super.signOut();
 	}

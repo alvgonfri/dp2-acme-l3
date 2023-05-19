@@ -48,7 +48,7 @@ public class CompanyPracticumPublishTest extends TestHarness {
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/company/practicum/publish-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void negativeButtonTest(final int recordIndex, final String code) {
+	public void test200Negative(final int recordIndex, final String code) {
 		// HINT: aquí se intenta publicar una practica que no puede ser publicada todavía
 
 		super.signIn("company1", "company1");

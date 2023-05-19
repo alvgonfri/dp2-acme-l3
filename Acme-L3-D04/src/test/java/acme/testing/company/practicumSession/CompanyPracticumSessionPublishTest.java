@@ -30,7 +30,7 @@ public class CompanyPracticumSessionPublishTest extends TestHarness {
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/company/practicum-session/publish-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test100Positive(final int recordIndex, final int sessionRecordIndex, final String title, final String startDate) {
+	public void test100Positive(final int recordIndex, final int sessionRecordIndex, final String title, final String startDate, final String endDate) {
 		super.signIn("company1", "company1");
 
 		super.clickOnMenu("Company", "Practicas list");
@@ -44,6 +44,7 @@ public class CompanyPracticumSessionPublishTest extends TestHarness {
 		super.sortListing(0, "asc");
 		super.checkColumnHasValue(sessionRecordIndex, 0, title);
 		super.checkColumnHasValue(sessionRecordIndex, 1, startDate);
+		super.checkColumnHasValue(sessionRecordIndex, 2, endDate);
 
 		super.clickOnListingRecord(sessionRecordIndex);
 		super.checkFormExists();
@@ -55,7 +56,7 @@ public class CompanyPracticumSessionPublishTest extends TestHarness {
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/company/practicum-session/publish-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void negativeButtonTest(final int recordIndex, final int sessionRecordIndex, final String title, final String startDate) {
+	public void test200Negative(final int recordIndex, final int sessionRecordIndex, final String title, final String startDate, final String endDate) {
 		// HINT: this test attempts to publish a practicum-session that cannot be published, yet.
 
 		super.signIn("company1", "company1");
@@ -71,6 +72,7 @@ public class CompanyPracticumSessionPublishTest extends TestHarness {
 		super.sortListing(0, "asc");
 		super.checkColumnHasValue(sessionRecordIndex, 0, title);
 		super.checkColumnHasValue(sessionRecordIndex, 1, startDate);
+		super.checkColumnHasValue(sessionRecordIndex, 2, endDate);
 
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();

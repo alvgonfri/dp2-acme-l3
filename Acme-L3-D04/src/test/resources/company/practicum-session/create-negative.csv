@@ -1,6 +1,6 @@
-recordIndex,code,title,summary,goals
-0,,valido,esto es un sumario valido pero no para sesiones,test
-0,ADS342,aaa,esto es un sumario valido pero no para sesiones,negativo
-0,RTY567,titulo,esto es un sumario valido pero no para sesiones,
-0,DER444,,esto es un sumario valido pero no para sesiones,errar
-0,FEE234,ksnakdnskandkndknakdsad,,testear
+record-index,session-record-index,title,summary,start-date,end-date,link
+0,1,valido,<script>alert('Warning')</script>,2005/09/25 18:00,2005/01/04 11:00,null
+0,1,aaa,esto es un sumario valido pero no para sesiones,,2005/09/25 18:00,http://google.es
+0,1,實踐課,esto es un sumario valido pero no para sesiones,2005/09/25 18:00,2000/03/05 13:00,,
+0,1,,esto es un sumario valido pero no para sesiones,2000/03/05 13:00,,null
+0,1,ksnakdnskandkndknakdsad,,2000/03/05 13:00,2005/09/25 18:00,http://google.es

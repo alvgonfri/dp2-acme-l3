@@ -36,7 +36,7 @@ public class CompanyPracticumShowTest extends TestHarness {
 		super.signIn("company1", "company1");
 		super.clickOnMenu("Company", "Practicas list");
 		super.checkListingExists();
-		super.sortListing(1, "asc");
+		super.sortListing(0, "asc");
 
 		super.checkColumnHasValue(recordIndex, 0, code);
 		super.checkColumnHasValue(recordIndex, 1, title);

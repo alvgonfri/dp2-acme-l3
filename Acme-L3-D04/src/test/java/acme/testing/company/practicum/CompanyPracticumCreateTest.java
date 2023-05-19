@@ -32,6 +32,7 @@ public class CompanyPracticumCreateTest extends TestHarness {
 		super.checkFormExists();
 
 		super.fillInputBoxIn("code", code);
+		super.fillInputBoxIn("course", course);
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("summary", summary);
 		super.fillInputBoxIn("goals", goals);
@@ -39,7 +40,7 @@ public class CompanyPracticumCreateTest extends TestHarness {
 
 		super.clickOnMenu("Company", "Practicas list");
 		super.checkListingExists();
-		super.sortListing(0, "asc");
+		super.sortListing(0, "desc");
 		super.checkColumnHasValue(recordIndex, 0, code);
 		super.checkColumnHasValue(recordIndex, 1, title);
 		super.checkColumnHasValue(recordIndex, 2, summary);

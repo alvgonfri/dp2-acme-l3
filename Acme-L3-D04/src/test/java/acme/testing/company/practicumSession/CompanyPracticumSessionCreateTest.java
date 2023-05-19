@@ -31,7 +31,7 @@ public class CompanyPracticumSessionCreateTest extends TestHarness {
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/company/practicum-session/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test100Positive(final int recordIndex, final int sessionRecordIndex, final String title, final String summary, final String startDate, final String endDate, final String link) {
+	public void test100Positive(final int recordIndex, final int sessionRecordIndex, final String title, final String summary, final String startDate, final String endDate, final String link, final String practicum) {
 
 		super.signIn("company1", "company1");
 
@@ -48,12 +48,14 @@ public class CompanyPracticumSessionCreateTest extends TestHarness {
 		super.fillInputBoxIn("startDate", startDate);
 		super.fillInputBoxIn("endDate", endDate);
 		super.fillInputBoxIn("link", link);
+		super.fillInputBoxIn("practicum", practicum);
 		super.clickOnSubmit("Create");
 
 		super.checkListingExists();
-		super.sortListing(0, "asc");
+		super.sortListing(0, "desc");
 		super.checkColumnHasValue(sessionRecordIndex, 0, title);
 		super.checkColumnHasValue(sessionRecordIndex, 1, startDate);
+		super.checkColumnHasValue(sessionRecordIndex, 2, endDate);
 
 		super.clickOnListingRecord(sessionRecordIndex);
 		super.checkInputBoxHasValue("title", title);
@@ -68,7 +70,7 @@ public class CompanyPracticumSessionCreateTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/company/practicum-session/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)
-	public void test200Negative(final int recordIndex, final String title, final String summary, final String startDate, final String endDate, final String link) {
+	public void test200Negative(final int recordIndex, final int sessionRecordIndex, final String title, final String summary, final String startDate, final String endDate, final String link) {
 
 		super.signIn("company1", "company1");
 
@@ -117,15 +119,13 @@ public class CompanyPracticumSessionCreateTest extends TestHarness {
 
 	@Test
 	public void test301Hacking() {
-		// HINT: this test tries to create a duty for a published practicum created by 
-		// HINT+ the principal.
 
 		Collection<Practicum> practicums;
 		String param;
 
 		super.checkLinkExists("Sign in");
 		super.signIn("company1", "company1");
-		practicums = this.repository.findManyPracticumsByCompanyUsername("employer1");
+		practicums = this.repository.findManyPracticumsByCompanyUsername("company1");
 		for (final Practicum practicum : practicums)
 			if (!practicum.isDraftMode()) {
 				param = String.format("practicumId=%d", practicum.getId());
@@ -136,15 +136,13 @@ public class CompanyPracticumSessionCreateTest extends TestHarness {
 
 	@Test
 	public void test302Hacking() {
-		// HINT: this test tries to create duties for jobs that weren't created 
-		// HINT+ by the principal.
 
 		Collection<Practicum> practicums;
 		String param;
 
 		super.checkLinkExists("Sign in");
-		super.signIn("company1", "company1");
-		practicums = this.repository.findManyPracticumsByCompanyUsername("employer2");
+		super.signIn("company2", "company2");
+		practicums = this.repository.findManyPracticumsByCompanyUsername("company2");
 		for (final Practicum practicum : practicums) {
 			param = String.format("practicumId=%d", practicum.getId());
 			super.request("/company/practicum-session/create", param);
