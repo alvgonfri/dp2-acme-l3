@@ -2,3 +2,14 @@ key,moment,title,message,critical,moreInfo
 bulletin-01,2000/08/24 14:39,Lorem ipsum,Lorem ipsum dolor sit amet,true,https://www.google.es/
 bulletin-02,2003/05/14 14:39,Lorem ipsum,Lorem ipsum dolor sit amet,true,https://www.google.es/
 bulletin-03,2000/12/25 14:39,Lorem ipsum,Lorem ipsum dolor sit amet,false,https://www.google.es/
+bulletin-04,2022/07/29 00:00,Base title,Base message,false,http://www.example.org
+bulletin-05,0001/12/31 23:00,Base title,Base message,true,http://www.example.org
+bulletin-06,2022/07/29 23:59,Base title,Base message,false,http://www.example.org
+bulletin-07,2022/07/29 00:00,Título base,ññññ,false,http://www.example.org
+bulletin-08,2022/07/29 00:00,東期京検保大,東期京検保大,false,http://www.example.org
+bulletin-09,2022/07/29 00:00,<script>alert("hi")</script>,<h1>Base message</h1>,true,http://www.example.org
+bulletin-10,2022/07/29 00:00,This text has exactly 75 characters!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!,This text has exactly 100 characters!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!,false,http://www.example.org
+bulletin-11,2022/07/29 00:00,Base title,Base message,true,null
+bulletin-12,2022/07/29 00:00,Base title,Base message,false,http://server.local/cccc?a=1&b=2
+bulletin-13,2022/07/29 00:00,Base title,Base message,false,http://a.b/c?d&e
+bulletin-14,2022/07/30 00:00,Base title,Base message,true,http://www.example.org
