@@ -13,14 +13,14 @@ public class AssistantTutorialListTest extends TestHarness {
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AssistantTutorialListTest repository;
+	protected AssistantTutorialTestRepository repository;
 
 	// Test methods -----------------------------------------------------------
 
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/assistant/tutorial/list-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test100Positive(final int tutorialRecordIndex, final String code, final String title, final String Course) {
+	public void test100Positive(final int tutorialRecordIndex, final String code, final String title, final String course) {
 
 		super.signIn("assistant1", "assistant1");
 
@@ -30,7 +30,7 @@ public class AssistantTutorialListTest extends TestHarness {
 
 		super.checkColumnHasValue(tutorialRecordIndex, 0, code);
 		super.checkColumnHasValue(tutorialRecordIndex, 1, title);
-		super.checkColumnHasValue(tutorialRecordIndex, 2, Course);
+		super.checkColumnHasValue(tutorialRecordIndex, 2, course);
 
 		super.signOut();
 	}

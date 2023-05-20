@@ -11,7 +11,7 @@ public class AssistantTutorialCreateTest extends TestHarness {
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/assistant/tutorial/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test100Positive(final int recordIndex, final String code, final String title, final String summary, final String goals, final String course, final String score, final String totalTime) {
+	public void test100Positive(final int recordIndex, final String code, final String title, final String summary, final String goals, final String course) {
 		// HINT: this test authenticates as an employer and then lists his or her
 		// HINT: jobs, creates a new one, and check that it's been created properly.
 
@@ -21,13 +21,13 @@ public class AssistantTutorialCreateTest extends TestHarness {
 		super.checkListingExists();
 
 		super.clickOnButton("Create new tutorial");
-		super.fillInputBoxIn("Code", code);
-		super.fillInputBoxIn("Title", title);
-		super.fillInputBoxIn("Summary", summary);
-		super.fillInputBoxIn("Goals", goals);
-		super.fillInputBoxIn("Course", course);
-		super.fillInputBoxIn("totalTime", totalTime);
-		super.clickOnSubmit("Create");
+		super.fillInputBoxIn("code", code);
+		super.fillInputBoxIn("title", title);
+		super.fillInputBoxIn("summary", summary);
+		super.fillInputBoxIn("goals", goals);
+		super.fillInputBoxIn("course", course);
+
+		super.clickOnSubmit("Create new tutorial");
 
 		super.clickOnMenu("Assistant", "Tutorials");
 		super.checkListingExists();
@@ -38,12 +38,11 @@ public class AssistantTutorialCreateTest extends TestHarness {
 		super.clickOnListingRecord(recordIndex);
 
 		super.checkFormExists();
-		super.fillInputBoxIn("Code", code);
-		super.fillInputBoxIn("Title", title);
-		super.fillInputBoxIn("Summary", summary);
-		super.fillInputBoxIn("Goals", goals);
-		super.fillInputBoxIn("Course", course);
-		super.fillInputBoxIn("totalTime", totalTime);
+		super.fillInputBoxIn("code", code);
+		super.fillInputBoxIn("title", title);
+		super.fillInputBoxIn("summary", summary);
+		super.fillInputBoxIn("goals", goals);
+		super.fillInputBoxIn("course", course);
 
 		super.clickOnButton("Tutorial Session");
 
@@ -55,7 +54,7 @@ public class AssistantTutorialCreateTest extends TestHarness {
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/assistant/tutorial/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test200Negative(final int recordIndex, final String code, final String title, final String summary, final String goals, final String course, final String score, final String totalTime) {
+	public void test200Negative(final int recordIndex, final String code, final String title, final String summary, final String goals, final String course) {
 		// HINT: this test attempts to create jobs with incorrect data.
 
 		super.signIn("assistant1", "assistant1");
@@ -64,13 +63,12 @@ public class AssistantTutorialCreateTest extends TestHarness {
 		super.clickOnButton("Create new tutorial");
 		super.checkFormExists();
 
-		super.fillInputBoxIn("Code", code);
-		super.fillInputBoxIn("Title", title);
-		super.fillInputBoxIn("Summary", summary);
-		super.fillInputBoxIn("Goals", goals);
-		super.fillInputBoxIn("Course", course);
-		super.fillInputBoxIn("totalTime", totalTime);
-		super.clickOnSubmit("Create");
+		super.fillInputBoxIn("code", code);
+		super.fillInputBoxIn("title", title);
+		super.fillInputBoxIn("summary", summary);
+		super.fillInputBoxIn("goals", goals);
+		super.fillInputBoxIn("course", course);
+		super.clickOnSubmit("Create new tutorial");
 
 		super.checkErrorsExist();
 

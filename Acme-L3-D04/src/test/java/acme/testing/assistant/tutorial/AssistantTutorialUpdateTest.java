@@ -22,8 +22,8 @@ public class AssistantTutorialUpdateTest extends TestHarness {
 
 
 	@ParameterizedTest
-	@CsvFileSource(resources = "/employer/job/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test100Positive(final int recordIndex, final String code, final String summary, final String title, final String goals, final String course, final String totalTime) {
+	@CsvFileSource(resources = "/assistant/tutorial/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
+	public void test100Positive(final int recordIndex, final String code, final String title, final String summary, final String goals, final String course) {
 		// HINT: this test logs in as an employer, lists his or her jobs, 
 		// HINT+ selects one of them, updates it, and then checks that 
 		// HINT+ the update has actually been performed.
@@ -33,25 +33,18 @@ public class AssistantTutorialUpdateTest extends TestHarness {
 		super.sortListing(0, "asc");
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
-
-		super.checkInputBoxHasValue("Code", code);
-		super.checkInputBoxHasValue("Summary", summary);
-		super.checkInputBoxHasValue("Title", title);
-		super.checkInputBoxHasValue("Goals", goals);
-		super.checkInputBoxHasValue("Course", course);
-		super.checkInputBoxHasValue("Total time", totalTime);
 		super.clickOnSubmit("Unpublish");
 
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
-		super.checkInputBoxHasValue("Code", code);
-		super.checkInputBoxHasValue("Summary", summary);
-		super.checkInputBoxHasValue("Title", title);
-		super.checkInputBoxHasValue("Goals", goals);
-		super.checkInputBoxHasValue("Course", course);
-		super.checkInputBoxHasValue("Total time", totalTime);
+		super.fillInputBoxIn("code", code);
+		super.fillInputBoxIn("summary", summary);
+		super.fillInputBoxIn("title", title);
+		super.fillInputBoxIn("goals", goals);
+		super.fillInputBoxIn("course", course);
+
 		super.clickOnSubmit("Update");
 
 		super.checkListingExists();
@@ -67,8 +60,8 @@ public class AssistantTutorialUpdateTest extends TestHarness {
 	}
 
 	@ParameterizedTest
-	@CsvFileSource(resources = "/employer/job/update-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test200Negative(final int recordIndex, final String code, final String summary, final String title, final String goals, final String course, final String totalTime) {
+	@CsvFileSource(resources = "/assistant/tutorial/update-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
+	public void test200Negative(final int recordIndex, final String code, final String title, final String summary, final String goals, final String course) {
 		// HINT: this test attempts to update a job with wrong data.
 
 		super.signIn("assistant1", "assistant1");
@@ -76,27 +69,19 @@ public class AssistantTutorialUpdateTest extends TestHarness {
 		super.sortListing(0, "asc");
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
-
-		super.checkInputBoxHasValue("Code", code);
-		super.checkInputBoxHasValue("Summary", summary);
-		super.checkInputBoxHasValue("Title", title);
-		super.checkInputBoxHasValue("Goals", goals);
-		super.checkInputBoxHasValue("Course", course);
-		super.checkInputBoxHasValue("Total time", totalTime);
 		super.clickOnSubmit("Unpublish");
 
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
-		super.checkInputBoxHasValue("Code", code);
-		super.checkInputBoxHasValue("Summary", summary);
-		super.checkInputBoxHasValue("Title", title);
-		super.checkInputBoxHasValue("Goals", goals);
-		super.checkInputBoxHasValue("Course", course);
-		super.checkInputBoxHasValue("Total time", totalTime);
+		super.fillInputBoxIn("code", code);
+		super.fillInputBoxIn("summary", summary);
+		super.fillInputBoxIn("title", title);
+		super.fillInputBoxIn("goals", goals);
+		super.fillInputBoxIn("course", course);
+
 		super.clickOnSubmit("Update");
-		;
 
 		super.checkErrorsExist();
 
@@ -105,8 +90,6 @@ public class AssistantTutorialUpdateTest extends TestHarness {
 
 	@Test
 	public void test300Hacking() {
-		// HINT: this test tries to update a job with a role other than "Employer",
-		// HINT+ or using an employer who is not the owner.
 
 		Collection<Tutorial> tutorials;
 		String param;

@@ -21,22 +21,22 @@ public class AssistantTutorialShowTest extends TestHarness {
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/assistant/tutorial/show-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test100Positive(final int recordIndex, final String code, final String summary, final String title, final String goals, final String course, final String totalTime) {
+	public void test100Positive(final int recordIndex, final String code, final String title, final String summary, final String goals, final String course, final String totalTime) {
 		// HINT: this test signs in as an employer, lists all of the jobs, click on  
 		// HINT+ one of them, and checks that the form has the expected data.
 
-		super.signIn("employer1", "employer1");
+		super.signIn("assistant1", "assistant1");
 		super.clickOnMenu("Assistant", "Tutorials");
 		super.sortListing(0, "asc");
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
 
-		super.checkInputBoxHasValue("Code", code);
-		super.checkInputBoxHasValue("Summary", summary);
-		super.checkInputBoxHasValue("Title", title);
-		super.checkInputBoxHasValue("Goals", goals);
-		super.checkInputBoxHasValue("Course", course);
-		super.checkInputBoxHasValue("Total time", totalTime);
+		super.checkInputBoxHasValue("code", code);
+		super.checkInputBoxHasValue("title", title);
+		super.checkInputBoxHasValue("summary", summary);
+		super.checkInputBoxHasValue("goals", goals);
+		super.checkInputBoxHasValue("course", course);
+		super.checkInputBoxHasValue("totalTime", totalTime);
 		super.signOut();
 	}
 
@@ -48,35 +48,36 @@ public class AssistantTutorialShowTest extends TestHarness {
 
 	@Test
 	public void test300Hacking() {
-		// HINT: this test tries to show an unpublished job by someone who is not the principal.
 
 		Collection<Tutorial> tutorials;
 		String param;
 
 		tutorials = this.repository.findManyTutorialByAssistantUsername("assistant1");
-		for (final Tutorial tutorial : tutorials)
-			if (tutorial.isDraftMode()) {
-				param = String.format("id=%d", tutorial.getId());
+		System.out.println(tutorials);
+		for (final Tutorial tutorial : tutorials) {
+			param = String.format("id=%d", tutorial.getId());
 
-				super.checkLinkExists("Sign in");
-				super.request("/assistant/tutorial/show", param);
-				super.checkPanicExists();
+			super.checkLinkExists("Sign in");
+			super.request("/assistant/tutorial/show", param);
+			super.checkPanicExists();
 
-				super.signIn("administrator", "administrator");
-				super.request("/assistant/tutorial/show", param);
-				super.checkPanicExists();
-				super.signOut();
+			super.signIn("administrator", "administrator");
+			super.request("/assistant/tutorial/show", param);
+			super.checkPanicExists();
+			super.signOut();
 
-				super.signIn("lecturer2", "lecturer2");
-				super.request("/assistant/tutorial/show", param);
-				super.checkPanicExists();
-				super.signOut();
+			super.signIn("lecturer2", "lecturer2");
+			super.request("/assistant/tutorial/show", param);
+			super.checkPanicExists();
+			super.signOut();
 
-				super.signIn("student1", "student1");
-				super.request("/assistant/tutorial/show", param);
-				super.checkPanicExists();
-				super.signOut();
-			}
+			super.signIn("student1", "student1");
+			super.request("/assistant/tutorial/show", param);
+			super.checkPanicExists();
+			super.signOut();
+
+		}
+
 	}
 
 }

@@ -3,7 +3,6 @@ package acme.testing.assistant.tutorial;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.testing.TestHarness;
 
@@ -11,11 +10,7 @@ public class AssistantTutorialDeleteTest extends TestHarness {
 
 	// Internal state ---------------------------------------------------------
 
-	@Autowired
-	protected AssistantTutorialTestRepository repository;
-
 	// Test methods ------------------------------------------------------------
-
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/employer/job/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
