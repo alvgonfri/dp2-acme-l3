@@ -1,0 +1,7 @@
+recordIndex,code,course,motivation,goals,workTime
+0,123,Writing Mastery,Test motivation,Test goals,0
+0,ZZZ123,---,Test motivation,Test goals,0
+0,ZZZ123,Writing Mastery,,Test goals,0
+0,ZZZ123,Writing Mastery,Test motivation,,0
+0,ZZZ123,Writing Mastery,This text has a lot of characters!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!,Test goals,0
+0,ZZZ123,Writing Mastery,Test motivation,This text has a lot of characters!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!,0
