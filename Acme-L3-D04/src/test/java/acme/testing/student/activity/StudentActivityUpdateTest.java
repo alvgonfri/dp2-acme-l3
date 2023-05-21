@@ -47,6 +47,16 @@ public class StudentActivityUpdateTest extends TestHarness {
 		super.fillInputBoxIn("moreInfo", moreInfo);
 		super.clickOnSubmit("Update");
 
+		super.signOut();
+		super.signIn("student1", "student1");
+
+		super.clickOnMenu("Student", "List my enrolments");
+		super.checkListingExists();
+		super.sortListing(0, "asc");
+
+		super.clickOnListingRecord(enrolmentRecordIndex);
+		super.clickOnButton("Activities");
+
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		super.checkColumnHasValue(activityRecordIndex, 0, title);

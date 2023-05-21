@@ -15,3 +15,4 @@ enrolment-13,XYZ100,<h1>Base motivation</h1>,Base goals,true,null,null,student-0
 enrolment-14,ZZZ999,Base motivation,<script>alert("hi")</script>,true,null,null,student-03,course-01
 enrolment-15,AAA107,Base motivation,Base goals,false,%%%%%%%%%%%%%%%%%%This holder has exactly 75 characters%%%%%%%%%%%%%%%%%%%%,1234,student-03,course-02
 enrolment-16,AAA108,Base motivation,Base goals,false,Еирмод лобортис партиендо,0000,student-03,course-03
+enrolment-17,AAA999,Base motivation,Base goals,true,null,null,student-04,course-02

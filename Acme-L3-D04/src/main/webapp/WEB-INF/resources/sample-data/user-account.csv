@@ -6,7 +6,8 @@ user-account-lecturer-02,true,"UserIdentity{name: 'Lecturer', surname: '2', emai
 user-account-lecturer-03,true,"UserIdentity{name: 'Lecturer', surname: '3', email: 'lecturer3@acme.com'}",lecturer3,lecturer3
 user-account-student-01,true,"UserIdentity{name: 'Student', surname: 'One', email: 'student1@mail.com'}",student1,student1
 user-account-student-02,true,"UserIdentity{name: 'Student', surname: 'Two', email: 'student2@mail.com'}",student2,student2
-user-account-student-03,true,"UserIdentity{name: 'Base', surname: 'Student', email: 'student3@mail.com'}",student3,student3
+user-account-student-03,true,"UserIdentity{name: 'Base', surname: 'Student3', email: 'student3@mail.com'}",student3,student3
+user-account-student-04,true,"UserIdentity{name: 'Base', surname: 'Student4', email: 'student4@mail.com'}",student4,student4
 user-account-auditor-01,true,"UserIdentity{name: 'Pablo', surname: 'Blanco', email: 'pabloblanco@acme.com'}",auditor1,auditor1
 user-account-auditor-02,true,"UserIdentity{name: 'Jorge', surname: 'Ruiz', email: 'jorgeruiz@acme.com'}",auditor2,auditor2
 user-account-company-01,true,"UserIdentity{name: 'Sergio', surname: 'Lopez', email: 'company1@acme.com'}",company1,company1
