@@ -1,0 +1,6 @@
+enrolmentRecordIndex,code,activityRecordIndex,title,summary,type,startDate,endDate,moreInfo
+0,ABC754,0,Creative Writing Seminar,Small group activity designed to allow students to engage with experienced writers,THEORY,2022/01/30 09:00,2022/01/30 11:00,
+0,ABC754,1,Writing Retreat,Weekend-long activity designed to provide students with an immersive writing experience,HANDS_ON,2022/02/05 08:00,2022/02/07 20:00,http://www.example.org
+0,ABC754,2,Writing Workshop,Group activity designed to provide students with the opportunity to practice their writing skills,HANDS_ON,2022/01/29 11:00,2022/01/29 18:00,
+1,CTR888,0,Financial Planning Workshop,Group activity designed to help students develop their financial planning skills,HANDS_ON,2022/04/08 09:30,2022/04/08 14:00,
+1,CTR888,1,Stock Market Simulation,Group activity designed to give students hands-on experience in trading in the stock market,HANDS_ON,2022/04/15 10:00,2022/04/16 10:00,

@@ -1,0 +1,7 @@
+enrolmentRecordIndex,activityRecordIndex,title,summary,type,startDate,endDate,moreInfo
+0,3,Z1 Test title,Test summary,THEORY,2022/07/30 10:00,2022/07/30 18:00,http://www.example.org
+0,4,Z2 Test title,Test summary,THEORY,2022/07/30 10:00,2022/07/30 18:00,
+0,5,Z3 This text has exactly 75 characters!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!,This text has exactly 100 characters!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!,HANDS_ON,2022/07/30 10:00,2022/07/30 18:00,http://www.example.org
+1,2,Z1 ÁÉÍÓÚ,ñ,THEORY,2022/07/30 10:00,2022/07/30 18:00,http://www.example.org
+1,3,Z2 <h1>Title</h1>,<h3>Hello</h3>,HANDS_ON,2022/07/30 10:00,2022/07/30 18:00,
+1,4,Z3 Test title,Test summary,THEORY,2000/01/01 00:00,2100/12/31 23:59,http://www.example.org
