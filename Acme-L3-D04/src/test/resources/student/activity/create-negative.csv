@@ -1,0 +1,8 @@
+enrolmentRecordIndex,activityRecordIndex,title,summary,type,startDate,endDate,moreInfo
+0,3,Test title,Test summary,THEORY,2022/07/30 10:00,2022/07/30 18:00,info
+0,4,This text has a lot of characters!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!,This text has a lot of characters!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!,HANDS_ON,2022/07/30 10:00,2022/07/30 18:00,http://www.example.org
+0,5,Test title,Test summary,---,2022/07/30 10:00,2022/07/30 18:00,
+1,2,,,THEORY,2022/07/30 10:00,2022/07/30 18:00,http://www.example.org
+1,4,Test title,Test summary,THEORY,1900/07/30 10:00,2022/07/30 18:00,http://www.example.org
+1,5,Test title,Test summary,HANDS_ON,2022/07/30 10:00,2200/07/30 18:00,http://www.example.org
+1,6,Test title,Test summary,HANDS_ON,2022/07/30 10:00,2022/07/30 09:00,http://www.example.org
