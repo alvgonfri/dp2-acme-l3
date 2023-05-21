@@ -22,7 +22,7 @@ public class AssistantTutorialSessionListTest extends TestHarness {
 
 
 	@ParameterizedTest
-	@CsvFileSource(resources = "/assistant/tutorial/list-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/assistant/tutorialSession/list-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void test100Positive(final int tutorialRecordIndex, final String code, final int sessionRecordIndex, final String title, final String sessionType, final String startDate, final String endDate) {
 
 		super.signIn("assistant1", "assistant1");
@@ -33,7 +33,7 @@ public class AssistantTutorialSessionListTest extends TestHarness {
 
 		super.checkColumnHasValue(tutorialRecordIndex, 0, code);
 		super.clickOnListingRecord(tutorialRecordIndex);
-		super.checkInputBoxHasValue("Code", code);
+		super.checkInputBoxHasValue("code", code);
 		super.clickOnButton("Tutorial Session");
 
 		super.checkListingExists();
@@ -61,8 +61,8 @@ public class AssistantTutorialSessionListTest extends TestHarness {
 
 		tutorials = this.repository.findManyTutorialByAssistantUsername("assistant1");
 		for (final Tutorial tutorial : tutorials)
-			if (tutorial.isDraftMode()) {
-				param = String.format("masterId=%d", tutorial.getId());
+			if (tutorial.isDraftMode() || !tutorial.isDraftMode()) {
+				param = String.format("tutorialId=%d", tutorial.getId());
 
 				super.checkLinkExists("Sign in");
 				super.request("/assistant/tutorial-session/list", param);

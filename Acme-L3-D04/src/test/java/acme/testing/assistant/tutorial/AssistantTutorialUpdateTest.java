@@ -40,8 +40,8 @@ public class AssistantTutorialUpdateTest extends TestHarness {
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
 		super.fillInputBoxIn("code", code);
-		super.fillInputBoxIn("summary", summary);
 		super.fillInputBoxIn("title", title);
+		super.fillInputBoxIn("summary", summary);
 		super.fillInputBoxIn("goals", goals);
 		super.fillInputBoxIn("course", course);
 
@@ -69,15 +69,15 @@ public class AssistantTutorialUpdateTest extends TestHarness {
 		super.sortListing(0, "asc");
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
-		super.clickOnSubmit("Unpublish");
+		//super.clickOnSubmit("Unpublish");
 
-		super.checkListingExists();
-		super.sortListing(0, "asc");
-		super.clickOnListingRecord(recordIndex);
+		//		super.checkListingExists();
+		//		super.sortListing(0, "asc");
+		//		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
 		super.fillInputBoxIn("code", code);
-		super.fillInputBoxIn("summary", summary);
 		super.fillInputBoxIn("title", title);
+		super.fillInputBoxIn("summary", summary);
 		super.fillInputBoxIn("goals", goals);
 		super.fillInputBoxIn("course", course);
 

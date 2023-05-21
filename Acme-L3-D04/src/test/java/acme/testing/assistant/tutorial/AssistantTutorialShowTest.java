@@ -6,6 +6,7 @@ import java.util.Collection;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.entities.tutorial.Tutorial;
 import acme.testing.TestHarness;
@@ -14,6 +15,7 @@ public class AssistantTutorialShowTest extends TestHarness {
 
 	// Internal state ---------------------------------------------------------
 
+	@Autowired
 	protected AssistantTutorialTestRepository repository;
 
 	// Test data --------------------------------------------------------------
@@ -53,31 +55,29 @@ public class AssistantTutorialShowTest extends TestHarness {
 		String param;
 
 		tutorials = this.repository.findManyTutorialByAssistantUsername("assistant1");
-		System.out.println(tutorials);
-		for (final Tutorial tutorial : tutorials) {
-			param = String.format("id=%d", tutorial.getId());
+		for (final Tutorial tutorial : tutorials)
+			if (tutorial.isDraftMode() || !tutorial.isDraftMode()) {
+				param = String.format("id=%d", tutorial.getId());
 
-			super.checkLinkExists("Sign in");
-			super.request("/assistant/tutorial/show", param);
-			super.checkPanicExists();
+				super.checkLinkExists("Sign in");
+				super.request("/assistant/tutorial/show", param);
+				super.checkPanicExists();
 
-			super.signIn("administrator", "administrator");
-			super.request("/assistant/tutorial/show", param);
-			super.checkPanicExists();
-			super.signOut();
+				super.signIn("administrator", "administrator");
+				super.request("/assistant/tutorial/show", param);
+				super.checkPanicExists();
+				super.signOut();
 
-			super.signIn("lecturer2", "lecturer2");
-			super.request("/assistant/tutorial/show", param);
-			super.checkPanicExists();
-			super.signOut();
+				super.signIn("lecturer2", "lecturer2");
+				super.request("/assistant/tutorial/show", param);
+				super.checkPanicExists();
+				super.signOut();
 
-			super.signIn("student1", "student1");
-			super.request("/assistant/tutorial/show", param);
-			super.checkPanicExists();
-			super.signOut();
-
-		}
-
+				super.signIn("student1", "student1");
+				super.request("/assistant/tutorial/show", param);
+				super.checkPanicExists();
+				super.signOut();
+			}
 	}
 
 }
