@@ -35,6 +35,7 @@ public class AssistantTutorialUpdateTest extends TestHarness {
 		super.checkFormExists();
 		super.clickOnSubmit("Unpublish");
 
+		super.clickOnMenu("Assistant", "Tutorials");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		super.clickOnListingRecord(recordIndex);
@@ -46,7 +47,7 @@ public class AssistantTutorialUpdateTest extends TestHarness {
 		super.fillInputBoxIn("course", course);
 
 		super.clickOnSubmit("Update");
-
+		super.clickOnMenu("Assistant", "Tutorials");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		super.checkColumnHasValue(recordIndex, 0, code);

@@ -37,6 +37,7 @@ public class AssistantTutorialDeleteTest extends TestHarness {
 		super.checkInputBoxHasValue("totalTime", totalTime);
 		super.clickOnSubmit("Unpublish");
 
+		super.clickOnMenu("Assistant", "Tutorials");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		super.clickOnListingRecord(recordIndex);
