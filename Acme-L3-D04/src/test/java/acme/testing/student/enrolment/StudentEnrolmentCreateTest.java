@@ -27,6 +27,10 @@ public class StudentEnrolmentCreateTest extends TestHarness {
 		super.fillInputBoxIn("goals", goals);
 		super.clickOnSubmit("Create");
 
+		super.signOut();
+		super.signIn("student1", "student1");
+
+		super.clickOnMenu("Student", "List my enrolments");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		super.checkColumnHasValue(recordIndex, 0, code);

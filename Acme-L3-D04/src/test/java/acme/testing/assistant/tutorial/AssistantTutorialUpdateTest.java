@@ -35,6 +35,9 @@ public class AssistantTutorialUpdateTest extends TestHarness {
 		super.checkFormExists();
 		super.clickOnSubmit("Unpublish");
 
+		super.signOut();
+		super.signIn("assistant1", "assistant1");
+
 		super.clickOnMenu("Assistant", "Tutorials");
 		super.checkListingExists();
 		super.sortListing(0, "asc");

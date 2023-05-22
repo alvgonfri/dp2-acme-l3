@@ -29,6 +29,9 @@ public class AssistantTutorialCreateTest extends TestHarness {
 
 		super.clickOnSubmit("Create new tutorial");
 
+		super.signOut();
+		super.signIn("assistant1", "assistant1");
+
 		super.clickOnMenu("Assistant", "Tutorials");
 		super.checkListingExists();
 		super.sortListing(0, "asc");

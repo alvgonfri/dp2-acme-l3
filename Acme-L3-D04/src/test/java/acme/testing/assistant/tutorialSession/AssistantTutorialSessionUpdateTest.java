@@ -54,6 +54,9 @@ public class AssistantTutorialSessionUpdateTest extends TestHarness {
 		super.fillInputBoxIn("moreInfo", moreInfo);
 		super.clickOnSubmit("Update");
 
+		super.signOut();
+		super.signIn("assistant1", "assistant1");
+
 		super.clickOnMenu("Assistant", "Tutorials");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
