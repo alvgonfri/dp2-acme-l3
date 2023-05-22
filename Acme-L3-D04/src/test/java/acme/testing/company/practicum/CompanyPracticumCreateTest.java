@@ -24,6 +24,7 @@ public class CompanyPracticumCreateTest extends TestHarness {
 	@CsvFileSource(resources = "/company/practicum/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void test100Positive(final int recordIndex, final String code, final String course, final String title, final String summary, final String goals) {
 		// HINT: En este test intentamos crear una practica con datos correctos.
+
 		super.signIn("company1", "company1");
 
 		super.clickOnMenu("Company", "Practicas list");
@@ -88,7 +89,20 @@ public class CompanyPracticumCreateTest extends TestHarness {
 		super.request("/company/practicum/create");
 		super.checkPanicExists();
 
+		super.checkLinkExists("Sign in");
 		super.signIn("administrator1", "administrator1");
+		super.request("/company/practicum/create");
+		super.checkPanicExists();
+		super.signOut();
+
+		super.checkLinkExists("Sign in");
+		super.signIn("student1", "student1");
+		super.request("/company/practicum/create");
+		super.checkPanicExists();
+		super.signOut();
+
+		super.checkLinkExists("Sign in");
+		super.signIn("auditor1", "auditor1");
 		super.request("/company/practicum/create");
 		super.checkPanicExists();
 		super.signOut();

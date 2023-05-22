@@ -31,8 +31,9 @@ public class CompanyPracticumPublishTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/company/practicum/publish-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void test100Positive(final int recordIndex, final String code) {
+
 		super.signIn("company1", "company1");
-		// HINT: Autenticamos como company, listamos practicas, seleccionamos una y la publicamos
+
 		super.clickOnMenu("Company", "Practicas list");
 		super.checkListingExists();
 		super.sortListing(0, "asc");

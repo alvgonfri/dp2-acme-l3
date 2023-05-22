@@ -31,6 +31,7 @@ public class CompanyPracticumSessionPublishTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/company/practicum-session/publish-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void test100Positive(final int recordIndex, final int sessionRecordIndex, final String title, final String startDate, final String endDate) {
+
 		super.signIn("company1", "company1");
 
 		super.clickOnMenu("Company", "Practicas list");

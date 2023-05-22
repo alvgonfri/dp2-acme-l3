@@ -12,12 +12,21 @@
 
 package acme.testing.company.practicumSession;
 
+import java.util.Collection;
+
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
+import org.springframework.beans.factory.annotation.Autowired;
 
+import acme.entities.practicums.PracticumSession;
 import acme.testing.TestHarness;
 
 public class CompanyPracticumSessionDeleteTest extends TestHarness {
+
+	@Autowired
+	protected CompanyPracticumSessionTestRepository repository;
+
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/company/practicum-session/delete-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
@@ -49,6 +58,40 @@ public class CompanyPracticumSessionDeleteTest extends TestHarness {
 
 		super.checkListingExists();
 		super.signOut();
+	}
+
+	@Test
+	public void test200Negative() {
+		// HINT: there aren't any negative tests for this feature since it's a deletion that
+		// HINT+ doesn't involve entering any data into any forms.
+	}
+
+	@Test
+	public void test300Hacking() {
+		Collection<PracticumSession> practicumSessions;
+		String param;
+
+		practicumSessions = this.repository.findManyPracticumSessionsByCompanyUsername("company1");
+		for (final PracticumSession practicumSession : practicumSessions)
+			if (practicumSession.isDraftMode()) {
+				param = String.format("id=%d", practicumSession.getId());
+
+				super.checkLinkExists("Sign in");
+				super.request("/company/practicum-session/delete", param);
+				super.checkPanicExists();
+
+				super.checkLinkExists("Sign in");
+				super.signIn("administrator1", "administrator1");
+				super.request("/company/practicum-session/delete", param);
+				super.checkPanicExists();
+				super.signOut();
+
+				super.checkLinkExists("Sign in");
+				super.signIn("company2", "company2");
+				super.request("/company/practicum-session/delete", param);
+				super.checkPanicExists();
+				super.signOut();
+			}
 	}
 
 }

@@ -27,6 +27,7 @@ public class CompanyPracticumListTest extends TestHarness {
 		// HINT+ and then checks that the listing shows the expected data.
 
 		super.signIn("company1", "company1");
+
 		super.clickOnMenu("Company", "Practicas list");
 		super.checkListingExists();
 		super.sortListing(0, "asc");

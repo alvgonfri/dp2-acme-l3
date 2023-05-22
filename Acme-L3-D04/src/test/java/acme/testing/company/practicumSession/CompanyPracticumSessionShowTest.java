@@ -33,6 +33,7 @@ public class CompanyPracticumSessionShowTest extends TestHarness {
 	public void test100Positive(final int recordIndex, final int sessionRecordIndex, final String title, final String summary, final String startDate, final String endDate, final String link, final String practicum) {
 		// HINT: this test signs in as an company, lists all of the practicum-sessions, click on  
 		// HINT+ one of them, and checks that the form has the expected data.
+
 		super.signIn("company1", "company1");
 		super.clickOnMenu("Company", "Practicas list");
 		super.checkListingExists();

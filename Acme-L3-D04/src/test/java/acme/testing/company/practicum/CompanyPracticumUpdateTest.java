@@ -73,6 +73,7 @@ public class CompanyPracticumUpdateTest extends TestHarness {
 	@Order(20)
 	public void test200Negative(final int recordIndex, final String title, final String summary, final String goals) {
 		// HINT: Actualizar con datos incorrectos.
+
 		super.signIn("company1", "company1");
 
 		super.clickOnMenu("Company", "Practicas list");

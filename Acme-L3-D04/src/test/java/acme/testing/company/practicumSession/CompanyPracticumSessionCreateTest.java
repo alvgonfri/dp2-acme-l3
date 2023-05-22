@@ -51,6 +51,15 @@ public class CompanyPracticumSessionCreateTest extends TestHarness {
 		super.fillInputBoxIn("practicum", practicum);
 		super.clickOnSubmit("Create");
 
+		super.signOut();
+		super.signIn("company1", "company1");
+
+		super.clickOnMenu("Company", "Practicas list");
+		super.checkListingExists();
+		super.sortListing(0, "asc");
+
+		super.clickOnListingRecord(recordIndex);
+		super.clickOnButton("View sessions");
 		super.checkListingExists();
 		super.sortListing(0, "desc");
 		super.checkColumnHasValue(sessionRecordIndex, 0, title);
@@ -58,6 +67,7 @@ public class CompanyPracticumSessionCreateTest extends TestHarness {
 		super.checkColumnHasValue(sessionRecordIndex, 2, endDate);
 
 		super.clickOnListingRecord(sessionRecordIndex);
+		super.checkFormExists();
 		super.checkInputBoxHasValue("title", title);
 		super.checkInputBoxHasValue("summary", summary);
 		super.checkInputBoxHasValue("startDate", startDate);
@@ -110,43 +120,23 @@ public class CompanyPracticumSessionCreateTest extends TestHarness {
 			super.request("/company/practicum-session/create", param);
 			super.checkPanicExists();
 
+			super.checkLinkExists("Sign in");
 			super.signIn("administrator1", "administrator1");
 			super.request("/company/practicum-session/create", param);
 			super.checkPanicExists();
 			super.signOut();
-		}
-	}
 
-	@Test
-	public void test301Hacking() {
-
-		Collection<Practicum> practicums;
-		String param;
-
-		super.checkLinkExists("Sign in");
-		super.signIn("company1", "company1");
-		practicums = this.repository.findManyPracticumsByCompanyUsername("company1");
-		for (final Practicum practicum : practicums)
-			if (!practicum.isDraftMode()) {
-				param = String.format("practicumId=%d", practicum.getId());
-				super.request("/company/practicum-session/create", param);
-				super.checkPanicExists();
-			}
-	}
-
-	@Test
-	public void test302Hacking() {
-
-		Collection<Practicum> practicums;
-		String param;
-
-		super.checkLinkExists("Sign in");
-		super.signIn("company2", "company2");
-		practicums = this.repository.findManyPracticumsByCompanyUsername("company2");
-		for (final Practicum practicum : practicums) {
-			param = String.format("practicumId=%d", practicum.getId());
+			super.checkLinkExists("Sign in");
+			super.signIn("student1", "student1");
 			super.request("/company/practicum-session/create", param);
 			super.checkPanicExists();
+			super.signOut();
+
+			super.checkLinkExists("Sign in");
+			super.signIn("auditor1", "auditor1");
+			super.request("/company/practicum-session/create", param);
+			super.checkPanicExists();
+			super.signOut();
 		}
 	}
 

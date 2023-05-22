@@ -28,6 +28,7 @@ public class CompanyPracticumSessionUpdateTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/company/practicum-session/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void test100Positive(final int recordIndex, final int sessionRecordIndex, final String title, final String summary, final String startDate, final String endDate, final String link) {
+
 		super.signIn("company1", "company1");
 
 		super.clickOnMenu("Company", "Practicas list");
@@ -47,8 +48,19 @@ public class CompanyPracticumSessionUpdateTest extends TestHarness {
 		super.fillInputBoxIn("startDate", startDate);
 		super.fillInputBoxIn("endDate", endDate);
 		super.fillInputBoxIn("link", link);
-
 		super.clickOnSubmit("Update");
+
+		super.signOut();
+		super.signIn("company1", "company1");
+
+		super.clickOnMenu("Company", "Practicas list");
+		super.checkListingExists();
+		super.sortListing(0, "asc");
+
+		super.clickOnListingRecord(recordIndex);
+		super.clickOnButton("View sessions");
+		super.checkListingExists();
+		super.sortListing(0, "asc");
 		super.clickOnListingRecord(sessionRecordIndex);
 		super.checkInputBoxHasValue("title", title);
 		super.checkInputBoxHasValue("summary", summary);

@@ -1,15 +1,15 @@
 key,title,summary,start-date,end-date,link,draft-mode,addendum,key:practicum
 practicum-session-01,<script>alert('Warning')</script>,Aqui va un sumario de la sesion practica de ejemplo,2023/01/01 12:00,2023/02/01 12:00,https://github.com/alvfonfri/dp2-acme-l3,true,false,practicum-01
 practicum-session-02,Sesion practica de prueba,<b>HOLA</b>,2023/02/14 18:30,2023/04/03 11:15,https://github.com/alvfonfri/dp2-acme-l3,true,false,practicum-02
-practicum-session-03,"*`++'""""~6~$%%&/(!""@@#",Aqui va un sumario de la sesion practica de ejemplo,2023/01/01 12:00,2023/02/01 12:00,null,false,false,practicum-03
+practicum-session-03,"*`++'""""~6~$%%&/(!""@@#",樣本練習,2023/01/01 12:00,2023/02/01 12:00,null,false,false,practicum-03
 practicum-session-04,Sesion practica de prueba,<script>alert('Warning')</script>,2023/02/14 18:30,2023/06/05 16:30,null,false,false,practicum-04
-practicum-session-05,Sesion practica,"*`++'""""~6~$%%&/(!""@@#",2023/01/01 12:00,2023/02/01 12:00,null,true,false,practicum-05
+practicum-session-05,樣本練習,"*`++'""""~6~$%%&/(!""@@#",2023/01/01 12:00,2023/02/01 12:00,null,true,false,practicum-05
 practicum-session-06,<script>alert('Warning')</script>,<b>HOLA</b>,2023/01/01 12:00,2023/01/30 08:00,https://ev.us.es,true,true,practicum-17
 practicum-session-07,53510N PR4CT1C4,Esto es el abstract,2023/01/01 12:00,2023/01/30 08:00,https://github.com/alvfonfri/dp2-acme-l3,true,false,practicum-04
 practicum-session-08,"*`++'""""~6~$%%&/(!""@@#",<b>HOLA</b>,2023/01/22 05:33,2023/04/03 11:15,null,true,false,practicum-16
 practicum-session-09,Sesion practica,"*`++'""""~6~$%%&/(!""@@#",2023/01/01 12:00,2023/06/05 16:30,https://github.com/alvfonfri/dp2-acme-l3,false,false,practicum-02
 practicum-session-10,Sesion practica de prueba,<script>alert('Warning')</script>,2023/02/14 18:30,2023/04/03 11:15,https://github.com/alvfonfri/dp2-acme-l3,false,false,practicum-11
-practicum-session-11,Sesion practica,"*`++'""""~6~$%%&/(!""@@#",2023/01/22 05:33,2023/04/03 11:15,https://github.com/alvfonfri/dp2-acme-l3,true,false,practicum-20
+practicum-session-11,樣本練習,樣本練習,2023/01/22 05:33,2023/04/03 11:15,https://github.com/alvfonfri/dp2-acme-l3,true,false,practicum-20
 practicum-session-12,<script>alert('Warning')</script>,Aqui va un sumario de la sesion practica de ejemplo,2023/01/01 12:00,2023/06/05 16:30,null,false,false,practicum-08
 practicum-session-13,Sesion practica de prueba,Esto es el abstract,2023/01/01 12:00,2023/06/05 16:30,https://github.com/alvfonfri/dp2-acme-l3,true,false,practicum-05
 practicum-session-14,53510N PR4CT1C4,<b>HOLA</b>,2023/01/01 12:00,2023/06/05 16:30,https://ev.us.es,false,false,practicum-02
