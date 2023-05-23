@@ -24,7 +24,7 @@ public class StudentActivityShowTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/student/activity/show-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void test100Positive(final int enrolmentRecordIndex, final String code, final int activityRecordIndex, final String title, final String summary, final String type, final String startDate, final String endDate, final String moreInfo) {
-		// HINT: this test signs in as an student, lists his or her jobs, selects
+		// HINT: this test signs in as an student, lists his or her activities, selects
 		// HINT+ one of them and checks that it's as expected.
 
 		super.signIn("student1", "student1");

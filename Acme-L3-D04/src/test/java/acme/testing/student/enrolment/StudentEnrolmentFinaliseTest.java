@@ -107,6 +107,7 @@ public class StudentEnrolmentFinaliseTest extends TestHarness {
 			if (!enrolment.isDraftMode()) {
 				params = String.format("id=%d", enrolment.getId());
 				super.request("/employer/job/finalise", params);
+				super.checkPanicExists();
 			}
 		super.signOut();
 	}
@@ -124,6 +125,7 @@ public class StudentEnrolmentFinaliseTest extends TestHarness {
 		for (final Enrolment enrolment : enrolments) {
 			params = String.format("id=%d", enrolment.getId());
 			super.request("/employer/job/finalise", params);
+			super.checkPanicExists();
 		}
 		super.signOut();
 	}

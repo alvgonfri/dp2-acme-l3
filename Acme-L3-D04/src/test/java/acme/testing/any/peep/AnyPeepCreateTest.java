@@ -26,6 +26,9 @@ public class AnyPeepCreateTest extends TestHarness {
 		super.fillInputBoxIn("moreInfo", moreInfo);
 		super.clickOnSubmit("Create");
 
+		super.signIn("assistant1", "assistant1");
+		super.signOut();
+
 		super.clickOnMenu("Any", "Peeps");
 		super.checkListingExists();
 		super.sortListing(0, "desc");
