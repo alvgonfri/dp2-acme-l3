@@ -9,3 +9,5 @@ audit-03,ABC013,The process of auditing has concluded.,All.,None.,auditor-01,cou
 audit-04,ABC014,The audit concluded.,All the points treated in the audit were considered as strong points.,None.,auditor-01,course-01,False
 audit-05,ABC015,The audit concluded.,All.,None of the points treated in the audit were considered as a weak point.,auditor-01,course-01,False
 audit-06,ABC016,The audit concluded.,All.,None.,auditor-02,course-02,False
+audit-11,CBA016, 你为什么要翻译这个, All, None.,auditor-01,course-03,False
+audit-12,CBA017, ????!!!$$&$%&<@#@#@, почему вы переводите это, <h2>None.<h2>,auditor-01,course-03,False
