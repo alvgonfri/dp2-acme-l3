@@ -31,4 +31,5 @@ administrator.offer.form.button.delete = Eliminar
 
 administrator.offer.error.onedayfuture = Debe estar disponible al menos 1 día despues del momento actual
 administrator.offer.error.oneweeklong = La fecha fin debe ser al menos 1 semana posterior a la decha de inicio
-administrator.offer.error.datelimits = La fecha debe ser entre 01/01/2000 00:00 and 31/12/2100 23:59
+administrator.offer.error.datelimits = La fecha debe ser entre 01/01/2000 00:00 and 31/12/2100 23:
+administrator.offer.error.negativePrice = La cantidad no puede ser negativa

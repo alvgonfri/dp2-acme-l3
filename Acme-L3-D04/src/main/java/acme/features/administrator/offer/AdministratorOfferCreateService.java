@@ -121,6 +121,9 @@ public class AdministratorOfferCreateService extends AbstractService<Administrat
 			super.state(isValid, "endAvailable", "administrator.offer.error.datelimits");
 		}
 
+		if (!super.getBuffer().getErrors().hasErrors("price"))
+			super.state(object.getPrice().getAmount() >= 0, "price", "administrator.offer.error.negativePrice");
+
 	}
 
 	@Override
