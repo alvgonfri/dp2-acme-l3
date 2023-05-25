@@ -1,8 +1,8 @@
 key,code,title,summary,goals,draft-mode,key:assistant,key:course
-tutorial-01,ABC873,Basic,Basic tutorial,Sample data,false,assistant-01,course-01
+tutorial-01,ABC873,Basic,Basic tutorial,Sample data,true,assistant-01,course-01
 tutorial-02,ABC813,Basic,Basic tutorial,Sample data,false,assistant-02,course-01
 tutorial-03,ABC872,Basic,Basic tutorial,Sample data,false,assistant-01,course-02
 tutorial-04,ABC672,Basic,Basic tutorial,Sample data,false,assistant-01,course-02
 tutorial-05,ABC662,formación basica, Aprender simple,Sample data,false,assistant-01,course-02
 tutorial-06,ABC623,<div>Test</div>,Basic tutorial,Sample data,false,assistant-01,course-02
-tutorial-07,ABC980,<div>Test</div>,こんにちは,Sample data,false,assistant-02,course-02
+tutorial-07,ABC980,<div>Test</div>,こんにちは,Sample data,true,assistant-02,course-02

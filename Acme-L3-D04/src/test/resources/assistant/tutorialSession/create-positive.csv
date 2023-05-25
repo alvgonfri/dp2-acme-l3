@@ -1,5 +1,13 @@
 tutorialRecordIndex,code,sessionRecordIndex,title,summary, sessionType, startDate, endDate,moreInfo
 2,ABC672, 0, prueba - CREATE, esto es una prueba <div> hola </div>,HANDS_ON, 2010/02/22 00:00, 2010/02/23 02:00,http://www.example.org
+2,ABC672, 1, prueba - CREATE, esto es una prueba 2 <div> hola </div>,HANDS_ON, 2010/02/22 00:00, 2010/02/23 02:00,http://www.example.org
+2,ABC672, 2, prueba - CREATE, esto es una prueba  3<div> hola </div>,HANDS_ON, 2010/02/22 00:00, 2010/02/23 02:00,http://www.example.org
+2,ABC672, 3, prueba - CREATE, esto es una prueba <div> hola </div>,HANDS_ON, 2010/02/22 00:00, 2010/02/24 02:00,http://www.example.org
+2,ABC672, 4, prueba - CREATE, esto es una prueba <div> hola </div>,HANDS_ON, 2010/02/22 00:00, 2010/02/27 02:00,http://www.example.org
+
+
+
+
 
 
 

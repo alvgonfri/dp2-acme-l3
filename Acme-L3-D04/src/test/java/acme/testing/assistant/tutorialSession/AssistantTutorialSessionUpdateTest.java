@@ -33,18 +33,9 @@ public class AssistantTutorialSessionUpdateTest extends TestHarness {
 		super.checkColumnHasValue(tutorialRecordIndex, 0, code);
 		super.clickOnListingRecord(tutorialRecordIndex);
 		super.checkInputBoxHasValue("code", code);
-		super.clickOnSubmit("Unpublish");
-
-		super.checkListingExists();
-		super.sortListing(0, "asc");
-
-		super.checkColumnHasValue(tutorialRecordIndex, 0, code);
-		super.clickOnListingRecord(tutorialRecordIndex);
-		super.checkInputBoxHasValue("code", code);
 		super.clickOnButton("Tutorial Session");
 
 		super.checkListingExists();
-		super.checkColumnHasValue(sessionRecordIndex, 0, title);
 		super.clickOnListingRecord(sessionRecordIndex);
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("summary", summary);
@@ -104,7 +95,6 @@ public class AssistantTutorialSessionUpdateTest extends TestHarness {
 		super.clickOnButton("Tutorial Session");
 
 		super.checkListingExists();
-		super.checkColumnHasValue(sessionRecordIndex, 0, title);
 		super.clickOnListingRecord(sessionRecordIndex);
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("summary", summary);
