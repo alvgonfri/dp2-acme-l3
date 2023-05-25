@@ -1,0 +1,6 @@
+record-index,code,course,title,summary,goals
+0,AAA021,RCG 873,Titulo,<h2>static</h2>,testear
+0,AAA022,RCG 873,Titulo correcto,Sumario de la practica de ejemplo,testear
+0,AAA023,RCG 873,"*`++'""""~6~$%%&/(!""@@#",Abstracto valido,testear
+0,AAA024,RCG 873,Perfecto,Sumario de la practica de ejemplo,probar
+0,AAA025,RCG 873,Valido,<script>alert('Warning')</script>,testear

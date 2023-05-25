@@ -1,0 +1,5 @@
+record-index,code,title,summary
+0,AAA001,Titulo de practica,<script>alert('Warning')</script>
+1,AAA002,<script>alert('Warning')</script>,Resumen de la practica
+2,AAA004,<h2>static</h2>,Sumario de la practica de ejemplo
+3,AAA006,Titulo de practica,Sumario de la practica de ejemplo

@@ -1,6 +1,21 @@
-key,code,title,summary,goals,key:company,key:course
-practicum-01,AAA111,Practicum ejemplo,Sumario de la practica de ejemplo,emprender,company-01,course-01
-practicum-02,AAA121,Practicum ejemplo,Sumario de la practica de ejemplo,aprender,company-04,course-02
-practicum-03,AAA131,Practicum ejemplo,Sumario de la practica de ejemplo,habilidad,company-02,course-01
-practicum-04,AAA141,Practicum ejemplo,Sumario de la practica de ejemplo,economia,company-03,course-02
-practicum-05,AAA151,Practicum ejemplo,Sumario de la practica de ejemplo,jugar,company-02,course-01
+key,code,title,summary,goals,draft-mode,key:company,key:course
+practicum-01,AAA001,Titulo de practica,<script>alert('Warning')</script>,testear,true,company-01,course-01
+practicum-02,AAA002,<script>alert('Warning')</script>,Resumen de la practica,<h2>static</h2>,true,company-01,course-02
+practicum-03,AAA003,Titulo de practica,Sumario de la practica de ejemplo,testear,false,company-02,course-03
+practicum-04,AAA004,<h2>static</h2>,Sumario de la practica de ejemplo,"*`++'""""~6~$%%&/(!""@@#",true,company-01,course-04
+practicum-05,AAA005,Practicum ejemplo,樣本練習,objetivos,false,company-02,course-01
+practicum-06,AAA006,Titulo de practica,Sumario de la practica de ejemplo,testear,true,company-01,course-02
+practicum-07,AAA007,"*`++'""""~6~$%%&/(!""@@#",Resumen de la practica,<h2>static</h2>,true,company-01,course-03
+practicum-08,AAA008,Titulo de practica,Resumen de la practica,樣本練習,true,company-02,course-04
+practicum-09,AAA009,Practicum ejemplo,Sumario de la practica de ejemplo,<script>alert('Warning')</script>,true,company-02,course-01
+practicum-10,AAA010,"*`++'""""~6~$%%&/(!""@@#",Sumario de la practica de ejemplo,"*`++'""""~6~$%%&/(!""@@#",false,company-02,course-02
+practicum-11,AAA011,Titulo de practica,<h2>static</h2>,objetivos,false,company-01,course-03
+practicum-12,AAA012,<script>alert('Warning')</script>,Sumario de la practica de ejemplo,testear,true,company-01,course-04
+practicum-13,AAA013,Titulo de practica,"*`++'""""~6~$%%&/(!""@@#",testear,true,company-01,course-01
+practicum-14,AAA014,樣本練習,Sumario de la practica de ejemplo,objetivos,false,company-02,course-02
+practicum-15,AAA015,"*`++'""""~6~$%%&/(!""@@#",Resumen de la practica,objetivos,false,company-01,course-03
+practicum-16,AAA016,Practicum ejemplo,Sumario de la practica de ejemplo,<h2>static</h2>,true,company-02,course-04
+practicum-17,AAA017,Titulo de practica,<script>alert('Warning')</script>,testear,false,company-01,course-01
+practicum-18,AAA018,<h2>static</h2>,Sumario de la practica de ejemplo,objetivos,true,company-02,course-02
+practicum-19,AAA019,樣本練習,Resumen de la practica,<script>alert('Warning')</script>,false,company-02,course-03
+practicum-20,AAA020,Practicum ejemplo,"*`++'""""~6~$%%&/(!""@@#",testear,false,company-02,course-04

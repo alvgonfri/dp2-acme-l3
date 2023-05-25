@@ -1,0 +1,3 @@
+record-index,code,title,summary,goals
+0,AAA001,Titulo de practica,<script>alert('Warning')</script>,testear
+0,AAA002,<script>alert('Warning')</script>,Resumen de la practica,<h2>static</h2>
