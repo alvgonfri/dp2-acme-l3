@@ -39,6 +39,9 @@ public class CompanyPracticumCreateTest extends TestHarness {
 		super.fillInputBoxIn("goals", goals);
 		super.clickOnSubmit("Create");
 
+		super.signOut();
+		super.signIn("company1", "company1");
+
 		super.clickOnMenu("Company", "Practicas list");
 		super.checkListingExists();
 		super.sortListing(0, "desc");
