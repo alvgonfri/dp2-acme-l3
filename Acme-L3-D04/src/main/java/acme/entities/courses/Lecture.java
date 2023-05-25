@@ -36,7 +36,7 @@ public class Lecture extends AbstractEntity {
 	protected String			summary;
 
 	@NotNull
-	@Min(0)
+	@Min(1)
 	protected int				learningTime;
 
 	@NotBlank
