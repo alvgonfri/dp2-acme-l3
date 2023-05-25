@@ -21,7 +21,7 @@ import acme.testing.TestHarness;
 public class AnyPeepListTest extends TestHarness {
 
 	@ParameterizedTest
-	@CsvFileSource(resources = "/any/peep/list-all-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/any/peep/list-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void test100Positive(final int recordIndex, final String moment, final String title, final String nick) {
 		// HINT: this test enter any anonymous, then lists the peeps.
 		super.clickOnMenu("Any", "Peeps");

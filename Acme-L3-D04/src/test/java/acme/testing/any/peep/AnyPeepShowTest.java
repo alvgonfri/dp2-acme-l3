@@ -30,7 +30,7 @@ public class AnyPeepShowTest extends TestHarness {
 
 
 	@ParameterizedTest
-	@CsvFileSource(resources = "/any/peep/show.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/any/peep/show-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void test100Positive(final int recordIndex, final String moment, final String title, final String nick, final String message, final String email, final String moreInfo) {
 		// HINT: this test enter any anonymous, then lists the peeps,
 		// HINT+ and checks that the listing shows the expected data.
