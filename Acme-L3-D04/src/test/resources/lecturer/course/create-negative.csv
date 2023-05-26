@@ -1,0 +1,8 @@
+recordIndex,code,title,summary,retailPrice,moreInfo
+0,A3C 1320,Titulo,Summary prueba,"EUR 20,020.00",http://www.ev.es
+0,ABC 120,TituloMas76Cararcteres!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!,Summary prueba,"EUR 20,020.00",http://www.ev.es
+0,ABC 120,,Summary prueba,"EUR 20,020.00",http://www.ev.es
+0,ABC 120,Titulo,,"EUR 20,020.00",http://www.ev.es
+0,ABC 120,Titulo,Summary prueba mas de 101 caracteres!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!,"EUR 20,020.00",http://www.ev.es
+0,ABC 120,Titulo,Summary prueba,"20,020.00",http://www.ev.es
+0,ABC 120,Titulo,Summary prueba,"EUR 20,020.00",www.ev.es
