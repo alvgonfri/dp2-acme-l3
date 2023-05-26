@@ -127,6 +127,9 @@ public class AdministratorOfferUpdateService extends AbstractService<Administrat
 			isValid = MomentHelper.isAfterOrEqual(object.getEndAvailable(), earliestDate) && MomentHelper.isBeforeOrEqual(object.getEndAvailable(), latestDate);
 			super.state(isValid, "endAvailable", "administrator.offer.error.datelimits");
 		}
+
+		if (!super.getBuffer().getErrors().hasErrors("price"))
+			super.state(object.getPrice().getAmount() >= 0, "price", "administrator.offer.error.negativePrice");
 	}
 
 	@Override
