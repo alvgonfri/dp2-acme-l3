@@ -1,2 +1,6 @@
 recordIndex,code,course,motivation,goals,workTime,creditCardHolder,creditCardNumber,expiryDate,cvc
 2,DFD390,Writing Mastery,New Motivation,New goals,0,New holder,1111222233334444,2025/03/03 00:00,123
+2,NNN000,Financial Planning and Analysis,.:;,New goals,0,New holder,1111222233334444,2023/03/03 00:00,123
+2,XYZ101,Writing Mastery,áÁáÁ,New goals,0,ÁÉÍÓÚ,1111222233334444,2025/03/03 00:00,123
+2,DFD391,Tech for Non-Techies,ññññ,New goals,0,New holder,1234567812345678,2025/03/03 00:00,123
+2,ZZZ987,Financial Planning and Analysis,<h1>New motivation</h1>,New goals,0,New holder,1111222233334444,2025/03/03 00:00,123

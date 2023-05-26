@@ -1,2 +1,7 @@
 recordIndex,code,course,motivation,goals,workTime,creditCardHolder,creditCardNumber,expiryDate,cvc
-2,DFD390,Tech for Non-Techies,,This text has a lot of characters!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!,0,This text has a lot of characters!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!,1,2020/03/03 00:00,1
+2,DFD390,Tech for Non-Techies,,New goals,0,New holder,1234123412341234,2024/03/03 00:00,123
+2,DFD390,---,New motivation,New goals,0,New holder,1234123412341234,2024/03/03 00:00,123
+2,DFD390,Tech for Non-Techies,New motivation,This text has a lot of characters!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!,0,This text has a lot of characters!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!,1234123412341234,2024/03/03 00:00,123
+2,New code,Tech for Non-Techies,New motivation,New goals,0,New holder,1234123412341234,2024/03/03 00:00,123
+2,DFD390,Tech for Non-Techies,New motivation,New goals,0,New holder,1,2024/03/03 00:00,1
+2,DFD390,Tech for Non-Techies,New motivation,New goals,0,New holder,1234123412341234,2020/03/03 00:00,123
