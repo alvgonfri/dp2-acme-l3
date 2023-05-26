@@ -1,6 +1,8 @@
 
 package acme.forms;
 
+import java.util.Map;
+
 import acme.framework.data.AbstractForm;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,27 +16,23 @@ public class AdministratorDashboard extends AbstractForm {
 
 	// Attributes -------------------------------------------------------------
 
-	int						numberOfPrincipalsAssistant;
-	
-	int						numberOfPrincipalsAuditor;
-	
-	int						numberOfPrincipalsCompany;
-	
-	int						numberOfPrincipalsStudent;
-	
-	int						numberOfPrincipalLecturer;
-	
+	int							numberOfAssistants;
+	int							numberOfAuditors;
+	int							numberOfCompanies;
+	int							numberOfStudents;
+	int							numberOfLecturers;
+
 	double						ratioOfPeepsWithEmailAndLink;
 	double						ratioOfCriticalBulletins;
 	double						ratioOfNonCriticalBulletins;
-	double						averageBudgetInOffersByCurrency;
-	double						minimumBudgetInOffersByCurrency;
-	double						maximumBudgetInOffersByCurrency;
-	double						deviationBudgetInOffersByCurrency;
-	double						averageNumberOfNotesPostedOver10Weeks;
-	double						minimumNumberOfNotesPostedOver10Weeks;
-	double						maximumNumberOfNotesPostedOver10Weeks;
-	double						deviationNumberOfNotesPostedOver10Weeks;
+	Map<String, Double>			averageBudgetInOffersByCurrency;
+	Map<String, Double>			minimumBudgetInOffersByCurrency;
+	Map<String, Double>			maximumBudgetInOffersByCurrency;
+	Map<String, Double>			deviationBudgetInOffersByCurrency;
+	double						averageNotesLastTenWeeks;
+	double						minimumNotesLastTenWeeks;
+	double						maximumNotesLastTenWeeks;
+	double						deviationOfNotesLastTenWeeks;
 
 	// Derived attributes -----------------------------------------------------
 
